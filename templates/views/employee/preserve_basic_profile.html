@@ -1,0 +1,2099 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/navbar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>
+
+    </title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+        .profile_card_tag {
+            border: none;
+            padding: 8px;
+            margin-bottom: 5px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            background: whitesmoke;
+
+
+
+        }
+
+        .selected_tag {
+            color: rgb(97, 112, 182);
+            background-color: rgb(155, 233, 225);
+        }
+
+        .my_arrow_fa {
+            float: right;
+        }
+    </style>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        .block {
+
+            background: rgba(86, 61, 124, .15);
+            margin-bottom: 30px;
+        }
+
+        .label {
+            font-size: .85rem;
+            font-weight: bold;
+        }
+
+
+
+        .my_card {
+
+            max-width: 100%;
+            margin-left: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .my_card_title {
+            border: 2px solid slateblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            border-radius: 7px;
+            padding: 5px;
+            text-align: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            font-variant: small-caps;
+            color: #596EC2;
+
+
+
+        }
+
+        .card-subtitle {
+            text-align: center;
+        }
+
+        .form-group label {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: #596EC2;
+            font-weight: 500;
+
+        }
+
+        .service_rate_given span {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: #596EC2;
+            font-weight: 500;
+
+        }
+
+        .profile_card_tag_error {
+            color: whitesmoke;
+            background: salmon;
+        }
+
+
+
+
+        .my_card_subtitle {
+            text-align: center;
+        }
+
+
+
+        .skills_pallete {
+            border: none;
+
+
+
+            background: rgb(241, 239, 239);
+            font-family: 'Roboto', sans-serif;
+            border-radius: 10px;
+            font-variant: small-caps;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin: 2px;
+            display: inline-block;
+            border: 1px solid rgb(182, 182, 182);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            cursor: pointer;
+
+
+        }
+
+        .skills_pallete:hover {
+            background: #596EC2;
+            color: honeydew;
+        }
+
+
+        .skills_pallete_container {
+            padding: 0px;
+
+
+        }
+
+        .welcome_text {
+            color: snow;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            border-radius: 10px;
+
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .welcome_text span {
+            font-size: 30px;
+
+        }
+
+        .details_fields {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            outline: none;
+            padding: 5px;
+
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+        }
+
+        .service_rate_given {
+            margin-bottom: 20px;
+        }
+
+        .service_rate_given .service_rate_final {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            outline: none;
+            padding: 5px;
+            margin-top: 10px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        .profile_card_header {
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 100px;
+            font-variant: small-caps;
+        }
+    </style>
+
+
+<style>
+    .card_prev_next {
+        display: inline-block;
+
+        padding: 10px;
+        width: 100%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+
+    }
+
+    .card_prev_next a {
+        color: #596EC2;
+        font-variant: small-caps;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 10px;
+        width: 40%;
+        text-align: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .card_prev_next a:hover {
+        background: rgb(53, 207, 187);
+        color: snow;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+
+    <!-- navbar -->
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 col-sm-12 my-col">
+                <div class="card my_card" style="text-align: center;">
+
+                    <div class="profile_card_tag selected_tag">Getting Started<i
+                            class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">Category<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <!-- <div class="profile_card_tag">Expertise<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    
+                     -->
+
+
+
+                    <div class="profile_card_tag">Hourley Rate<i class="my_arrow_fa fas fa-arrow-circle-right"></i>
+                    </div>
+                    <div class="profile_card_tag">Title And Overview<i
+                            class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">Profile Photo<i class="my_arrow_fa fas fa-arrow-circle-right"></i>
+                    </div>
+                    <div class="profile_card_tag">Location<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">Phone<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-sm-12 my-col">
+                <form id="profile_details_form" action="/employee/submit_profile_details" method="POST">
+                    <div class="card profile_details_card" style="width: 100%;" id="card">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Getting started</span>
+                            </div>
+                            <div class="my_card_subtitle card-subtitle mb-2 text-muted">
+                                <span>0 of 12</span>
+                            </div>
+                            <div class="card-text welcome_text">
+                                <span>Welcome to profile editing</span>
+
+                                <h2>We welcome you?</h2>
+
+                            </div>
+                            <div onclick="nextPage(0)" style="cursor: pointer;" class="mt-3 card-title my_card_title">
+                                NEXT
+                                <!-- <a href="#" style="border:2px solid red;
+                                width:fit-content;" class=" card-link" >next</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Category</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>1 of 12</span>
+                            </div>
+                            <div class="card-text">
+
+
+                                <span class="profile_card_header">what is the main service you offer?</span>
+                                <hr />
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">category</label>
+                                    <select name="service_category" class="form-control details_fields"
+                                        id="service_category">
+                                        <option value="Select" selected hidden>Select</option>
+                                        <%serviceCategories.forEach((cat)=>{%>
+                                            <option value="<%=cat%>">
+                                                <%=cat%>
+                                            </option>
+                                            <%})%>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">sub category</label>
+                                    <select name="service_subcategory" class="form-control details_fields"
+                                        id="service_subcategory">
+                                        <option value="Select" selected hidden>Select</option>
+                                        <%serviceSubCategories.forEach((cat)=>{%>
+                                            <option value="<%=cat%>">
+                                                <%=cat%>
+                                            </option>
+                                            <%})%>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(1)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(1)">next</a>
+                            </div>
+                          
+
+                        </div>
+                    </div>
+                    <!-- 
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Expertise</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>3 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Select Your Skills</span>
+                                <hr />
+                                <div class="skills_pallete_container">
+
+
+                                    <span data-name="java" class="skills_pallete">jajavajavavaSumit</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">j</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajajavajavavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(2)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(2)">next</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="pricing pricing-palden">
+                            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom"
+                                data-delay="item-0" style="min-height: 497px;">
+                                <div class="pricing-deco">
+                                    <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px"
+                                        id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100"
+                                        width="300px" x="0px" xml:space="preserve" y="0px">
+                                        <path class="deco-layer deco-layer--1"
+                                            d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--2"
+                                            d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--3"
+                                            d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z"
+                                            fill="#FFFFFF" opacity="0.7"></path>
+                                        <path class="deco-layer deco-layer--4"
+                                            d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                    <div class="pricing-price"><span class="pricing-currency">$</span>29
+                                        <span class="pricing-period">/ mo</span>
+                                    </div>
+                                    <h3 class="pricing-title">Freelance</h3>
+                                </div>
+                                <ul class="pricing-feature-list">
+                                    <li class="pricing-feature">1 GB of space</li>
+                                    <li class="pricing-feature">Support at $25/hour</li>
+                                    <li class="pricing-feature">Limited cloud access</li>
+                                </ul>
+                                <button class="pricing-action">Choose plan</button>
+                            </div>
+                            <div class="pricing-item features-item ja-animate pricing__item--featured"
+                                data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
+                                <div class="pricing-deco" style="background: linear-gradient(135deg,#a93bfe,#584efd)">
+                                    <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px"
+                                        id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100"
+                                        width="300px" x="0px" xml:space="preserve" y="0px">
+                                        <path class="deco-layer deco-layer--1"
+                                            d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--2"
+                                            d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--3"
+                                            d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z"
+                                            fill="#FFFFFF" opacity="0.7"></path>
+                                        <path class="deco-layer deco-layer--4"
+                                            d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                    <div class="pricing-price"><span class="pricing-currency">$</span>59
+                                        <span class="pricing-period">/ mo</span>
+                                    </div>
+                                    <h3 class="pricing-title">Business</h3>
+                                </div>
+                                <ul class="pricing-feature-list">
+                                    <li class="pricing-feature">5 GB of space</li>
+                                    <li class="pricing-feature">Support at $5/hour</li>
+                                    <li class="pricing-feature">Full cloud access</li>
+                                </ul>
+                                <button class="pricing-action">Choose plan</button>
+                            </div>
+                            <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom"
+                                data-delay="item-2" style="min-height: 497px;">
+                                <div class="pricing-deco">
+                                    <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px"
+                                        id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100"
+                                        width="300px" x="0px" xml:space="preserve" y="0px">
+                                        <path class="deco-layer deco-layer--1"
+                                            d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--2"
+                                            d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z"
+                                            fill="#FFFFFF" opacity="0.6"></path>
+                                        <path class="deco-layer deco-layer--3"
+                                            d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z"
+                                            fill="#FFFFFF" opacity="0.7"></path>
+                                        <path class="deco-layer deco-layer--4"
+                                            d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                    <div class="pricing-price"><span class="pricing-currency">$</span>99
+                                        <span class="pricing-period">/ mo</span>
+                                    </div>
+                                    <h3 class="pricing-title">Enterprise</h3>
+                                </div>
+                                <ul class="pricing-feature-list">
+                                    <li class="pricing-feature">10 GB of space</li>
+                                    <li class="pricing-feature">Support at $5/hour</li>
+                                    <li class="pricing-feature">Full cloud access</li>
+                                </ul>
+                                <button class="pricing-action">Choose plan</button>
+                            </div>
+
+
+                            <style>
+                                .pricing {
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-flex-wrap: wrap;
+                                    flex-wrap: wrap;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                    margin: 0 auto 3em;
+                                }
+
+                                .pricing-item {
+                                    position: relative;
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-flex-direction: column;
+                                    flex-direction: column;
+                                    -webkit-align-items: stretch;
+                                    align-items: stretch;
+                                    text-align: center;
+                                    -webkit-flex: 0 1 330px;
+                                    flex: 0 1 330px;
+                                }
+
+                                .pricing-action {
+                                    color: inherit;
+                                    border: none;
+                                    background: none;
+                                    cursor: pointer;
+                                }
+
+                                .pricing-action:focus {
+                                    outline: none;
+                                }
+
+                                .pricing-feature-list {
+                                    text-align: left;
+                                }
+
+                                .pricing-palden .pricing-item {
+                                    font-family: 'Open Sans', sans-serif;
+                                    cursor: default;
+                                    color: #84697c;
+                                    background: #fff;
+                                    box-shadow: 0 0 10px rgba(46, 59, 125, 0.23);
+                                    border-radius: 20px 20px 10px 10px;
+                                    margin: 1em;
+                                }
+
+                                @media screen and (min-width: 66.25em) {
+                                    .pricing-palden .pricing-item {
+                                        margin: 1em -0.5em;
+                                    }
+
+                                    .pricing-palden .pricing__item--featured {
+                                        margin: 0;
+                                        z-index: 10;
+                                        box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
+                                    }
+                                }
+
+                                .pricing-palden .pricing-deco {
+                                    border-radius: 10px 10px 0 0;
+                                    background: linear-gradient(135deg, #4097f9, #0af0c7);
+                                    padding: 4em 0 9em;
+                                    position: relative;
+                                }
+
+                                .pricing-palden .pricing-deco-img {
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 160px;
+                                }
+
+                                .pricing-palden .pricing-title {
+                                    font-size: 0.75em;
+                                    margin: 0;
+                                    text-transform: uppercase;
+                                    letter-spacing: 5px;
+                                    color: #fff;
+                                }
+
+                                .pricing-palden .deco-layer {
+                                    -webkit-transition: -webkit-transform 0.5s;
+                                    transition: transform 0.5s;
+                                }
+
+                                .pricing-palden .pricing-item:hover .deco-layer--1 {
+                                    -webkit-transform: translate3d(15px, 0, 0);
+                                    transform: translate3d(15px, 0, 0);
+                                }
+
+                                .pricing-palden .pricing-item:hover .deco-layer--2 {
+                                    -webkit-transform: translate3d(-15px, 0, 0);
+                                    transform: translate3d(-15px, 0, 0);
+                                }
+
+                                .pricing-palden .icon {
+                                    font-size: 2.5em;
+                                }
+
+                                .pricing-palden .pricing-price {
+                                    font-size: 5em;
+                                    font-weight: bold;
+                                    padding: 0;
+                                    color: #fff;
+                                    margin: 0 0 0.25em 0;
+                                    line-height: 0.75;
+                                }
+
+                                .pricing-palden .pricing-currency {
+                                    font-size: 0.15em;
+                                    vertical-align: top;
+                                }
+
+                                .pricing-palden .pricing-period {
+                                    font-size: 0.15em;
+                                    padding: 0 0 0 0.5em;
+                                    font-style: italic;
+                                }
+
+                                .pricing-palden .pricing__sentence {
+                                    font-weight: bold;
+                                    margin: 0 0 1em 0;
+                                    padding: 0 0 0.5em;
+                                }
+
+                                .pricing-palden .pricing-feature-list {
+                                    margin: 0;
+                                    padding: 0.25em 0 2.5em;
+                                    list-style: none;
+                                    text-align: center;
+                                }
+
+                                .pricing-palden .pricing-feature {
+                                    padding: 1em 0;
+                                }
+
+                                .pricing-palden .pricing-action {
+                                    font-weight: bold;
+                                    margin: auto 3em 2em 3em;
+                                    padding: 1em 2em;
+                                    color: #fff;
+                                    border-radius: 30px;
+                                    background: linear-gradient(135deg, #a93bfe, #584efd);
+                                    -webkit-transition: background-color 0.3s;
+                                    transition: background-color 0.3s;
+                                }
+
+                                .pricing-palden .pricing-action:hover,
+                                .pricing-palden .pricing-action:focus {
+                                    background: linear-gradient(135deg, #fd7d57, #f55d59);
+                                }
+
+                                .pricing-palden .pricing-item--featured .pricing-deco {
+                                    padding: 5em 0 8.885em 0;
+                                }
+                            </style>
+                        </div>
+
+
+                        <!-- <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Hourly rate</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>3 of 12</span>
+                            </div>
+                            <div class="card-text">
+
+
+                                <div>
+                                    <span class="profile_card_header">Profit Details?</span>
+                                    <hr />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">your Service rate</label>
+                                        <input name="service_rate" type="text" class="form-control details_fields"
+                                            id="service_rate">
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="service_rate_given">
+
+                                    <span>service given by us</span>
+                                    <div class="service_rate_final">hello</div>
+                                </div>
+
+                                <div class="service_rate_given">
+
+                                    <span>your profit</span>
+                                    <div class="service_rate_final">hello</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(2)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(2)">next</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                        <div class="card profile_details_card" style="width: 100%; display:none;">
+                            <div class="card-body">
+                                <div class="card-title my_card_title">
+                                    <span>title and overview</span>
+                                </div>
+                                <div class="card-subtitle mb-2 text-muted">
+                                    <span>4 of 12</span>
+                                </div>
+                                <div class="card-text">
+                                    <span class="profile_card_header">Some Extra Details</span>
+                                    <hr />
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">title</label>
+                                        <input type="text" name="title" class="form-control details_fields" id="title">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">extra detail</label>
+                                        <textarea rows="5" style="resize: none;" cols="5" maxlength="100"
+                                            name="extra_details" class="form-control details_fields" id="extra_details"
+                                            rows="3"></textarea>
+                                    </div>
+
+
+                                </div>
+                                <div class="mt-3 card-title card_prev_next">
+
+                                    <a href="#" style="float: left;" class="card-link"
+                                        onclick="previousPage(3)">back</a>
+                                    <a href="#" style="float: right;" class="card-link" onclick="nextPage(3)">next</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card profile_details_card" style="width: 100%; display:none;">
+                            <div class="card-body">
+                                <div class="card-title my_card_title">
+                                    <span>Profile photto</span>
+                                </div>
+                                <div class="card-subtitle mb-2 text-muted">
+                                    <span>6 of 12</span>
+                                </div>
+                                <div class="card-text">
+                                    <span class="profile_card_header">Upload your profile pic</span>
+                                    <hr />
+
+
+
+
+                                    <div class="profile_container">
+
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload"></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview"
+                                                    style="background-image: url('http://i.pravatar.cc/500?img=7');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <style>
+                                        .profile_container {
+                                            max-width: 960px;
+                                            margin: 30px auto;
+                                            margin-top: 0px;
+                                            padding: 20px;
+                                        }
+
+                                        h1 {
+                                            font-size: 20px;
+                                            text-align: center;
+                                            margin: 20px 0 20px;
+                                        }
+
+                                        h1 small {
+                                            display: block;
+                                            font-size: 15px;
+                                            padding-top: 8px;
+                                            color: gray;
+                                        }
+
+                                        .avatar-upload {
+                                            position: relative;
+                                            max-width: 205px;
+                                            margin: 50px auto;
+                                        }
+
+                                        .avatar-upload .avatar-edit {
+                                            position: absolute;
+                                            right: 12px;
+                                            z-index: 1;
+                                            top: 10px;
+                                        }
+
+                                        .avatar-upload .avatar-edit input {
+                                            display: none;
+                                        }
+
+                                        .avatar-upload .avatar-edit input+label {
+                                            display: inline-block;
+                                            width: 34px;
+                                            height: 34px;
+                                            margin-bottom: 0;
+                                            border-radius: 100%;
+                                            background: #FFFFFF;
+                                            border: 1px solid transparent;
+                                            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+                                            cursor: pointer;
+                                            font-weight: normal;
+                                            transition: all 0.2s ease-in-out;
+                                        }
+
+                                        .avatar-upload .avatar-edit input+label:hover {
+                                            background: #f1f1f1;
+                                            border-color: #d6d6d6;
+                                        }
+
+                                        .avatar-upload .avatar-edit input+label:after {
+                                            content: "\f040";
+                                            font-family: 'FontAwesome';
+                                            color: #757575;
+                                            position: absolute;
+                                            top: 10px;
+                                            left: 0;
+                                            right: 0;
+                                            text-align: center;
+                                            margin: auto;
+                                        }
+
+                                        .avatar-upload .avatar-preview {
+                                            width: 192px;
+                                            height: 192px;
+                                            position: relative;
+                                            border-radius: 100%;
+                                            border: 6px solid #F8F8F8;
+                                            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+                                        }
+
+                                        .avatar-upload .avatar-preview>div {
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 100%;
+                                            background-size: cover;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                        }
+                                    </style>
+
+
+                                    <!-- <div class="form-group">
+                                    <label for="exampleFormControlFile1">Your Profile Pic!</label>
+                                    <input name="profile_pic" type="file" id="profile_pic"
+                                        class="form-control-file details_fields" id="exampleFormControlFile1">
+
+
+                                </div> -->
+
+                                    <!-- <div class="profile_pic_container">
+                                    <div class="wrapper">
+                                        <div class="image">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <div class="icon">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                            </div>
+                                            <div class="text">
+                                                No file chosen, yet!
+                                            </div>
+                                        </div>
+                                        <div id="cancel-btn">
+                                            <i class="fas fa-times"></i>
+                                        </div>
+                                        <div class="file-name">
+                                            File name here
+                                        </div>
+                                    </div>
+                                    <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                                    <input id="default-btn" type="file" hidden>
+                                </div> -->
+
+
+
+                                    <!-- 
+                                <style>
+                                    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+                                   
+
+                                   
+
+                                    .profile_pic_container {
+                                        height: 350px;
+                                        width: 430px;
+                                        position: relative;
+                                    }
+
+                                    .profile_pic_container .wrapper {
+                                        position: relative;
+                                        height: 300px;
+                                        width: 100%;
+                                        border-radius: 10px;
+                                        background: #fff;
+                                        border: 2px dashed #c2cdda;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        overflow: hidden;
+                                    }
+
+                                    .wrapper.active {
+                                        border: none;
+                                    }
+
+                                    .wrapper .image {
+                                        position: absolute;
+                                        height: 100%;
+                                        width: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+
+                                    .wrapper img {
+                                        height: 100%;
+                                        width: 100%;
+                                        object-fit: cover;
+                                    }
+
+                                    .wrapper .icon {
+                                        font-size: 100px;
+                                        color: #9658fe;
+                                    }
+
+                                    .wrapper .text {
+                                        font-size: 20px;
+                                        font-weight: 500;
+                                        color: #5B5B7B;
+                                    }
+
+                                    .wrapper #cancel-btn i {
+                                        position: absolute;
+                                        font-size: 20px;
+                                        right: 15px;
+                                        top: 15px;
+                                        color: #9658fe;
+                                        cursor: pointer;
+                                        display: none;
+                                    }
+
+                                    .wrapper.active:hover #cancel-btn i {
+                                        display: block;
+                                    }
+
+                                    .wrapper #cancel-btn i:hover {
+                                        color: #e74c3c;
+                                    }
+
+                                    .wrapper .file-name {
+                                        position: absolute;
+                                        bottom: 0px;
+                                        width: 100%;
+                                        padding: 8px 0;
+                                        font-size: 18px;
+                                        color: #fff;
+                                        display: none;
+                                        background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+                                    }
+
+                                    .wrapper.active:hover .file-name {
+                                        display: block;
+                                    }
+
+                                    .profile_pic_container #custom-btn {
+                                        margin-top: 30px;
+                                        display: block;
+                                        width: 100%;
+                                        height: 50px;
+                                        border: none;
+                                        outline: none;
+                                        border-radius: 25px;
+                                        color: #fff;
+                                        font-size: 18px;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;
+                                        text-transform: uppercase;
+                                        cursor: pointer;
+                                        background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+                                    }
+                                </style> -->
+
+
+                                    <!-- <div class="avatar_preview_container">
+                                    <div id="uploaded_image">
+                                        <img src="/images/test.jpg" alt="">
+                                        
+                                    </div>
+                                </div>
+                                <style>
+                                    .avatar_preview_container{
+                                        display: flex;
+                                        border: 1px solid red;
+                                        align-items: center;
+                                        justify-content: center;
+                                        
+                                    }
+                                    #uploaded_image{
+                                        background-image: url("/images/test.jpg");
+                                    }
+                                    
+                                    #uploaded_image img{
+                                        width: 200px;
+                                        height: 200px;
+                                        border: 2px solid greenyellow;
+                                        border-radius: 50%;
+                                        
+                                    }
+                                </style>
+ -->
+
+
+                                </div>
+                                <div class="mt-3 card-title card_prev_next">
+
+                                    <a href="#" style="float: left;" class="card-link"
+                                        onclick="previousPage(4)">back</a>
+                                    <a href="#" style="float: right;" class="card-link" onclick="nextPage(4)">next</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card profile_details_card" style="width: 100%; display:none;">
+                            <div class="card-body">
+                                <div class="card-title my_card_title">
+                                    <span>location</span>
+                                </div>
+                                <div class="card-subtitle mb-2 text-muted">
+                                    <span>5 of 12</span>
+                                </div>
+                                <div class="card-text">
+                                    <span class="profile_card_header">Location Details</span>
+                                    <hr />
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">City</label>
+                                        <select name="city" class="form-control details_fields" id="city">
+                                            <option selected value="default">Select</option>
+                                            <% states.forEach((state)=>{%>
+                                                <option value="<%=state.name%>">
+                                                    <%=state.name%>
+                                                </option>
+                                                <%})%>
+
+
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Address</label>
+                                        <textarea name="address" style="resize: none;"
+                                            class="form-control details_fields" id="address" rows="3"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Pincode</label>
+                                        <input type="text" name="pincode" class="form-control details_fields"
+                                            id="pincode" placeholder="Your PinCode">
+                                    </div>
+                                </div>
+                                <div class="mt-3 card-title card_prev_next">
+
+                                    <a href="#" style="float: left;" class="card-link"
+                                        onclick="previousPage(5)">back</a>
+                                    <a href="#" style="float: right;" class="card-link" onclick="nextPage(5)">next</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card profile_details_card" style="width: 100%; display:none;">
+                            <div class="card-body">
+                                <div class="card-title my_card_title">
+                                    <span>Phone number</span>
+                                </div>
+                                <div class="card-subtitle mb-2 text-muted">
+                                    <span>7 of 12</span>
+                                </div>
+                                <div class="card-text">
+                                    <span class="profile_card_header">Your Contact Number</span>
+                                    <hr />
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">phone</label>
+                                        <input type="tel" class="form-control details_fields" id="phone">
+                                    </div>
+                                </div>
+                                <div class="mt-3 card-title card_prev_next">
+
+                                    <a href="#" style="float: left;" class="card-link"
+                                        onclick="previousPage(6)">back</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content: center; text-align: center;">
+                            <button type="submit" id="submitBtn" class="btn btn-secondary" style="display:none">
+                                submit
+                            </button>
+                        </div>
+
+                        <style>
+                            #submitBtn {
+                                color: whitesmoke;
+                                font-variant: small-caps;
+                                font-weight: bold;
+                                border-radius: 10px;
+                                padding: 5px;
+                                width: 40%;
+                                text-align: center;
+                                border: none;
+                                border: 2px solid rgb(187, 178, 177);
+                                background: whitesmoke;
+                                color: steelblue;
+                                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                                margin-top: 5px;
+
+
+                            }
+
+                            #submitBtn:hover {
+                                background: steelblue;
+                                color: whitesmoke;
+                            }
+                        </style>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        var profile_details_card = document.getElementsByClassName("profile_details_card");
+        var lastNextBtn = document.getElementById("lastNextBtn")
+        var submitBtn = document.getElementById("submitBtn")
+        var profileCardTagColl = document.getElementsByClassName("profile_card_tag")
+
+        function nextPage(currentPageNo) {
+
+            if (currentPageNo >= 1) {
+                var fieldsArr = []
+                var elementsColl = profile_details_card[currentPageNo].getElementsByClassName("details_fields")
+
+                for (const fieldEle of elementsColl) {
+
+                    var fieldObj = {
+                        name: fieldEle.name,
+                        value: fieldEle.value,
+
+                    }
+
+
+                    fieldsArr.push(fieldObj)
+                }
+
+
+                fetch('/employee/profile_details/upload_data_fetch', {
+                    method: "POST",
+                    headers: { "Content-type": "application/json;charset=UTF-8" },
+                    body:
+                        JSON.stringify({ fieldsArr: fieldsArr, pageNo: currentPageNo })
+
+                })
+                    .then(response => response.json())
+                    .then((json) => {
+                        alert("json")
+                    })
+                    .catch(err => alert(err));
+
+
+
+
+
+            }
+            profile_details_card[currentPageNo].style.display = "none"
+            profile_details_card[currentPageNo + 1].style.display = "block"
+            profileCardTagColl[currentPageNo].classList.remove("selected_tag")
+            profileCardTagColl[currentPageNo + 1].classList.add("selected_tag")
+
+            if (currentPageNo == 5) {
+                submitBtn.style.display = "block"
+                alert(currentPageNo)
+            }
+        }
+
+        function previousPage(currentPageNo) {
+            //alert(currentPageNo)
+
+
+            profile_details_card[currentPageNo].style.display = "none"
+            profile_details_card[currentPageNo - 1].style.display = "block"
+            profileCardTagColl[currentPageNo].classList.remove("selected_tag")
+            profileCardTagColl[currentPageNo - 1].classList.add("selected_tag")
+
+            if (currentPageNo == 6) {
+                submitBtn.style.display = "none"
+            }
+
+        }
+
+    </script>
+
+    <script>
+        var profileDetailsForm = document.getElementById("profile_details_form")
+
+
+
+        //const usernameEl = document.querySelector('#username');
+        const serviceCategory = document.querySelector('#service_category');
+        const serviceSubcategory = document.querySelector('#service_subcategory');
+        const serviceRate = document.querySelector('#service_rate');
+        const title = document.querySelector('#title');
+        const extraDetails = document.querySelector('#extra_details');
+        const profilePic = document.querySelector('#profile_pic');
+        const city = document.querySelector('#city');
+        const address = document.querySelector('#address');
+        const pincode = document.querySelector('#pincode');
+        const phone = document.querySelector('#phone');
+        const profileCardTagsColl = document.getElementsByClassName("profile_card_tag")
+        //const confirmPasswordEl = document.querySelector('#repeat_password');
+
+        const checkCategoryCard = () => {
+            let valid = true;
+            //alert(emailEl.value)
+            if (serviceCategory.selectedIndex === 0) {
+                valid = false
+
+                showError(serviceCategory, "service category not valid", 1)
+            }
+            if (serviceSubcategory.selectedIndex === 0) {
+                valid = false
+
+                showError(serviceSubcategory, "service category not valid", 1)
+
+            }
+            if (valid) {
+                const fieldsList = [serviceCategory, serviceSubcategory]
+                showSuccess(fieldsList, "", 1)
+            }
+
+            return valid;
+
+        };
+
+        const checkHourlyRateCard = () => {
+            let valid = false;
+            //alert(emailEl.value)
+            const rateValue = serviceRate.value.trim();
+            if (!isRequired(rateValue)) {
+                showError(serviceRate, "service category not valid", 3)
+
+            } else if (!isRateValid(rateValue)) {
+                showError(serviceRate, "service category not valid", 3)
+
+            } else {
+                valid = true;
+                showSuccess([serviceRate], "", 3)
+            }
+            return valid;
+
+        };
+
+        const checkTitleOverViewCard = () => {
+            let valid = false;
+            //alert(emailEl.value)
+            const titleValue = title.value.trim();
+            const extraDetailsValue = extraDetails.value.trim();
+            if (!isRequired(title)) {
+                showError(title, "service category not valid", 4)
+
+            } else if (!isBetween(titleValue.length, 5, 25)) {
+                showError(title, "service category not valid", 4)
+
+            } else {
+                valid = true;
+                showSuccess([title], "", 4)
+            }
+            return valid;
+
+        };
+
+        const checkProfilePhotoCard = () => {
+            let valid = false;
+            const files = profilePic.files
+            if (files.length === 0) {
+                showError(profilePic, "service category not valid", 5)
+
+            }
+            else if (files[0] === undefined) {
+                showError(profilePic, "service category not valid", 5)
+
+            }
+            else if (files[0] === null) {
+                showError(profilePic, "service category not valid", 5)
+
+            } else {
+                valid = true;
+                showSuccess([profilePic], "", 5)
+            }
+
+            return valid;
+        }
+
+
+        const checkLocationCard = () => {
+            let valid = true;
+            const addressValue = address.value.trim()
+            //alert(emailEl.value)
+            if (city.selectedIndex === 0) {
+                valid = false
+                showError(city, "service category not valid", 6)
+
+            }
+
+            if (!isRequired(addressValue)) {
+                valid = false;
+                showError(address, "service category not valid", 6)
+
+
+            }
+
+            if (!isRequired(pincode.value.trim())) {
+                valid = false;
+                showError(pincode, "service category not valid", 6)
+
+            }
+            if (valid) {
+                showSuccess([city, address, pincode], "", 6)
+            }
+            return valid
+        }
+
+        const checkPhoneCard = () => {
+            let valid = false;
+            //alert(emailEl.value)
+            //alert("phone")
+            const phoneValue = phone.value.trim();
+            if (!isRequired(phoneValue)) {
+                showError(phone, "service category not valid", 7)
+
+            } else if (!isPhoneValid(phoneValue)) {
+                showError(phone, "service category not valid", 7)
+
+            } else {
+                showSuccess([phone], "", 7)
+                valid = true;
+            }
+            return valid;
+        }
+
+
+
+
+
+
+        //const form = document.querySelector('#register_form');
+
+
+        // const checkUsername = () => {
+
+        //     let valid = false;
+
+        //     const min = 3,
+        //         max = 25;
+
+        //     const username = usernameEl.value.trim();
+
+        //     if (!isRequired(username)) {
+        //         showError(usernameEl, 'Username cannot be blank.');
+        //     } else if (!isBetween(username.length, min, max)) {
+        //         showError(usernameEl, `Username must be between ${min} and ${max} characters.`)
+        //     } else {
+        //         showSuccess(usernameEl);
+        //         valid = true;
+        //     }
+        //     return valid;
+        // };
+
+
+        // const checkEmail = () => {
+        //     let valid = false;
+
+        //     const email = emailEl.value.trim();
+        //     if (!isRequired(email)) {
+        //         showError(emailEl, 'Email cannot be blank.');
+        //     } else if (!isEmailValid(email)) {
+        //         showError(emailEl, 'Email is not valid.')
+        //     } else {
+        //         showSuccess(emailEl);
+        //         valid = true;
+        //     }
+        //     return valid;
+        // };
+
+        // const checkPhone = () => {
+        //     let valid = false;
+
+        //     const phone = phoneEl.value.trim();
+        //     if (!isRequired(phone)) {
+        //         showError(phoneEl, 'Phone cannot be blank.');
+        //     } else if (!isPhoneValid(phone)) {
+        //         showError(phoneEl, 'Phone is not valid.')
+        //     } else {
+        //         showSuccess(phoneEl);
+        //         valid = true;
+        //     }
+        //     return valid;
+        // };
+
+        // const checkEmailPhone = () => {
+        //     if (emailActive) {
+        //         return checkEmail();
+        //     } else {
+        //         return checkPhone();
+        //     }
+        // }
+
+        // const checkPassword = () => {
+        //     let valid = false;
+
+
+        //     const password = passwordEl.value.trim();
+
+        //     if (!isRequired(password)) {
+        //         showError(passwordEl, 'Password cannot be blank.');
+        //     } else if (!isPasswordSecure(password)) {
+        //         showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+        //     } else {
+        //         showSuccess(passwordEl);
+        //         valid = true;
+        //     }
+
+        //     return valid;
+        // };
+
+        // const checkConfirmPassword = () => {
+        //     let valid = false;
+
+        //     const confirmPassword = confirmPasswordEl.value.trim();
+        //     const password = passwordEl.value.trim();
+
+        //     if (!isRequired(confirmPassword)) {
+        //         showError(confirmPasswordEl, 'Please enter the password again');
+        //     } else if (password !== confirmPassword) {
+        //         showError(confirmPasswordEl, 'The password does not match');
+        //     } else {
+        //         showSuccess(confirmPasswordEl);
+        //         valid = true;
+        //     }
+
+        //     return valid;
+        // };
+
+
+
+        const isEmailValid = (email) => {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        };
+
+        const isRateValid = (rate) => {
+            const re = /^[+-]?0(?![0-9]).[0-9]*(?![.])$|^[+-]?[1-9]{1}[0-9]*.[0-9]*$|^[+-]?.[0-9]+$/;
+            return re.test(rate);
+        };
+
+
+        const isPhoneValid = (phone) => {
+            const re = /^[6-9]{1}[0-9]{9}$/;
+            return re.test(phone);
+        };
+
+        const isPasswordSecure = (password) => {
+            const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+            return re.test(password);
+        };
+
+        const isRequired = value => value === '' ? false : true;
+        const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+
+        const showError = (input, message, profileCardTagIndex) => {
+            //alert(profileCardTagIndex)
+            //profileCardTagsColl[profileCardTagIndex].classList.add("profile_card_tag_error")
+            profileCardTagsColl[profileCardTagIndex].style.color = "whitesmoke";
+            profileCardTagsColl[profileCardTagIndex].style.background = "salmon";
+            input.style.border = "1px solid red"
+            // // get the form-field element
+            // const formField = input.parentElement;
+            // // add the error class
+            // input.classList.remove('success');
+            // input.classList.add('error');
+
+            // // show the error message
+            // const error = formField.getElementsByClassName('feedback')[0];
+            // //alert(error)
+            // //alert(error)
+            // error.innerHTML = message;
+        };
+
+        const showSuccess = (inputList, message, profileCardTagIndex) => {
+            // profileCardTagsColl[profileCardTagIndex].style.color = "";
+            // profileCardTagsColl[profileCardTagIndex].style.background = "whitesmoke";
+            profileCardTagsColl[profileCardTagIndex].removeAttribute("style")
+            for (const inputField of inputList) {
+                inputField.style.border = "1px solid springgreen";
+            }
+            //input.style.border = "1px solid springgreen"
+            //alert(input +"~"+ message)
+            // // get the form-field element
+            // const formField = input.parentElement;
+
+            // // remove the error class
+            // input.classList.remove('error');
+            // input.classList.add('success');
+
+            // // hide the error message
+            // const error = formField.getElementsByClassName('feedback')[0];
+            // //alert(error)
+            // error.innerHTML = '';
+        }
+
+
+        profileDetailsForm.onsubmit = function (e) {
+            // prevent the form from submitting
+            //alert(e)
+            e.preventDefault();
+
+
+            // validate fields
+            //let isUsernameValid = checkUsername();
+
+            let isCategoryCardValid = checkCategoryCard();
+            let isHourlyRateCardValid = checkHourlyRateCard();
+            let isTitleOverviewCardValid = checkTitleOverViewCard();
+            let isProfilePhotoCardValid = checkProfilePhotoCard();
+            let isLocationCardValid = checkLocationCard();
+            let isPhoneCardValid = checkPhoneCard();
+            alert("isFormValid")
+            let isFormValid =// isUsernameValid &&
+                isCategoryCardValid &&
+                isHourlyRateCardValid &&
+                isTitleOverviewCardValid &&
+                isProfilePhotoCardValid &&
+                isLocationCardValid &&
+                isPhoneCardValid;
+
+            // submit to the server if the form is valid
+            if (isFormValid) {
+                //alert("valid")
+                return true
+            } else {
+                return false;
+            }
+        };
+
+
+        // const debounce = (fn, delay = 500) => {
+        //     let timeoutId;
+        //     return (...args) => {
+        //         // cancel the previous timer
+        //         if (timeoutId) {
+        //             clearTimeout(timeoutId);
+        //         }
+        //         // setup a new timer
+        //         timeoutId = setTimeout(() => {
+        //             fn.apply(null, args)
+        //         }, delay);
+        //     };
+        // };
+
+        // signupForm.addEventListener('input', debounce(function (e) {
+        //     switch (e.target.id) {
+        //         case 'username':
+        //             checkUsername();
+        //             break;
+        //         case 'email':
+        //             checkEmailPhone();
+        //             break;
+        //         case 'phone':
+        //             checkEmailPhone();
+        //             break;
+        //         case 'password':
+        //             checkPassword();
+        //             break;
+        //         case 'repeat_password':
+        //             checkConfirmPassword();
+        //             break;
+        //     }
+        // }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    <script>
+        // $(document).on("change", "#imageUpload", () => {
+        //     var reader = new FileReader();
+        //     reader.onload = function (e) {
+        //         $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+        //         $('#imagePreview').hide();
+        //         $('#imagePreview').fadeIn(650);
+        //     }
+        //     reader.readAsDataURL(input.files[0]);
+        // })
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function (event) {
+            //alert(this)
+            handleImageUpload(event, this)
+            //readURL(this);
+        });
+
+        const handleImageUpload = (event, inputFileEl) => {
+            //alert("hello")
+            const files = event.target.files
+            const formData = new FormData()
+            alert(files[0].id)
+            formData.append('myImage', files[0])
+            formData.append('pageNo', 5)
+            //alert(formData)
+            fetch('/employee/submit_profile_details/upload_pic', {
+                method: 'POST',
+                //headers: { "Content-type": "application/json;charset=UTF-8" },
+                body: formData//JSON.stringify({name:"sum",pass:"5797"})//formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    //console.log(data)
+                    readURL(inputFileEl)
+                    alert(data)
+                })
+                .catch(error => {
+                    //console.error(error)
+                    alert(error)
+                })
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+<%if(changeUrl){%>
+    <script>
+        if (window.history.replaceState) {
+            //alert(window.location.href)
+            window.history.replaceState(null, null, "<%=url%>")
+        }
+    </script>
+
+    <%}%>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- category
+     <div class="card_content">
+                            <h3>Tell us about the work you do</h3>
+                            <br />
+                            <h5>What is the main service you offer</h5>
+                            <select class="form-select" aria-label="Default select example" style="width: 100%;">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <select class="form-select" aria-label="Default select example" style="width: 100%;">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                        </div> 
+
+-->
+
+
+
+<!-- 
+hourly rate
+
+  <div class="card_content">
+                            <div class="hourly_rate1">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, explicabo libero! Voluptatibus amet odio, distinctio animi sit exercitationem facilis ipsa quod quisquam, atque error aliquid. In nulla ullam soluta tenetur.</p>
+                                <div class="sub_hourly_rate1" style="position:relative;border:2px solid black;" >
+                                    <div class="hourly_rate1_text" style="display:inline-block">
+                                        <h3>Hourly rate</h3>
+                                        <p>total amount by paid by client   </p>
+
+                                    </div>
+                                    <div class="hourly_rate1_amount" style="display:inline-block;right:0px;position:absolute;border:2px solid black;">
+                                        <input  type="text"/>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="hourly_rate2"></div>
+                            <div class="hourly_rate3"></div>
+                           
+                        </div>
+
+
+
+
+-->
+
+
+
+
+
+<!-- expertise
+
+
+       <div class="card_content">
+                            <h3>select your skills</h3>
+                            <br />
+                            <div class="skills_pallete_container">
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">jajavajavava</span><span
+                                    class="skills_pallete">jajavajavava</span>
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">jajavajavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javajavajavajava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajavajavava</span>
+                                <span class="skills_pallete">jajjajavajavavaavajavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">javjavaa</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jjavaava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jjajavajavavaava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">javjajavajavavaa</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javjajavajavavaa</span><span class="skills_pallete">javajajavajavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javjajavajavavaa</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                            </div>
+                        </div>
+
+-->

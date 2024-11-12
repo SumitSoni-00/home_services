@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/admin_dashboard_header")%>
+
+        <style>
+            html {
+                font-size: 62.5%;
+            }
+
+            body {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                font-size: 1.5rem;
+            }
+        </style>
+</head>
+
+<body>
+
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- nav -->
+        <%- include("../partials/admin_dashboard_nav")%>
+            <!-- /nav -->
+
+
+            <!-- Sidebar -->
+            <%- include("../partials/admin_dashboard_sidebar")%>
+                <!-- /Sidebar -->
+
+
+                <!-- Page Wrapper -->
+                <div class="page-wrapper">
+                    
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Indicates a successful or positive action.
+                    </div>
+                </div>
+                <!-- /Page Wrapper -->
+
+    </div>
+    <!-- /Main Wrapper -->
+
+
+
+
+    <!-- nav (js) -->
+    <%- include("../partials/admin_footer")%>
+        <!-- /nav (js) -->
+
+        <!-- search filter new orders -->
+        <script src="js/admin_dashboard/search_filter_new_orders.js"></script>
+
+
+
+
+</body>
+
+</html>

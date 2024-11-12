@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+
+    <!-- GLOBAL HEADER (START) -->
+    <%-include("../../partials/global/global_header",{title:"Employee Dash"})%>
+    <!-- GLOBAL HEADER (END) -->
+
+
+</head>
+
+<body>
+
+    
+
+
+          <!--========== HEADER / SIDE_BAR (START)==========-->
+    <%-include("../../partials/employee/dash_header_side_bar")%>
+    <!--/========== HEADER / SIDE_BAR (END)==========-->
+
+        <!--========== CONTENTS ==========-->
+
+
+
+
+
+
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+
+
+
+            body {
+
+                /* line-height: 2.4rem;
+            font-weight: 400; */
+
+
+                overflow-x: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
+                /* background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff; */
+
+                transition: all 200ms linear;
+
+            }
+
+            /* 
+        html {
+            font-size: 62.5%;
+
+
+        } */
+
+            .red_border {
+                border: 1px solid red;
+            }
+
+            .black_border {
+                border: 1px solid black;
+            }
+
+            .green_border {
+                border: 1px solid green;
+            }
+
+            .pink_border {
+                border: 1px solid palevioletred;
+            }
+
+            .side_menu_col {
+                padding: 0;
+
+                /* border: 1px solid red; */
+                height: max-content;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+                background: white;
+
+            }
+
+            .side_menu_wrap {
+
+                margin: 0 2rem;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                padding: 1.5rem;
+
+
+            }
+
+            .my_orders_main_col {
+                padding: 0;
+            }
+
+            .my_orders_main_wrap {
+                margin: 0 2rem 0 0;
+
+
+            }
+
+            .side_menu_heading_wrap {
+                text-align: center;
+
+
+            }
+
+            .side_menu_heading_wrap h3 {
+                font-size: 2.5rem;
+            }
+
+            .order_status_header_div {
+                margin-bottom: 1rem;
+            }
+
+            .order_status_header_div span {
+
+                font-variant: small-caps;
+                font-weight: 450;
+                letter-spacing: 0.25rem;
+            }
+
+            .order_status_checkboxes {
+                margin-left: 1rem;
+            }
+
+            .my_orders_main_nav {
+                height: 4rem;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+            }
+
+            .order_item {
+                margin-bottom: 2rem;
+                /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+            }
+
+            .my_orders_main_nav {
+                margin-bottom: 2.5rem;
+            }
+
+
+
+            .order_item_img_col {
+                padding: 0;
+
+                /* border: 1px solid red; */
+            }
+
+            .order_item_img_col .order_item_img_wrap {
+
+                text-align: center;
+
+            }
+
+            .order_item_img_col .order_item_img_wrap img {
+                width: 15rem;
+
+            }
+
+
+            .order_item {
+
+                padding-top: 1rem;
+            }
+
+            .order_item_meta_col {
+                padding: 0;
+                margin-bottom: 2rem;
+
+            }
+
+            .order_item_status_col {
+                padding: 0;
+            }
+
+            .order_status_wrap {
+                padding: 0.5rem;
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+            }
+
+            .header_contact {
+                border-bottom: 2px solid gray;
+                padding: 0.2rem;
+                margin-bottom: 1.5rem;
+
+
+            }
+
+            .header_contact_icon {
+                font-size: 1.5rem;
+            }
+
+            .awesome_circle {
+                border: none;
+                color: aquamarine;
+                font-size: 1.5rem;
+
+            }
+
+            .order_item_meta_heading h3 {
+
+                font-size: 1.5rem;
+                color: darkblue;
+                font-weight: 400;
+                letter-spacing: 0.1rem;
+               
+            }
+
+            .order_item_meta_heading{
+               
+                padding-right:  1rem;
+                padding-left: 1rem;
+            }
+
+            
+
+            .order_item_meta_meta2 {
+                padding: 1rem;
+                /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+                /* margin: 1rem; */
+            }
+
+            .order_item_meta_meta2 h4 {
+
+                font-weight: 500;
+                letter-spacing: 0.1rem;
+                font-size: 1.5rem;
+            }
+
+            .order_item_meta_meta2 p {
+
+                font-weight: 450;
+                letter-spacing: 0.1rem;
+                text-align: center;
+                background: whitesmoke;
+               
+                padding: 10px;
+                width: fit-content;
+
+            }
+
+            .detail_wrap {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 0 1rem;
+                margin: 0;
+            }
+
+            .detail_h6 {
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem;
+                font-variant: small-caps;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        </style>
+
+
+        <style>
+            a {
+                text-decoration: none;
+            }
+
+            .view_details_div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .meta_footer {
+
+                margin-top: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .view_details_a {
+                text-decoration: none;
+                /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+                font-size: 1rem;
+                color: rgb(1, 1, 145);
+                padding: 0.5rem;
+                letter-spacing: 0.1rem;
+                font-weight: 500;
+                transition: all 0.3s;
+
+            }
+
+            .view_details_a:hover {
+                color: rgb(151, 5, 54);
+               
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+
+
+
+            .tag {
+                background: whitesmoke;
+                
+
+                color: #333;
+                font-size: 1rem;
+                font-weight: 600;
+
+
+                padding: 0.5rem 0.5rem 0 0.5rem;
+                position: relative;
+                margin: 0;
+
+
+            }
+
+            .user_image_wrap {
+                padding: 0;
+                text-align: center;
+            }
+
+            .user_image_wrap img {
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+
+                object-fit: cover;
+                object-position: center center;
+            }
+
+            .cust_details_order {
+                padding: 0;
+
+            }
+
+            /* 
+            .details_wrap{
+                margin-left: 1rem;
+            } */
+
+            .contact_details {
+                font-size: 1rem;
+            }
+
+            .take_action {
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+                padding: 0.5rem;
+            }
+
+            li {
+                list-style-type: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .take_action a {
+                text-decoration: none;
+                color: #F4F0FA;
+                font-weight: bold;
+                font-size: 1.5rem;
+                letter-spacing: 0.1rem;
+                font-variant: small-caps;
+                padding: 0.5rem;
+
+
+            }
+
+            .take_action li {
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #000046;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #1CB5E0, #000046);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                border-radius: 0.5rem;
+
+            }
+
+            .take_action_a:hover {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+            }
+
+            .order_item_meta_wrap {
+                /* padding-bottom: 0.5rem; */
+                /* padding-right: 1rem; */
+                /* border: 2px solid red; */
+
+
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+            }
+
+           
+
+            @media screen and (max-width:768px) {
+               
+
+                .details_wrap{
+                    margin-top: 20px;
+                }
+                
+            }
+
+            
+            @media screen and (max-width:450px) {
+                body{
+                    border:2px solid red
+                }
+
+               
+                .view_details_div{
+                    
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                .tag{
+                    width: 100%;
+                    text-align: center;
+                    background: inherit;
+                    
+                }
+
+                .order_item_meta_heading h3 {
+
+                   
+                   
+                    font-size: 1.2rem;
+                    text-align: center;
+                    }
+
+                    .detail_wrap{
+                        border: 1px solid red;
+                        padding:0 ;
+                    }
+                   
+                
+            }
+        </style>
+
+
+
+
+
+       
+
+
+        <div class="container-fluid  my_orders_cont  " >
+           
+            <div class="row my_orders_row " >
+
+                <div class="col-lg-12 co-md-12 col-sm-12 col-12 my_orders_main_col ">
+                    <div class="my_orders_main_wrap " style="margin: 0 auto;">
+
+
+
+                        <div class="container-fluid  order_items_cont " >
+
+
+
+                            <div class="row order_item " >
+
+                                <div class="col-md-12 col-lg-9 col-sm-12 col-12  order_item_meta_col " >
+                                    <div class="order_item_meta_wrap " >
+                                        <div class="order_item_meta_heading">
+                                            <h3 style="padding: 1rem 0 0 1rem;"><i class='bx bx-star'></i>&nbsp; New
+                                                Order Alloted</h3>
+                                            <hr>
+                                            <div class="detail_wrap">
+                                                <h6 class="detail_h6"><i class='bx bxs-user-detail'></i><span>customer
+                                                        details</span></h6>
+                                                <div>Painter</div>
+                                            </div>
+                                        </div>
+                                        <div class="order_item_meta_meta2 mt-2" >
+
+
+                                            <div class="container">
+                                                <div class="row ">
+                                                    <div class="col-lg-3 user_image_wrap" >
+                                                        <img src="/sallu2.jpg" alt="">
+                                                    </div>
+                                                    <div class="col-lg-9 cust_details_order ">
+                                                        <div class="details_wrap ml-lg-4 ">
+                                                            <h4>Sumit Soni</h4>
+                                                            <p >
+                                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                482002
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="meta_footer">
+
+                                                <div class="tag">
+                                                    <i class="far fa-calendar-alt"></i>5/11/12 , Tues, 11:51 AM
+                                                </div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-3 col-sm-12 col-12 order_item_status_col" >
+                                    <div class="order_status_wrap ml-lg-3">
+                                        <div class="header_contact">
+                                            <h6><i class='bx bxs-contact header_contact_icon'></i> &nbsp; Contact
+                                                Information</h6>
+                                        </div>
+
+                                        <h5 class="contact_details"> <i
+                                                class='bx bxs-phone bx-tada'></i><span>+9198798798798</span></h5>
+                                        <h5 class="contact_details"> <i
+                                                class='bx bx-user bx-tada header_contact_icon'></i><span>sumit@gmail.com</span>
+                                        </h5>
+
+
+                                    </div>
+
+                                    <div class="take_action mt-3 ml-lg-3">
+                                        <div>
+                                            <h6>Order Alloted on : 26/july/2029</h6>
+                                        </div>
+
+                                        <div>
+                                            <ul>
+                                                <li><a href="" class="take_action_a">take action
+
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+               
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <style>
+            .table_title {
+
+                padding: 1rem;
+                color: whitesmoke;
+                background: rgb(213, 168, 255);
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                border-radius: 0.5rem;
+            }
+        </style>
+<%if(completedOrders){%>
+
+        <div class="row">
+            <div class="col-12 ">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title table_title">Completed Orders</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th> Category </th>
+                                        <th> status </th>
+                                        <th> something </th>
+                                        <th> Date </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face1.jpg" class="mr-2" alt="image"> David
+                                            Grey
+                                        </td>
+                                        <td> Fund is not recieved </td>
+                                        <td>
+                                            <label class="badge badge-gradient-success">DONE</label>
+                                        </td>
+                                        <td> Dec 5, 2017 </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face2.jpg" class="mr-2" alt="image"> Stella
+                                            Johnson
+                                        </td>
+                                        <td> High loading time </td>
+                                        <td>
+                                            <label class="badge badge-gradient-warning">PROGRESS</label>
+                                        </td>
+                                        <td> Dec 12, 2017 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face3.jpg" class="mr-2" alt="image"> Marina
+                                            Michel
+                                        </td>
+                                        <td> Website down for one week </td>
+                                        <td>
+                                            <label class="badge badge-gradient-info">ON HOLD</label>
+                                        </td>
+                                        <td> Dec 16, 2017 </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image"> John Doe
+                                        </td>
+                                        <td> Loosing control on server </td>
+                                        <td>
+                                            <label class="badge badge-gradient-danger">REJECTED</label>
+                                        </td>
+                                        <td> Dec 3, 2017 </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%}%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <%- include("../../partials/bootstrap_js_cdn")%>
+
+
+
+
+            <%-include("../../partials/dash_header_nav_js.ejs")%>
+
+
+
+
+            <script>
+
+                if (window.history.replaceState) {
+                    //alert(window.location.href)
+                    window.history.replaceState(null, null, "/employee/home_dash")
+                }
+            </script>
+</body>
+
+</html>

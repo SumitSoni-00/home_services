@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+
+    <title>Hello, world!</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            color: #212112;
+
+
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        div[class*=col-] {
+            padding: 0;
+
+        }
+    </style>
+
+
+    <style>
+        .services_init_heading_row {
+            position: sticky;
+            top: 0;
+
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .heading_wrap {
+
+            text-align: center;
+
+
+
+        }
+
+        .heading_wrap div {
+
+            float: right;
+
+            padding: 0;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0.5rem 0.5rem 0.5rem 0;
+
+
+        }
+
+        .heading_wrap h3 {
+            display: inline-block;
+            margin: 2rem 0;
+
+
+
+
+        }
+
+
+
+
+        .heading_wrap div a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: bold;
+            background: #1D4350;
+
+            background: -webkit-linear-gradient(to left, #A43931, #1D4350);
+
+            background: linear-gradient(to left, #A43931, #1D4350);
+
+
+            border: none;
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+
+
+
+
+        }
+
+
+        .heading_wrap div a:hover {
+            color: #1D4350;
+            background: white;
+
+
+        }
+
+
+
+        .services_init_heading_col {
+            background: #ECE9E6;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            color: rgb(95, 102, 109);
+
+        }
+    </style>
+
+
+
+
+    <style>
+        .text-white {
+            color: #fff !important;
+        }
+
+
+
+
+
+
+
+        .bg-dark {
+            background-color: rgba(24, 28, 33, 0.9) !important;
+        }
+
+        .opacity-50 {
+            opacity: .5 !important;
+        }
+
+        .bg-dark {
+            background-color: rgba(24, 28, 33, 0.9) !important;
+        }
+
+
+        @media (min-width: 992px) {
+
+            .container,
+            .container-fluid {
+                padding-right: 2rem;
+                padding-left: 2rem;
+            }
+        }
+
+
+
+        .ui-w-100 {
+            width: 100px !important;
+            height: auto;
+        }
+
+        .font-weight-bold {
+            font-weight: 700 !important;
+        }
+
+        .opacity-75 {
+            opacity: .75 !important;
+        }
+
+        .empl_col {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding: 10rem;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="row services_init_heading_row ">
+        <div class="col-12 services_init_heading_col">
+            <div class="heading_wrap">
+                <h3>Some Stuff </h3>
+                <div>
+                    <a href="/services/start_booking/<%=category%>">Book Now</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row" style="height: 90vh;overflow-y: scroll;">
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+        <div class="media col-md-10 col-lg-8 col-xl-7  my-4 mx-auto empl_col" style="padding: 4rem;">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt class="d-block ui-w-100 rounded-circle">
+            <div class="media-body ml-5">
+                <h4 class="font-weight-bold mb-4">John Doe</h4>
+                <div class="text-muted mb-4">
+                    Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram duo,
+                    porro principes ei has.
+                </div>
+                <a href="#" class="d-inline-block text-dark">
+                    <strong>234</strong>
+                    <span class="text-muted">followers</span>
+                </a>
+                <a href="#" class="d-inline-block text-dark ml-3">
+                    <strong>111</strong>
+                    <span class="text-muted">following</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

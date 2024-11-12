@@ -1,0 +1,37 @@
+<style>
+		#logo{
+			width: 220px;
+		}
+		
+		#header{
+			background-color: #cfeefc;
+			height: 140px;
+			border: 1px solid #6600ff;
+		}
+
+		.msg{
+			font-size: 22px;
+			font-family: verdana;
+		}
+	</style>
+
+	<div id='main_box'>
+		<div id='header'>
+			<img src='http://localhost:8080/impro/images/new_hd.png' id='logo' />			
+		</div>
+		<div>
+			<p class='msg'>Hello! User</p>
+			
+			<p class='msg'>
+				Welcome to our Impro. Please click over the below link to activate your account.<br /><br />
+				
+				<a href='http://localhost:8080/iot_cloud/activate_account.do?email=<tmp>&vf_code=<tmp>'>Click Over this Link To Activate Your Acccount</a>		
+			</p>
+
+			<p class='msg'>
+				Regards,<br />
+				Impro Team<br />
+				7898579690
+			</p>
+		</div>
+	</div>

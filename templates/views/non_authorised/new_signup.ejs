@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <title>Hello, world!</title>
+    <style>
+        .divider-text {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .divider-text span {
+            padding: 7px;
+            font-size: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .divider-text:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            top: 55%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .btn-facebook {
+            background-color: #405D9D;
+            color: #fff;
+            border: 1px solid black;
+        }
+
+        .btn-google {
+            background: #b45245;
+            color: #f7f9fb;
+            border: 1px solid black;
+        }
+
+        .btn-google:hover {
+            background: #f7f9fb;
+        }
+
+        .btn-facebook:hover {
+            background: #f7f9fb;
+        }
+
+        .change_email_phone {
+            float: right;
+            border: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-variant: small-caps;
+            background: rgba(0, 0, 0, .05);
+            font-weight: 400;
+            font-size: 13px;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .change_email_phone:hover {
+            border: 1px solid #405D9D;
+            background: rgb(250, 239, 239);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <p class="text-center">some link</p>
+        <hr>
+
+
+
+
+
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <p class="text-center">Get started with your free account</p>
+                <p>
+
+                    <a href="/auth/google" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Login via
+                        Google</a>
+                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via
+                        facebook</a>
+                </p>
+                <p class="divider-text">
+                    <span class="bg-light">OR</span>
+                </p>
+                <style>
+                    .test {
+                        display: flex;
+                        justify-content: space-between;
+
+                        font-family: Verdana, Geneva, Tahoma, sans-serif
+                    }
+
+                    .change_user_btn {
+                        border: none;
+                        width: 45%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                    }
+                </style>
+
+                <div class="test">
+                    <button id="empl_btn" style="background: #4285f4;" class="change_user_btn"
+                        onclick="changeUser('empl')">Employee</button>
+                    <button id="cust_btn" class="change_user_btn" onclick="changeUser('cust')">Customer</button>
+                </div>
+
+
+                <div class="my-login-page">
+                    <section class="h-100">
+                        <div class="container h-100">
+                            <div class="row justify-content-md-center h-100">
+                                <div class="card-wrapper">
+
+                                    <div class="card fat mt-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Create Account</h4>
+                                            <form method="POST" action="/employee/register" id="register_form"
+                                                class="my-login-validation">
+                                                <div class="form-group">
+                                                    <label id="phone_email_label" style="display: inline;"
+                                                        for="email">E-Mail Address</label>
+                                                    <span id="change_email_phone_btn" class="change_email_phone">Create
+                                                        Account By Phone</span>
+                                                    <input id="email" type="email" class="mt-3 form-control"
+                                                        name="email" value="" required>
+
+                                                    <input style="display: none" id="phone" type="tel"
+                                                        class="mt-3 form-control" name="phone" value="">
+
+                                                    <div class="feedback">
+
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="which_type"name="which_type" value="email" />
+
+
+
+
+
+
+
+
+                                                <div class="form-group">
+                                                    <label for="password">Password</label>
+                                                    <input id="password" type="password" class="form-control"
+                                                        name="password" required data-eye>
+                                                    <i style="float: right;
+                                                    margin-top: -28px;
+                                                    margin-right: 5px;"
+                                                        class="toggle-password fa fa-eye-slash"></i>
+                                                    <div class="feedback">
+
+                                                    </div>
+                                                </div>
+                                                <script>
+
+                                                    const seeHidePass=document.getElementsByClassName("toggle-password")[0]
+
+                                                    seeHidePass.onclick=function(){
+                                                        const passwordEl=document.getElementById("password")
+                                                        if(passwordEl.getAttribute("type")==="password"){
+                                                            passwordEl.setAttribute("type","text")
+                                                            seeHidePass.classList.add("fa-eye")
+                                                            seeHidePass.classList.remove("fa-eye-slash")
+                                                        }else{
+                                                            passwordEl.setAttribute("type","password")
+                                                            seeHidePass.classList.add("fa-eye-slash")
+                                                            seeHidePass.classList.remove("fa-eye")
+                                                        }
+                                                    }
+                                                    // $(".toggle-password").click(function () {
+                                                    //     $(this).toggleClass("fa-eye fa-eye-slash");
+                                                    //     input = $(this).parent().find("input");
+                                                    //     if (input.attr("type") == "password") {
+                                                    //         input.attr("type", "text");
+                                                    //     } else {
+                                                    //         input.attr("type", "password");
+                                                    //     }
+                                                    // });
+                                                </script>
+
+                                                <div class="form-group">
+                                                    <label for="password">Repeat Password</label>
+                                                    <input id="repeat_password" type="password" class="form-control"
+                                                        name="repeat_password" required data-eye>
+                                                    <!-- <i style="float: right;
+                                                    margin-top: -28px;
+                                                    margin-right: 5px;"
+                                                        class="toggle-password fa fa-fw fa-eye-slash"></i> -->
+                                                    <div class="feedback">
+
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="form-group">
+                                                    <div class="custom-checkbox custom-control">
+                                                        <input type="checkbox" name="agree" id="agree"
+                                                            class="custom-control-input" required="">
+                                                        <label for="agree" class="custom-control-label">I agree to the
+                                                            <a href="#">Terms and
+                                                                Conditions</a></label>
+                                                        <div class="invalid-feedback">
+                                                            You must agree with our Terms and Conditions
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group m-0">
+                                                    <button type="submit" class="btn btn-primary btn-block">
+                                                        Create Account
+                                                    </button>
+                                                </div>
+                                                <div class="mt-4 text-center">
+                                                    Already have an account? <a href="/view_login">Login</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        Copyright &copy; 2017 &mdash; Your Company
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+
+                <style>
+                    html,
+                    body {
+                        height: 100%;
+                    }
+
+                    div.my-login-page {
+                        background-color: #f7f9fb;
+                        font-size: 14px;
+                    }
+
+                    .my-login-page .brand {
+                        width: 90px;
+                        height: 90px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        margin: 40px auto;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .my-login-page .brand img {
+                        width: 100%;
+                    }
+
+                    .my-login-page .card-wrapper {
+                        width: 400px;
+                    }
+
+                    .my-login-page .card {
+                        border-color: transparent;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+                    }
+
+                    .my-login-page .card.fat {
+                        padding: 10px;
+                    }
+
+                    .my-login-page .card .card-title {
+                        margin-bottom: 30px;
+                    }
+
+                    .my-login-page .form-control {
+                        border-width: 2.3px;
+                    }
+
+                    .my-login-page .error {
+                        border-color: #dc3545;
+                    }
+
+                    .my-login-page .success {
+                        border-color: #28a745;
+                    }
+
+                    .my-login-page .form-group label {
+                        width: 100%;
+                    }
+
+                    .my-login-page .btn.btn-block {
+                        padding: 12px 10px;
+                    }
+
+                    .my-login-page .footer {
+                        margin: 40px 0;
+                        color: #888;
+                        text-align: center;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        .my-login-page .card-wrapper {
+                            width: 90%;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    @media screen and (max-width: 320px) {
+                        .my-login-page .card.fat {
+                            padding: 0;
+                        }
+
+                        .my-login-page .card.fat .card-body {
+                            padding: 15px;
+                        }
+                    }
+                </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script>
+                    var signupForm = document.getElementById("register_form")
+                    var emplBtn = document.getElementById("empl_btn")
+                    var custBtn = document.getElementById("cust_btn")
+                    function changeUser(user) {
+                        //alert(emplBtn)
+                        if (user === "empl") {
+
+                            if (emplBtn.style.background === "") {
+                                emplBtn.style.background = "#4285f4"
+                                custBtn.style.background = ""
+                                signupForm.action = "/employee/register"
+
+                            }
+                        } else if (user === "cust") {
+
+                            if (custBtn.style.background === "") {
+                                custBtn.style.background = "#4285f4"
+                                emplBtn.style.background = ""
+                                signupForm.action = "/customer/register"
+
+                            }
+                        }
+                    }
+
+
+                    //const usernameEl = document.querySelector('#username');
+                    const emailEl = document.querySelector('#email');
+                    const passwordEl = document.querySelector('#password');
+                    const confirmPasswordEl = document.querySelector('#repeat_password');
+                    const phoneEl = document.querySelector('#phone');
+
+                    //const form = document.querySelector('#register_form');
+
+
+                    // const checkUsername = () => {
+
+                    //     let valid = false;
+
+                    //     const min = 3,
+                    //         max = 25;
+
+                    //     const username = usernameEl.value.trim();
+
+                    //     if (!isRequired(username)) {
+                    //         showError(usernameEl, 'Username cannot be blank.');
+                    //     } else if (!isBetween(username.length, min, max)) {
+                    //         showError(usernameEl, `Username must be between ${min} and ${max} characters.`)
+                    //     } else {
+                    //         showSuccess(usernameEl);
+                    //         valid = true;
+                    //     }
+                    //     return valid;
+                    // };
+
+
+                    const checkEmail = () => {
+                        let valid = false;
+                        //alert(emailEl.value)
+                        const email = emailEl.value.trim();
+                        if (!isRequired(email)) {
+                            showError(emailEl, 'Email cannot be blank.');
+                        } else if (!isEmailValid(email)) {
+                            showError(emailEl, 'Email is not valid.')
+                        } else {
+                            showSuccess(emailEl);
+                            valid = true;
+                        }
+                        return valid;
+                    };
+
+                    const checkPhone = () => {
+                        let valid = false;
+                        //alert(emailEl.value)
+                        //alert("phone")
+                        const phone = phoneEl.value.trim();
+                        if (!isRequired(phone)) {
+                            showError(phoneEl, 'Phone cannot be blank.');
+                        } else if (!isPhoneValid(phone)) {
+                            showError(phoneEl, 'Phone is not valid.')
+                        } else {
+                            showSuccess(phoneEl);
+                            valid = true;
+                        }
+                        return valid;
+                    };
+
+                    const checkEmailPhone = () => {
+                        if (emailActive) {
+                            return checkEmail();
+                        } else {
+                            return checkPhone();
+                        }
+                    }
+
+                    const checkPassword = () => {
+                        let valid = false;
+
+
+                        const password = passwordEl.value.trim();
+
+                        if (!isRequired(password)) {
+                            showError(passwordEl, 'Password cannot be blank.');
+                        } else if (!isPasswordSecure(password)) {
+                            showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+                        } else {
+                            showSuccess(passwordEl);
+                            valid = true;
+                        }
+
+                        return valid;
+                    };
+
+                    const checkConfirmPassword = () => {
+                        let valid = false;
+                        // check confirm password
+                        const confirmPassword = confirmPasswordEl.value.trim();
+                        const password = passwordEl.value.trim();
+
+                        if (!isRequired(confirmPassword)) {
+                            showError(confirmPasswordEl, 'Please enter the password again');
+                        } else if (password !== confirmPassword) {
+                            showError(confirmPasswordEl, 'The password does not match');
+                        } else {
+                            showSuccess(confirmPasswordEl);
+                            valid = true;
+                        }
+
+                        return valid;
+                    };
+
+                    const isEmailValid = (email) => {
+                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        return re.test(email);
+                    };
+
+
+                    const isPhoneValid = (phone) => {
+                        const re = /^[6-9]{1}[0-9]{9}$/;
+                        return re.test(phone);
+                    };
+
+                    const isPasswordSecure = (password) => {
+                        const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+                        return re.test(password);
+                    };
+
+                    const isRequired = value => value === '' ? false : true;
+                    const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+
+                    const showError = (input, message) => {
+                        // get the form-field element
+                        const formField = input.parentElement;
+                        // add the error class
+                        input.classList.remove('success');
+                        input.classList.add('error');
+
+                        // show the error message
+                        const error = formField.getElementsByClassName('feedback')[0];
+                        //alert(error)
+                        //alert(error)
+                        error.innerHTML = message;
+                    };
+
+                    const showSuccess = (input) => {
+                        // get the form-field element
+                        const formField = input.parentElement;
+
+                        // remove the error class
+                        input.classList.remove('error');
+                        input.classList.add('success');
+
+                        // hide the error message
+                        const error = formField.getElementsByClassName('feedback')[0];
+                        //alert(error)
+                        error.innerHTML = '';
+                    }
+
+
+                    signupForm.onsubmit = function (e) {
+                        // prevent the form from submitting
+                        //alert("submit")
+                        //e.preventDefault();
+
+
+                        // validate fields
+                        //let isUsernameValid = checkUsername();
+
+                        let isEmailPhoneValid = checkEmailPhone();
+                        let isPasswordValid = checkPassword();
+                        let isConfirmPasswordValid = checkConfirmPassword();
+
+                        let isFormValid =// isUsernameValid &&
+                            isEmailPhoneValid &&
+                            isPasswordValid &&
+                            isConfirmPasswordValid;
+
+                        // submit to the server if the form is valid
+                        if (isFormValid) {
+                            alert("valid")
+                            return true
+                        } else {
+                            return false;
+                        }
+                    };
+
+
+                    const debounce = (fn, delay = 500) => {
+                        let timeoutId;
+                        return (...args) => {
+                            // cancel the previous timer
+                            if (timeoutId) {
+                                clearTimeout(timeoutId);
+                            }
+                            // setup a new timer
+                            timeoutId = setTimeout(() => {
+                                fn.apply(null, args)
+                            }, delay);
+                        };
+                    };
+
+                    signupForm.addEventListener('input', debounce(function (e) {
+                        switch (e.target.id) {
+                            case 'username':
+                                checkUsername();
+                                break;
+                            case 'email':
+                                checkEmailPhone();
+                                break;
+                            case 'phone':
+                                checkEmailPhone();
+                                break;
+                            case 'password':
+                                checkPassword();
+                                break;
+                            case 'repeat_password':
+                                checkConfirmPassword();
+                                break;
+                        }
+                    }));
+
+                    var emailActive = true;
+
+                    const changeEmailPhoneSpan = document.getElementById("change_email_phone_btn");
+                    const phone = document.getElementById("phone")
+                    const phoneEmailLabel = document.getElementById("phone_email_label")
+                    changeEmailPhoneSpan.onclick = changeToEmailPhone;
+                    const whichType=document.getElementById("which_type")
+                    function changeToEmailPhone() {
+                        //alert(changeEmailPhoneSpan.innerHTML)
+                        //alert(changeEmailPhoneSpan.innerHTML)
+                        const phoneEmailForm = phone.parentElement
+                        const phoneEmailFeed = phoneEmailForm.getElementsByClassName("feedback")[0]
+                        phoneEmailFeed.innerHTML = ""
+                        phone.classList.remove('success');
+                        phone.classList.remove('error');
+                        email.classList.remove('success');
+                        email.classList.remove('error');
+                        if (emailActive) {
+                            changeEmailPhoneSpan.innerHTML = "Create Account By Email"
+                            emailActive = false
+                            phoneEmailLabel.innerHTML = "Phone"
+                            phoneEmailLabel.setAttribute("for", "phone")
+                            phone.style.display = "block"
+                            email.style.display = "none"
+                            phone.value = ""
+                            phone.setAttribute("required", "required")
+                            email.removeAttribute("required")
+                            whichType.value="phone"
+
+                        } else {
+                            changeEmailPhoneSpan.innerHTML = "Create Account By Phone";
+                            emailActive = true
+                            phoneEmailLabel.innerHTML = "Email"
+                            phoneEmailLabel.for = "email"
+                            phoneEmailLabel.setAttribute("for", "email")
+                            email.style.display = "block"
+                            phone.style.display = "none"
+                            email.value = ""
+                            email.setAttribute("required", "required")
+                            phone.removeAttribute("required")
+                            whichType.value="email"
+                        }
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </script>
+</body>
+
+</html>
+
+
+
+
+<!-- <div class="my-login-page">
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+
+          <div class="card fat mt-3">
+            <div class="card-body">
+              <h4 class="card-title">Login</h4>
+              <form class="my-login-validation">
+                <div class="form-group">
+                  <label for="email">E-Mail Address</label>
+                  <input required id="email" type="email" class="form-control" name="email" value="" required
+                    autofocus>
+                  <div class="invalid-feedback">
+                    Email is invalid
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password
+                    <a href="forgot.html" class="float-right">
+                      Forgot Password?
+                    </a>
+                  </label>
+                  <input id="password" type="password" class="form-control" name="password" required data-eye>
+                  <div class="invalid-feedback">
+                    Password is required
+                  </div>
+                </div>
+
+                
+
+                <div class="form-group">
+                  <div class="custom-checkbox custom-control">
+                    <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                    <label for="remember" class="custom-control-label">Remember Me</label>
+                  </div>
+                </div>
+
+                <div class="form-group m-0">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Login
+                  </button>
+                </div>
+                <div class="mt-4 text-center">
+                  Don't have an account? <a href="register.html">Create One</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer">
+            Copyright &copy; 2017 &mdash; Your Company
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div> -->

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- GLOBAL HEADER (START) -->
+    <%-include("../../partials/global/global_header",{title:"customer page"})%>
+        <!-- GLOBAL HEADER (END) -->
+
+</head>
+
+<body>
+
+    <!--========== HEADER / SIDE_BAR (START)==========-->
+    <%-include("../../partials/customer/dash_header_side_bar")%>
+        <!--/========== HEADER / SIDE_BAR (END)==========-->
+
+
+        <!--========== CONTENTS ==========-->
+        <main>
+            <section>
+
+
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+
+                    body {
+                        overflow-x: hidden;
+                        font-family: 'Poppins', sans-serif !important;
+                        background: white !important;
+
+
+
+
+                    }
+
+
+                    [class*='col-'] {
+
+                        padding: 0;
+                    }
+
+                    .address_box_cont .address_box_heading h4 {
+                        font-weight: 600 !important;
+                        letter-spacing: 2px !important;
+                        font-size: 18px !important;
+                    }
+
+                    .address_box_cont .second_heading h5 {
+                        font-size: 18px !important;
+                        font-family: Arial, Helvetica, sans-serif !important;
+                        color: rgb(37, 37, 250) !important;
+                    }
+
+                    .address_box_cont .address_fa {
+                        color: gray !important;
+                        font-size: 25px !important;
+                    }
+
+                    .address_box_cont .second_heading {
+                        padding: 15px !important;
+                    }
+
+                    .address_box_cont .second_col {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+                    }
+
+                    .address_box_cont .address_box_cont {
+                        background: white !important;
+                        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+                    }
+
+                    a {
+                        text-decoration: none !important;
+                    }
+
+                    .address_box_cont .second_heading:hover .h5_second {
+                        color: black;
+                    }
+
+                    .address_box_cont .address_item {
+                        border: 1.5px solid gainsboro !important;
+                        padding: 20px !important;
+                    }
+
+                    .address_box_cont .item_nav {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        font-size: 15px !important;
+                        color: darkgray !important;
+                    }
+
+                    .address_box_cont .three_dots {
+                        font-size: 20px !important;
+                        color: gray !important;
+                    }
+
+                    .address_box_cont .tag_span {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                        padding: 5px !important;
+                        font-weight: 800 !important;
+                    }
+
+                    .address_box_cont .item_head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+
+                    .address_box_cont .item_footer {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+
+                    .address_box_cont .item_head h3 {
+                        font-weight: 600 !important;
+                        font-size: 17px !important;
+                        margin-right: 20px !important;
+                    }
+
+                    .address_box_cont .item_head h3:last-child {
+                        color: rgb(74, 1, 148) !important;
+                    }
+
+                    .address_box_cont .footer_main {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+                        /* max-width: 70% !important; */
+                        font-weight: 500 !important;
+                        font-size: 17px !important;
+                        color: black !important;
+                        padding: 15px !important;
+                        font-family: Arial, Helvetica, sans-serif !important;
+                    }
+
+
+
+
+                    @media screen and (min-width: 768px) {
+                        .footer_main {
+
+                            max-width: 70% !important;
+
+                        }
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        .footer_main {
+
+                            max-width: 100% !important;
+                            width: 100% !important;
+                        }
+                    }
+
+                    .address_box_cont .menu_span {
+                        cursor: pointer !important;
+
+                        padding: 10px !important;
+                    }
+
+                    .address_box_cont .menu_span:hover {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    }
+
+                    .address_box_cont .form_item {
+                        /* border: 1.5px solid rgb(190, 187, 187); */
+                        font-size: 13px;
+                        font-weight: 700;
+                        /* background: aliceblue; */
+                        padding: 5px 10px !important;
+                        border-radius: 3px;
+
+
+                    }
+
+                    .address_box_cont .form_item .my_form_control {
+                        outline: none;
+                        /* border: 1px solid rgb(203, 203, 203); */
+                        box-shadow: none;
+                        border-radius: 2px;
+                        border: 1.5px solid white;
+                    }
+
+                    .address_box_cont .form_item .my_form_control:focus {
+                        border: 1.5px solid rgb(37, 37, 250) !important;
+                    }
+
+                    .address_box_cont  .address_textarea:focus {
+                        border: 1.5px solid rgb(37, 37, 250) !important;
+                    }
+
+                   
+
+                    .address_box_cont .address_textarea {
+                        resize: none;
+                        outline: none;
+                        box-shadow: none;
+                        border-radius: 2px;
+                        border: 1.5px solid gainsboro ;
+                        background: #fafafa;
+                        padding: 15px;
+                    }
+
+                    .address_box_cont .new_address_box {
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    }
+
+                    .invalid_field{
+                        border: 1.5px solid tomato !important;
+                    }
+                </style>
+
+                <%if(saveAddressFailed){%>
+                        <div class="alert alert-danger alert-dismissible mt-5" style="position: absolute;z-index: 9999;left:50%;right:50%; transform: translate(-50%,-50%);width: max-content; ">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <b>Error!</b> Only You can manage four addresses.
+                        </div>
+                        <%}%>
+                    
+
+                <div class="container address_box_cont">
+                    
+                    <div class="row p-lg-5 p-3">
+
+                        <div class="col-12">
+                            <div class="address_box_heading">
+                                <h4>Manage Addresses</h4>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-3 second_col">
+                            <a href="#" id="add_new_a">
+                                <div class="second_heading">
+                                    <h5 class="h5_second"><i class="far fa-address-card address_fa"></i> &nbsp; Add New
+                                        Address</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 new_address_box mt-3 p-4" id="address_box_id" style="display: none;">
+                            <form class="mt-3" id="new_address_form" action="new_address" method="post">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                        <label for="full_name">Full Name</label>
+                                        <input type="text" name="full_name" required class="form-control my_form_control"
+                                            id="full_name" placeholder="Full Name">
+                                    </div>
+                                    <div class="form-group col-lg-5 form_item">
+                                        <label for="pinCode">Pin Code</label>
+                                        <input type="text" name="pinCode" required class="form-control my_form_control"
+                                            id="pinCode" placeholder="Pin Code">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+
+
+                                    <div class="form-group col-lg-5  mr-lg-3 form_item">
+                                        <label for="address"> Address</label>
+                                        <textarea class="form-control  address_textarea" required
+                                            id="address" rows="3" name="address"></textarea>
+                                    </div>
+
+                                    <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                        <label for="contact_phone">Contact Phone </label>
+                                        <input type="text" class="form-control my_form_control" id="contact_phone"
+                                            placeholder=" Contact Phone" required name="contact_phone">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                        <label for="city">City </label>
+                                        <input type="text" required class="form-control my_form_control"
+                                            id="city" placeholder=" City" name="city">
+                                    </div>
+                                    <div class="form-group col-lg-5  form_item">
+                                        <label for="state">State</label>
+                                        <select id="state" required class="form-control my_form_control" name="state">
+                                            <option selected hidden value="null" >State</option>
+                                            <%states.forEach((state)=>{%>
+                                                <option value=" <%=state.id%>">
+                                                    <%=state.name%>
+                                                </option>
+                                                <%})%>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                        <label for="alternate_phone">Alternate Phone </label>
+                                        <input type="text" name="alternate_phone" class="form-control my_form_control" id="alternate_phone"
+                                            placeholder=" Alternate Phone">
+                                    </div>
+                                    <div class="form-group col-lg-5 form_item">
+                                        <label for="locality"> Locality</label>
+                                        <input type="text" required class="form-control my_form_control"
+                                            id="locality" placeholder=" Locality" name="locality">
+                                    </div>
+
+                                </div>
+
+
+
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn btn-primary" id="cancel_add_new">Cancel</button>
+                            </form>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <div>
+                                <%addresses.forEach((value)=>{%>
+                                    <div class="address_item mb-3">
+                                        <div class="item_nav">
+
+                                            <div>
+
+                                                <div class="dropdown show">
+                                                    <span href="#" id="item_menu" data-toggle="dropdown"
+                                                        aria-haspopup="true" role="button" aria-expanded="false"
+                                                        class="menu_span">
+                                                        <i class="fas fa-ellipsis-v three_dots "></i>
+                                                    </span>
+
+                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                        aria-labelledby="item_menu">
+                                                        <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item_head">
+                                            <h3>
+                                                <%=value.fullName%>
+                                            </h3>
+                                            <h3>
+                                                <%=value.contactPhone%>
+                                            </h3>
+                                        </div>
+
+                                        <div class="item_footer">
+                                            <p class="footer_main mt-3">
+                                                <%=value.address%>
+                                                    <br>
+                                                    <b>
+                                                        <%=value.city%>,
+                                                    </b><b>
+                                                        <%=value.state%> ,
+                                                    </b><b>
+                                                        <%=value.pinCode%>
+                                                    </b>
+                                                    <br>
+                                                    <small
+                                                        style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;font-size: 15px;letter-spacing: 1px;color: rgb(18, 126, 122);"><%=value.locality%><%=value.alternatePhone?"," + value.alternatePhone:""%></small>
+
+                                            </p>
+                                            <div>
+                                                <span class="tag_span">
+                                                    <%=value.addressType?value.addressType:"Home"%>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <%})%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </section>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ##################################################################################################################### -->
+
+        <!-- GLOBAL FOOTER (START) -->
+        <%-include("../../partials/global/global_footer")%>
+         <!-- GLOBAL FOOTER (END) -->
+
+
+
+
+        <!--========== HEADER / SIDE_BAR JS (START)==========-->
+        <%-include("../../partials/customer/dash_header_side_bar_js")%>
+        <!--/========== HEADER / SIDE_BAR JS (END)==========-->
+
+
+
+
+
+
+
+        <script>
+            const addNewAddress = document.getElementById("add_new_a")
+            const addressBoxEL = document.getElementById("address_box_id")
+            const cancelBtn = document.getElementById("cancel_add_new")
+            addNewAddress.onclick = () => {
+                addressBoxEL.style.display = "block"
+            }
+
+            cancelBtn.onclick = () => {
+                addressBoxEL.style.display = "none"
+            }
+        </script>
+
+
+
+
+
+
+
+
+<script>
+    const fullNameEL = document.getElementById("full_name")
+    const pinCodeEL= document.getElementById("pinCode")
+    const addressEL = document.getElementById("address")
+    const cityEL = document.getElementById("city")
+    const stateEL = document.getElementById("state")
+    const localityEL = document.getElementById("locality")
+    const contactPhoneEL = document.getElementById("contact_phone")
+   
+    const alternatePhoneEL = document.getElementById("alternate_phone")
+    
+    
+    
+    
+    const newAddressForm = document.getElementById("new_address_form")
+    newAddressForm.onsubmit = () => {
+       
+        
+            
+            let isNamesValid = namesValid()
+            let isAddressesValid = addressesValid()
+            let isPhonesValid = phonesValid()
+           
+            let isFormValid = isNamesValid && isPhonesValid && isAddressesValid
+
+            return isFormValid
+         
+           
+        
+
+    }
+
+    function addressesValid() {
+        let valid = true
+        if (!isCorrectAddress(addressEL.value)) {
+            valid = false
+            alert("addr")
+
+            showError(addressEL)
+        } else {
+            showSuccess(addressEL)
+        }
+
+        if (stateEL.selectedIndex === 0) {
+            valid = false
+
+            showError(stateEL)
+        } else {
+            showSuccess(stateEL)
+        }
+
+        if (!isPinCodeValid(pinCodeEL.value)) {
+            valid = false
+            showError(pinCodeEL)
+        } else {
+            showSuccess(pinCodeEL)
+
+        }
+
+
+        if (!isCorrectCity(cityEL.value)) {
+            valid = false
+            showError(cityEL)
+        } else {
+            showSuccess(cityEL)
+
+        }
+
+
+        if (!isCorrectLocality(localityEL.value)) {
+            valid = false
+
+            showError(localityEL)
+        } else {
+            showSuccess(localityEL)
+        }
+
+        return valid
+    }
+
+
+    function isPinCodeValid(value) {
+        var regex = /^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+        return regex.test(value.trim());
+    }
+
+
+    function namesValid() {
+        //alert("p")
+        let valid = true
+        if (!isCorrectName(fullNameEL.value)) {
+            valid = false
+            alert("lol")
+            showError(fullNameEL)
+        } else {
+            showSuccess(fullNameEL)
+        }
+        
+
+        return valid
+    }
+
+    function phonesValid() {
+        // alert("p")
+        let valid = true
+        if (!isCorrectPhone(contactPhoneEL.value)) {
+            valid = false
+
+            showError(contactPhoneEL)
+        } else {
+            showSuccess(contactPhoneEL)
+        }
+        if (alternatePhoneEL.value.trim().length !== 0) {
+            if (!isCorrectPhone(alternatePhoneEL.value)) {
+                valid = false
+                showError(alternatePhoneEL)
+            } else {
+                // alert(alternatePhoneEL.value.trim().length)
+                showSuccess(alternatePhoneEL)
+            }
+        } else {
+            showSuccess(alternatePhoneEL)
+        }
+
+
+        return valid
+    }
+
+
+    // window.onload=()=>{
+    //     var regex=/^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+    //     alert( regex.test("482 002"))
+    // }
+
+
+    function isCorrectName(value) {
+        var regex = /^[a-zA-Z ]{2,30}$/;
+
+        return regex.test(value.trim());
+        // return value.trim().length==0?false:true
+    }
+
+    function isCorrectCity(value) {
+        var regex = /^[a-zA-Z ]{2,100}$/;
+
+        return regex.test(value.trim());
+        // return value.trim().length==0?false:true
+    }
+
+    // window.onload=()=>{
+    //     var regex = /^[a-zA-Z,. ]{2,30}$/;
+
+
+    // }
+
+    function isCorrectAddress(value) {
+        var regex = /^[a-zA-Z0-9,.() ]{20,200}$/;
+        return regex.test(value.trim());
+    }
+
+    function isCorrectLocality(value) {
+        var regex = /^[a-zA-Z0-9,.() ]{2,50}$/;
+        return regex.test(value.trim());
+    }
+
+
+
+
+    function isCorrectPhone(value) {
+        var regex = /^[6-9]{1}[0-9]{9}$/;
+
+        return regex.test(value.trim());
+        // return value.trim().length==0?false:true
+    }
+
+    function showError(inputEl) {
+        //inputEl.classList.remove("valid_field")
+        inputEl.classList.add("invalid_field")
+
+    }
+
+    function showSuccess(inputEl) {
+        inputEl.classList.remove("invalid_field")
+        //inputEl.classList.add("valid_field")
+
+    }
+</script>
+
+<%if(changeUrl){%>
+    <script>
+        if (window.history.replaceState) {
+            //alert(window.location.href)
+            window.history.replaceState(null, null, "<%=url%>")
+        }
+    </script>
+
+    <%}%>
+
+
+</body>
+
+</html>

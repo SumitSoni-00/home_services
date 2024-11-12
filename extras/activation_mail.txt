@@ -1,0 +1,4 @@
+welcome,
+please click on this link to activate this account
+<a href=<temp> >click here</a>
+thank you

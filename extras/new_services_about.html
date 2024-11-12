@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Hello, world!</title>
+
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+        /* #Primary
+================================================== */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #212112;
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: all 200ms linear;
+        }
+
+        ::selection {
+            color: #fff;
+            background-color: #8167a9;
+        }
+
+        ::-moz-selection {
+            color: #fff;
+            background-color: #8167a9;
+        }
+
+
+        /* #Navigation
+================================================== */
+
+        .start-header {
+            opacity: 1;
+            transform: translateY(0);
+            padding: 20px 0;
+            box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .start-header.scroll-on {
+            box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+            padding: 10px 0;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .start-header.scroll-on .navbar-brand img {
+            height: 24px;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .navigation-wrap {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 28px;
+            width: auto;
+            display: block;
+            filter: brightness(10%);
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .navbar-toggler {
+            float: right;
+            border: none;
+            padding-right: 0;
+        }
+
+        .navbar-toggler:active,
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            width: 24px;
+            height: 17px;
+            background-image: none;
+            position: relative;
+            border-bottom: 1px solid #000;
+            transition: all 300ms linear;
+        }
+
+        .navbar-light .navbar-toggler-icon:after,
+        .navbar-light .navbar-toggler-icon:before {
+            width: 24px;
+            position: absolute;
+            height: 1px;
+            background-color: #000;
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
+        }
+
+        .navbar-light .navbar-toggler-icon:after {
+            top: 8px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+            transform: rotate(45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+            transform: translateY(8px) rotate(-45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            border-color: transparent;
+        }
+
+        .nav-link {
+            color: #212121 !important;
+            font-weight: 500;
+            transition: all 200ms linear;
+        }
+
+        .nav-item:hover .nav-link {
+            color: #8167a9 !important;
+        }
+
+        .nav-item.active .nav-link {
+            color: #777 !important;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 5px 0 !important;
+            display: inline-block;
+        }
+
+        .nav-item:after {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            content: '';
+            background-color: #8167a9;
+            opacity: 0;
+            transition: all 200ms linear;
+        }
+
+        .nav-item:hover:after {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .nav-item.active:hover:after {
+            opacity: 0;
+        }
+
+        .nav-item {
+            position: relative;
+            transition: all 200ms linear;
+        }
+
+        /* #Primary style
+================================================== */
+
+        .bg-light {
+            background-color: #fff !important;
+            transition: all 200ms linear;
+        }
+
+        .section {
+            position: relative;
+            width: 100%;
+            display: block;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .over-hide {
+            overflow: hidden;
+        }
+
+        .absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            margin-top: 40px;
+            transform: translateY(-50%);
+            z-index: 20;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #212112;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+            padding-top: 10px;
+            opacity: 1;
+            transform: translate(0);
+            transition: all 300ms linear;
+            transition-delay: 1700ms;
+        }
+
+        body.hero-anime p {
+            opacity: 0;
+            transform: translateY(40px);
+            transition-delay: 1700ms;
+        }
+
+        h1 span {
+            display: inline-block;
+            transition: all 300ms linear;
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        body.hero-anime h1 span:nth-child(1) {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        body.hero-anime h1 span:nth-child(2) {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        body.hero-anime h1 span:nth-child(3) {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        body.hero-anime h1 span:nth-child(4) {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        body.hero-anime h1 span:nth-child(5) {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        body.hero-anime h1 span:nth-child(6) {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        body.hero-anime h1 span:nth-child(7) {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+
+        body.hero-anime h1 span:nth-child(8) {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        body.hero-anime h1 span:nth-child(9) {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        body.hero-anime h1 span:nth-child(10) {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        h1 span:nth-child(1) {
+            transition-delay: 1000ms;
+        }
+
+        h1 span:nth-child(2) {
+            transition-delay: 700ms;
+        }
+
+        h1 span:nth-child(3) {
+            transition-delay: 900ms;
+        }
+
+        h1 span:nth-child(4) {
+            transition-delay: 800ms;
+        }
+
+        h1 span:nth-child(5) {
+            transition-delay: 1000ms;
+        }
+
+        h1 span:nth-child(6) {
+            transition-delay: 700ms;
+        }
+
+        h1 span:nth-child(7) {
+            transition-delay: 900ms;
+        }
+
+        h1 span:nth-child(8) {
+            transition-delay: 800ms;
+        }
+
+        h1 span:nth-child(9) {
+            transition-delay: 600ms;
+        }
+
+        h1 span:nth-child(10) {
+            transition-delay: 700ms;
+        }
+
+        body.hero-anime h1 span:nth-child(11) {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        body.hero-anime h1 span:nth-child(12) {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        body.hero-anime h1 span:nth-child(13) {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        body.hero-anime h1 span:nth-child(14) {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        body.hero-anime h1 span:nth-child(15) {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        h1 span:nth-child(11) {
+            transition-delay: 1300ms;
+        }
+
+        h1 span:nth-child(12) {
+            transition-delay: 1500ms;
+        }
+
+        h1 span:nth-child(13) {
+            transition-delay: 1400ms;
+        }
+
+        h1 span:nth-child(14) {
+            transition-delay: 1200ms;
+        }
+
+        h1 span:nth-child(15) {
+            transition-delay: 1450ms;
+        }
+
+        #switch,
+        #circle {
+            cursor: pointer;
+            -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
+        }
+
+        #switch {
+            width: 60px;
+            height: 8px;
+            border: 2px solid #8167a9;
+            border-radius: 27px;
+            background: #000;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 1;
+            transform: translate(0);
+            transition: all 300ms linear;
+            transition-delay: 1900ms;
+        }
+
+        body.hero-anime #switch {
+            opacity: 0;
+            transform: translateY(40px);
+            transition-delay: 1900ms;
+        }
+
+        #circle {
+            position: absolute;
+            top: -11px;
+            left: -13px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .switched {
+            border-color: #000 !important;
+            background: #8167a9 !important;
+        }
+
+        .switched #circle {
+            left: 43px;
+            box-shadow: 0 4px 4px rgba(26, 53, 71, 0.25), 0 0 0 1px rgba(26, 53, 71, 0.07);
+            background: #fff;
+        }
+
+        .nav-item .dropdown-menu {
+            transform: translate3d(0, 10px, 0);
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            display: block;
+            padding: 0;
+            margin: 0;
+            transition: all 200ms linear;
+        }
+
+        .nav-item.show .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            max-height: 999px;
+            transform: translate3d(0, 0px, 0);
+        }
+
+        .dropdown-menu {
+            padding: 10px !important;
+            margin: 0;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #212121;
+            background-color: #fcfaff;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+            transition: all 200ms linear;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        .dropdown-item {
+            padding: 3px 15px;
+            color: #212121;
+            border-radius: 2px;
+            transition: all 200ms linear;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            color: #fff;
+            background-color: rgba(129, 103, 169, .6);
+        }
+
+        body.dark {
+            color: #fff;
+            background-color: #1f2029;
+        }
+
+        body.dark .navbar-brand img {
+            filter: brightness(100%);
+        }
+
+        body.dark h1 {
+            color: #fff;
+        }
+
+        body.dark h1 span {
+            transition-delay: 0ms !important;
+        }
+
+        body.dark p {
+            color: #fff;
+            transition-delay: 0ms !important;
+        }
+
+        body.dark .bg-light {
+            background-color: #14151a !important;
+        }
+
+        body.dark .start-header {
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        body.dark .start-header.scroll-on {
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        body.dark .nav-link {
+            color: #fff !important;
+        }
+
+        body.dark .nav-item.active .nav-link {
+            color: #999 !important;
+        }
+
+        body.dark .dropdown-menu {
+            color: #fff;
+            background-color: #1f2029;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        body.dark .dropdown-item {
+            color: #fff;
+        }
+
+        body.dark .navbar-light .navbar-toggler-icon {
+            border-bottom: 1px solid #fff;
+        }
+
+        body.dark .navbar-light .navbar-toggler-icon:after,
+        body.dark .navbar-light .navbar-toggler-icon:before {
+            background-color: #fff;
+        }
+
+        body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            border-color: transparent;
+        }
+
+
+
+        /* #Media
+================================================== */
+
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            .nav-item:after {
+                display: none;
+            }
+
+            .nav-item::before {
+                position: absolute;
+                display: block;
+                top: 15px;
+                left: 0;
+                width: 11px;
+                height: 1px;
+                content: "";
+                border: none;
+                background-color: #000;
+                
+            }
+
+            .dropdown-toggle::after {
+                position: absolute;
+                display: block;
+                top: 10px;
+                left: -23px;
+                width: 1px;
+                height: 11px;
+                content: "";
+                border: none;
+                background-color: #000;
+                
+                transition: all 200ms linear;
+            }
+
+            .dropdown-toggle[aria-expanded="true"]::after {
+                transform: rotate(90deg);
+                opacity: 0;
+            }
+
+            .dropdown-menu {
+                padding: 0 !important;
+                background-color: transparent;
+                box-shadow: none;
+                transition: all 200ms linear;
+            }
+
+            .dropdown-toggle[aria-expanded="true"]+.dropdown-menu {
+                margin-top: 10px !important;
+                margin-bottom: 20px !important;
+            }
+
+            body.dark .nav-item::before {
+                background-color: #fff;
+            }
+
+            body.dark .dropdown-toggle::after {
+                background-color: #fff;
+            }
+
+            body.dark .dropdown-menu {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+        /* #Link to page
+================================================== */
+
+        .logo {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: block;
+            z-index: 100;
+            transition: all 250ms linear;
+        }
+
+        .logo img {
+            height: 26px;
+            width: auto;
+            display: block;
+            filter: brightness(10%);
+            transition: all 250ms linear;
+        }
+
+        body.dark .logo img {
+            filter: brightness(100%);
+        }
+    </style> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,500&family=Roboto:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+        /* #Primary
+================================================== */
+
+        body {
+
+
+
+
+
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: all 200ms linear;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            overflow-x: hidden;
+        }
+
+        .service_detail_main_cont {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        /* .service_detail_row {
+            border: 1px solid black;
+        } */
+
+        .service_detail_col {
+            padding: 0px;
+        }
+
+        .step_1_cont {
+            /* border: 1px solid brown; */
+            width: 80%;
+            margin: 0 auto;
+            padding: 3rem 5rem;
+
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+
+
+        .step_1_cont .form-group {
+            width: 75%;
+            margin-bottom: 3rem;
+
+
+        }
+
+        .step_1_cont_form input[type="tel"] {
+            margin-bottom: 0;
+        }
+
+        .step_1_cont .form-group .form-control {
+            padding: 1rem;
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+            outline: none;
+        }
+
+        .step_cont {
+            margin-bottom: 4rem;
+            border: 1px solid gainsboro;
+            display: flex;
+            height: 7rem;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            justify-content: space-between;
+
+        }
+
+        .step_cont h3 {
+            font-size: 3rem;
+            margin: auto 0;
+            margin-left: 3rem;
+        }
+
+        .vertical_strip {
+            /* background: rgb(53, 121, 121); */
+
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .vertical_strip div {
+            padding: 1rem 3rem;
+            border-bottom: 1px solid rgb(26, 54, 212);
+            margin-right: 4rem;
+            cursor: pointer;
+        }
+
+
+        .vertical_strip div:hover {
+            color: gray;
+        }
+
+        #next {
+            margin-right: 0;
+        }
+
+
+
+        textarea {
+            resize: none;
+        }
+
+        .step_2_cont .row {
+
+            border: none;
+        }
+
+        .step_2_heading {
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            display: flex;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem;
+
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .step_2_heading h2 {
+            font-size: 3rem;
+            letter-spacing: 0.15rem;
+            font-weight: 100;
+            color: rgb(83, 72, 233);
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* .step_2_search_empl_col{
+            border: 1px solid red;
+            
+        } */
+
+        .step_2_search_empl_cont {
+            margin-top: 3rem;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            width: 90%;
+            padding: 2.5rem;
+            text-align: center;
+            font-size: 2.25rem;
+            cursor: pointer;
+        }
+
+        .step_2_search_empl_cont .step_2_search_empl_heading {
+            color: lightseagreen;
+            letter-spacing: 0.25rem;
+            border: 1px solid gainsboro;
+            padding: 1rem;
+
+        }
+
+        .step_2_search_empl_cont .step_2_search_empl_ul {
+
+
+            margin-top: 3rem;
+        }
+
+        .step_2_search_empl_ul ul {
+            text-align: start;
+            font-size: 2rem;
+        }
+
+        .select_this_div {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            width: 25%;
+            margin: 2rem auto 0;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .select_this_div:hover {
+            background: azure;
+        }
+
+        @media only screen and (max-width: 768px) {
+            html {
+                font-size: 40%;
+            }
+
+            .step_cont {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- <div class="navigation-wrap bg-light start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+
+                        <a class="navbar-brand" href="https://front.codes/" target="_blank"><img
+                                src="https://assets.codepen.io/1462889/fcy.png" alt=""></a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">Home</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Portfolio</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Agency</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">Services</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Journal</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ -->
+
+
+
+    <div class="service_detail_main_cont container">
+        <div class="service_detail_row row">
+            <div class="service_detail_col col-md-12">
+                <div class="service_details_cont">
+
+                    <!-- <div class="step_cont">
+                        <h3>Step 1</h3>
+                        <div class="vertical_strip">
+                            <div style="display: none;">Next</div>
+                            <div id="next">Step 2</div>
+                        </div>
+                    </div> -->
+
+                    <div class="step_detail_cont">
+                        <div class="step_1_cont steps_class" >
+                            <div class="step_cont">
+                                <h3>Step 1</h3>
+                                <div class="vertical_strip">
+                                    
+                                    <div id="next" onclick="changeStep(0)">Step 2</div>
+                                </div>
+                            </div>
+                            
+
+
+
+                            <form class="step_1_cont_form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input required type="text" class="form-control" id="name" placeholder="Type Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <textarea required class="form-control" id="address" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pin_code">PIN Code</label>
+                                    <input required type="text" class="form-control" id="pin_code" placeholder="Type PIN Code">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input required type="tel" class="form-control" id="phone" placeholder="PhoneNumber">
+                                </div>
+                            </form>
+
+                        </div> 
+
+
+
+
+                        <div style="display: none;" style="display: none;" class="step_2_cont steps_class">
+                            
+                            <div class="step_cont">
+                                <h3 >Step 2</h3>
+                                <div class="vertical_strip">
+                                    <div onclick="prevStep(1)">Prev</div>
+                                    <div onclick="changeStep(1)">Step 3</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="step_2_heading">
+                                        <h2>Hire Your Employees</h2>
+                                    </div>
+                                </div>
+
+                                <div class="step_2_search_empl_col col-md-12">
+                                    <div class="step_2_search_empl_cont">
+                                        <span class="step_2_search_empl_heading">Search and select your own
+                                            Employee</span>
+                                        <div class="step_2_search_empl_ul">
+                                            <ul>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(182, 65, 65);font-size: 1.75rem;"></i>&nbsp;Find
+                                                    your custom employee
+                                                    from our registered employees</li>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(63, 63, 170);font-size: 1.75rem;"></i>&nbsp;Well
+                                                    trained and trusted
+                                                </li>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(63, 172, 235);font-size: 1.75rem;"></i>
+                                                    &nbsp;profeicient in their work
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="select_this_div">Select This</div>
+                                        <input type="radio" name="hired_employee" value="1" style="display: none;">
+                                    </div>
+                                </div>
+                                <div class=" step_2_search_empl_col col-md-12">
+                                    <div class="step_2_search_empl_cont">
+                                        <span class="step_2_search_empl_heading">We Send Our Employees !</span>
+                                        <div class="step_2_search_empl_ul">
+                                            <ul>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(182, 65, 65);font-size: 1.75rem;"></i>&nbsp;We
+                                                    will send our employees from our
+                                                    registered employees</li>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(63, 63, 170);font-size: 1.75rem;"></i>&nbsp;Well
+                                                    trained and trusted
+                                                </li>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(63, 172, 235);font-size: 1.75rem;"></i>
+                                                    &nbsp;profeicient in their work
+                                                </li>
+                                                <li><i class="fas fa-hand-holding-heart"
+                                                        style="color: rgb(235, 63, 198);font-size: 1.75rem;"></i>
+                                                    &nbsp;Your work our faith
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="select_this_div">Select This</div>
+                                        <input type="radio" name="hired_employee" value="2" id=""
+                                            style="display: none;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div  style="display: none;" class="step_2_cont steps_class">
+                            <div class="step_cont">
+                                <h3 >Step 3</h3>
+                                <div class="vertical_strip">
+                                    <div onclick="prevStep(2)">Prev</div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="step_2_heading">
+                                        <h2>Book Your Service</h2>
+                                    </div>
+                                </div>
+
+                                <div class="step_final_search_empl_col col-md-12 col-sm-12 col-12">
+
+                                    <div class="step_final_overview">
+                                        <style>
+                                            .step_final_overview {
+                                                /* border: 1px solid black; */
+                                                box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+                                                padding: 3rem;
+
+                                                width: 70%;
+                                                margin: 3rem auto 0;
+                                                font-size: 2rem;
+                                            }
+
+                                            .step_final_overview .form-control {
+
+                                                padding: 1rem;
+                                                font-size: 1.25rem;
+                                                outline: none;
+                                                border: none;
+                                                width: 80%;
+                                                background: whitesmoke;
+                                            }
+
+                                            .red_border {
+                                                border: 1px solid red;
+                                            }
+
+                                            .black_border {
+                                                border: 1px solid black;
+                                            }
+
+                                            .employee_type_wrap .employee_type_row .employee_type_img_col {
+                                                padding: 0;
+
+                                                text-align: center;
+
+
+                                            }
+
+                                            .employee_type_wrap .employee_type_row .employee_type_img_col img {
+                                                padding: 0;
+                                                border-radius: 50%;
+                                                height: 10rem;
+                                                width: 10rem;
+
+
+                                            }
+
+                                            .employee_type_wrap {
+                                                box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+                                            }
+
+                                            .employee_type_detail_col {
+                                                padding: 0;
+                                                text-align: start;
+                                            }
+                                        </style>
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" disabled class="form-control" placeholder="Type Name"
+                                                value="myname">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <textarea value="hello" class="form-control" placeholder="Type PIN" disabled
+                                                rows="3"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pin_code">PIN Code</label>
+                                            <input type="text" disabled value="some text" class="form-control"
+                                                placeholder="Type PIN Code">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label>
+                                            <input type="tel" disabled value="some text" class="form-control"
+                                                placeholder="PhoneNumber">
+                                        </div>
+
+                                        <div class="employee_type_wrap mt-5 black_border"
+                                            style="text-align: center;width: 80%;">
+                                            <h3>Employee Type</h3>
+                                            <div>
+                                                <div class="container">
+                                                    <div class="row employee_type_row">
+                                                        <div
+                                                            class="col-md-3 col-sm-12 col-12 employee_type_img_col black_border">
+                                                            <img src="../public/images/4.jpg" alt="">
+                                                        </div>
+
+                                                        <div
+                                                            class="col-md-9 col-sm-12 col-12 employee_type_detail_col red_border">
+                                                            <div>
+                                                                <h4>name</h4>
+                                                                <p>address sddress addrss</p>
+                                                            </div>
+
+                                                            <div class="red_border"
+                                                                style="display: flex;align-items: center;justify-content: space-around;width: 80%;margin: 0 auto;">
+                                                                <span>star</span>
+                                                                <span>a</span>
+                                                                <span>star</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <hr>
+                                        <div class="book_service mt-5 red_border"
+                                            style="display: flex;justify-content: center;align-items: center;">
+                                            <a href="" class="black_border" style="padding: 1.5rem;">Book Your
+                                                Service</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+      const nextStep=document.getElementById("next")
+      const steps=document.getElementsByClassName("steps_class")
+      
+
+      function changeStep(currentstep){
+          steps[currentstep].style.display="none"
+          steps[currentstep+1].style.display="block"
+         
+      }
+
+      function prevStep(currentstep){
+        steps[currentstep].style.display="none"
+          steps[currentstep-1].style.display="block"
+      }
+    
+    </script>
+</body>
+
+</html>

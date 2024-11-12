@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/navbar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <title>
+        <%= email %>
+    </title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <%= email %>
+        </h1>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-home"></i>
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-danger">11</span>
+                        </i>
+                        Link
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-warning">11</span>
+                        </i>
+                        Disabled
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope-o">
+                            <span class="badge badge-primary">11</span>
+                        </i>
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-bell">
+                            <span class="badge badge-info">11</span>
+                        </i>
+                        Test
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-globe">
+                            <span class="badge badge-success">11</span>
+                        </i>
+                        Test
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- <style>
+        .c-details span {
+            font-weight: 300;
+            font-size: 13px
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eee;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 39px
+        }
+
+        .badge span {
+            background-color: #fffbec;
+            width: 60px;
+            height: 25px;
+            padding-bottom: 3px;
+            border-radius: 5px;
+            display: flex;
+            color: #fed85d;
+            justify-content: center;
+            align-items: center
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 10px
+        }
+
+        .progress div {
+            background-color: red
+        }
+
+        .text1 {
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .text2 {
+            color: #a5aec0
+        }
+
+        .step {
+            border: none;
+            margin-bottom: 5px;
+            padding: 2px;
+            font-variant-caps: all-small-caps;
+            font-weight: 400;
+
+            background: rgb(250, 249, 249);
+
+
+        }
+    </style>
+
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="card" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <ul class="nav flex-column flex-nowrap overflow-hidden">
+                        <li class="nav-item step">
+                            <a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics <i
+                                        style="float: right;text-align: center;font-size: 20px;" class="fa fa-play"
+                                        aria-hidden="true"></i> </span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9 pl-5 ">
+                <div class="card" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--<div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">Mailchimp</h6> <span>1 days ago</span>
+                            </div>
+                        </div>
+                        <div class="badge"> <span>Design</span> </div>
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="heading">Senior Product<br>Designer-Singapore</h3>
+                        <div class="mt-5">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50
+                                        capacity</span></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card p-3 mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-dribbble"></i> </div>
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">Dribbble</h6> <span>4 days ago</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="heading">Junior Product<br>Designer-Singapore</h3>
+                        <div class="mt-5">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="mt-3"> <span class="text1">42 Applied <span class="text2">of 70
+                                        capacity</span></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>-->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        .block {
+
+            background: rgba(86, 61, 124, .15);
+            margin-bottom: 30px;
+        }
+
+        .label {
+            font-size: .85rem;
+            font-weight: bold;
+        }
+
+
+
+        .my_card {
+
+            max-width: 100%;
+            margin-left: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .my_card_title {
+            border: 2px solid slateblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            border-radius: 7px;
+            padding: 5px;
+            text-align: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            font-variant: small-caps;
+            color: #596EC2;
+
+
+
+        }
+
+        .card-subtitle {
+            text-align: center;
+        }
+
+        .form-group label {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: #596EC2;
+            font-weight: 500;
+
+        }
+
+        .service_rate_given span {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: #596EC2;
+            font-weight: 500;
+
+        }
+
+
+
+
+        .my_card_subtitle {
+            text-align: center;
+        }
+
+
+
+        .skills_pallete {
+            border: none;
+
+
+
+            background: rgb(241, 239, 239);
+            font-family: 'Roboto', sans-serif;
+            border-radius: 10px;
+            font-variant: small-caps;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin: 2px;
+            display: inline-block;
+            border: 1px solid rgb(182, 182, 182);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            cursor: pointer;
+
+
+        }
+
+        .skills_pallete:hover {
+            background: #596EC2;
+            color: honeydew;
+        }
+
+
+        .skills_pallete_container {
+            padding: 0px;
+
+
+        }
+
+        .welcome_text {
+            color: snow;
+            border: none;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            border-radius: 10px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .welcome_text span {
+            font-size: 30px;
+
+        }
+
+        .details_fields {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            outline: none;
+            padding: 5px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        .service_rate_given {
+            margin-bottom: 20px;
+        }
+
+        .service_rate_given .service_rate_final {
+            border: none;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            outline: none;
+            padding: 5px;
+            margin-top: 10px;
+
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        .profile_card_header {
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            padding: 5px;
+            margin-bottom: 100px;
+            font-variant: small-caps;
+        }
+    </style>
+    <hr />
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 col-sm-12 my-col">
+                <div class="card my_card" style="text-align: center;">
+
+                    <div class="profile_card_tag" id="selected_tag">AAAAAAAAAAA<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">AAAAAAAAAAA<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">AAAAAAAAAAA<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">AAAAAAAAAAA<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+                    <div class="profile_card_tag">AAAAAAAAAAA<i class="my_arrow_fa fas fa-arrow-circle-right"></i></div>
+
+
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+                        .profile_card_tag {
+                            border: none;
+                            padding: 8px;
+                            margin-bottom: 5px;
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                            border-radius: 5px;
+                            font-family: 'Roboto', sans-serif;
+                            background: whitesmoke;
+                            
+                           
+
+                        }
+                        #selected_tag{
+                            color: rgb(97, 112, 182);
+                            background-color: rgb(155, 233, 225);
+                        }
+                        .my_arrow_fa{
+                            float: right;
+                        }
+
+                        
+                    </style>
+                    <!--
+                    <ul class="nav flex-column flex-nowrap overflow-hidden">
+                        <li class="nav-item step">
+                            <a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics <i
+                                        style="float: right;text-align: center;font-size: 20px;" class="fa fa-play"
+                                        aria-hidden="true"></i> </span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-download"></i>
+                                <span class="d-none d-sm-inline">Export</span>
+                            </a>
+                        </li>
+                        <li class="nav-item step"><a class="nav-link text-truncate" href="#">
+                                <i class="fa fa-bar-chart"></i>
+                                <span class="d-none d-sm-inline">Analytics</span>
+                            </a>
+                        </li>
+
+                    </ul>-->
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-sm-12 my-col">
+                <form action="/employee/submit_profile_details" method="POST">
+                    <div class="card profile_details_card" style="width: 100%;" id="card">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Getting started</span>
+                            </div>
+                            <div class="my_card_subtitle card-subtitle mb-2 text-muted">
+                                <span>0 of 12</span>
+                            </div>
+                            <div class="card-text welcome_text">
+                                <span>Welcome to profile editing</span>
+
+                                <h2>We welcome you?</h2>
+
+                            </div>
+                            <div onclick="nextPage(0)" style="cursor: pointer;" class="mt-3 card-title my_card_title">
+                                NEXT
+                                <!-- <a href="#" style="border:2px solid red;
+                                width:fit-content;" class=" card-link" >next</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Category</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>1 of 12</span>
+                            </div>
+                            <div class="card-text">
+
+
+                                <span class="profile_card_header">what is the main service you offer?</span>
+                                <hr />
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">category</label>
+                                    <select name="service_category" class="form-control details_fields"
+                                        id="exampleFormControlSelect1">
+                                        <option value="1">ui</option>
+                                        <option value="2">java</option>
+                                        <option value="30000">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">sub category</label>
+                                    <select name="service_subcategory" class="form-control details_fields"
+                                        id="exampleFormControlSelect1">
+                                        <option value="11">1</option>
+                                        <option value="22">2</option>
+                                        <option value="13">3</option>
+                                        <option value="14">4</option>
+                                        <option value="15">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(1)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(1)">next</a>
+                            </div>
+                            <style>
+                                .card_prev_next {
+                                    display: inline-block;
+
+                                    padding: 10px;
+                                    width: 100%;
+                                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                    font-size: 20px;
+
+                                }
+
+                                .card_prev_next a {
+                                    color: #596EC2;
+                                    font-variant: small-caps;
+                                    font-weight: bold;
+                                    border-radius: 10px;
+                                    padding: 10px;
+                                    width: 40%;
+                                    text-align: center;
+                                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                                }
+
+                                .card_prev_next a:hover {
+                                    background: rgb(53, 207, 187);
+                                    color: snow;
+                                }
+                            </style>
+
+                        </div>
+                    </div>
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Expertise</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>3 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Select Your Skills</span>
+                                <hr />
+                                <div class="skills_pallete_container">
+
+
+                                    <span data-name="java" class="skills_pallete">jajavajavavaSumit</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">j</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajajavajavavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+                                    <span data-name="java" class="skills_pallete">jajavajavava</span>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(2)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(2)">next</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Hourly rate</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>3 of 12</span>
+                            </div>
+                            <div class="card-text">
+
+
+                                <div>
+                                    <span class="profile_card_header">Profit Details?</span>
+                                    <hr />
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">your rate</label>
+                                        <input name="service_rate" type="number" class="form-control details_fields"
+                                            id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="service_rate_given">
+
+                                    <span>service given by us</span>
+                                    <div class="service_rate_final">hello</div>
+                                </div>
+
+                                <div class="service_rate_given">
+
+                                    <span>your profit</span>
+                                    <div class="service_rate_final">hello</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(3)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(3)">next</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>title and overview</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>4 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Some Extra Details</span>
+                                <hr />
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">title</label>
+                                    <input type="text" name="title" class="form-control details_fields"
+                                        id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">extra detail</label>
+                                    <textarea rows="5" style="resize: none;" cols="5" maxlength="100"
+                                        name="extra_details" class="form-control details_fields"
+                                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+
+
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(4)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(4)">next</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Profile photto</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>6 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Upload your profile pic</span>
+                                <hr />
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Your Profile Pic!</label>
+                                    <input name="profile_pic" type="file" id="test"
+                                        class="form-control-file details_fields" id="exampleFormControlFile1">
+
+                                    <style>
+
+                                    </style>
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(5)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(5)">next</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>location</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>5 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Location Details</span>
+                                <hr />
+
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">City</label>
+                                    <select name="city" class="form-control details_fields"
+                                        id="exampleFormControlSelect1">
+                                        <option value="jbp">1</option>
+                                        <option value="mumb">2</option>
+                                        <option value="delhi">3</option>
+                                        <option value="kerala">4</option>
+                                        <option value="raipur">5</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Address</label>
+                                    <textarea name="address" style="resize: none;" class="form-control details_fields"
+                                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Pincode</label>
+                                    <input type="text" name="pincode" class="form-control details_fields"
+                                        id="exampleFormControlInput1" placeholder="Your PinCode">
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(6)">back</a>
+                                <a href="#" style="float: right;" class="card-link" onclick="nextPage(6)">next</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profile_details_card" style="width: 100%; display:none;">
+                        <div class="card-body">
+                            <div class="card-title my_card_title">
+                                <span>Phone number</span>
+                            </div>
+                            <div class="card-subtitle mb-2 text-muted">
+                                <span>7 of 12</span>
+                            </div>
+                            <div class="card-text">
+                                <span class="profile_card_header">Your Contact Number</span>
+                                <hr />
+
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">phone</label>
+                                    <input type="email" class="form-control details_fields"
+                                        id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+                            </div>
+                            <div class="mt-3 card-title card_prev_next">
+
+                                <a href="#" style="float: left;" class="card-link" onclick="previousPage(7)">back</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div style="display:flex; justify-content: center; text-align: center;">
+                        <button type="submit" id="submitBtn" class="btn btn-secondary" style="display:none">
+                            submit
+                        </button>
+                    </div>
+
+                    <style>
+                        #submitBtn {
+                            color: whitesmoke;
+                            font-variant: small-caps;
+                            font-weight: bold;
+                            border-radius: 10px;
+                            padding: 5px;
+                            width: 40%;
+                            text-align: center;
+                            border: none;
+                            border: 2px solid rgb(187, 178, 177);
+                            background: whitesmoke;
+                            color: steelblue;
+                            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                            margin-top: 5px;
+
+                        }
+
+                        #submitBtn:hover {
+                            background: steelblue;
+                            color: whitesmoke;
+                        }
+                    </style>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        var profile_details_card = document.getElementsByClassName("profile_details_card");
+        var lastNextBtn = document.getElementById("lastNextBtn")
+        var submitBtn = document.getElementById("submitBtn")
+        for (const variable of profile_details_card) {
+            document.write(variable + "\n")
+        }
+        function nextPage(currentPageNo) {
+            //alert(currentPageNo)
+            if (currentPageNo >= 1) {
+                var fieldsArr = []
+                var elementsColl = profile_details_card[currentPageNo].getElementsByClassName("details_fields")
+
+                for (const fieldEle of elementsColl) {
+
+                    var fieldObj = {
+                        name: fieldEle.name,
+                        value: fieldEle.value,
+
+                    }
+
+                    //alert(JSON.stringify(fieldObj))
+                    fieldsArr.push(fieldObj)
+                }
+                // var name = elementsColl[0].name
+                // var value = elementsColl[0].value
+                // var js = {
+                //     name: name,
+                //     value: value
+
+                // }
+                //alert(JSON.stringify(js))
+                fetch('/employee/profile_details/upload_data_fetch', {
+                    method: "POST",
+                    headers: { "Content-type": "application/json;charset=UTF-8" },
+                    body:
+                        JSON.stringify({ fieldsArr: fieldsArr, pageNo: currentPageNo })
+
+                })
+                    .then(response => response.json())
+                    .then(json => console.log(json))
+                    .catch(err => console.log(err));
+
+                // var js={
+                //     name:value
+                // }
+                // alert(JSON.stringify(js))
+            }
+            profile_details_card[currentPageNo].style.display = "none"
+            profile_details_card[currentPageNo + 1].style.display = "block"
+
+            if (currentPageNo == 6) {
+                submitBtn.style.display = "block"
+                alert(currentPageNo)
+            }
+        }
+
+        function previousPage(currentPageNo) {
+            //alert(currentPageNo)
+
+
+            profile_details_card[currentPageNo].style.display = "none"
+            profile_details_card[currentPageNo - 1].style.display = "block"
+            if (currentPageNo == 7) {
+                submitBtn.style.display = "none"
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- category
+     <div class="card_content">
+                            <h3>Tell us about the work you do</h3>
+                            <br />
+                            <h5>What is the main service you offer</h5>
+                            <select class="form-select" aria-label="Default select example" style="width: 100%;">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <select class="form-select" aria-label="Default select example" style="width: 100%;">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                        </div> 
+
+-->
+
+
+
+<!-- 
+hourly rate
+
+  <div class="card_content">
+                            <div class="hourly_rate1">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, explicabo libero! Voluptatibus amet odio, distinctio animi sit exercitationem facilis ipsa quod quisquam, atque error aliquid. In nulla ullam soluta tenetur.</p>
+                                <div class="sub_hourly_rate1" style="position:relative;border:2px solid black;" >
+                                    <div class="hourly_rate1_text" style="display:inline-block">
+                                        <h3>Hourly rate</h3>
+                                        <p>total amount by paid by client   </p>
+
+                                    </div>
+                                    <div class="hourly_rate1_amount" style="display:inline-block;right:0px;position:absolute;border:2px solid black;">
+                                        <input  type="text"/>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="hourly_rate2"></div>
+                            <div class="hourly_rate3"></div>
+                           
+                        </div>
+
+
+
+
+-->
+
+
+
+
+
+<!-- expertise
+
+
+       <div class="card_content">
+                            <h3>select your skills</h3>
+                            <br />
+                            <div class="skills_pallete_container">
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">jajavajavava</span><span
+                                    class="skills_pallete">jajavajavava</span>
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">jajavajavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javajavajavajava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajavajavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajavajavava</span>
+                                <span class="skills_pallete">jajjajavajavavaavajavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">javjavaa</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jjavaava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jjajavajavavaava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">javjajavajavavaa</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javjajavajavavaa</span><span class="skills_pallete">javajajavajavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">jjajavajavavaava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">jajajavajavavava</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">jajajavajavavava</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">javjajavajavavaa</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">java</span><span
+                                    class="skills_pallete">javjajavajavavaa</span>
+                                <span class="skills_pallete">java</span><span class="skills_pallete">jajajavajavavava</span><span
+                                    class="skills_pallete">java</span>
+                            </div>
+                        </div>
+
+-->

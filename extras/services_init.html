@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+
+    <title>Hello, world!</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+        /* #Primary
+    ================================================== */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            color: #212112;
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: all 200ms linear;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 
+        .services_details_cont {
+            border: 1px solid red;
+        }
+
+        .services_init_row {
+            border: 1px solid green;
+        } */
+
+        .services_init_side_col {
+            padding: 0;
+            /* border: 1px solid pink; */
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            position: sticky;
+            top: 9rem;
+            z-index: 999;
+            height: max-content;
+            background: whitesmoke;
+
+
+            color: azure;
+
+        }
+
+        .services_init_wrap_side_links {
+            padding: 2rem;
+        }
+
+        .services_init_wrap_side_links ul {
+            list-style-type: none;
+            /* border: 1px solid red; */
+            padding: 0 0rem;
+            margin: 0;
+
+        }
+
+        .services_init_wrap_side_links ul li {
+            border-bottom: 1px solid black;
+            padding: 2rem;
+        }
+
+        .services_init_wrap_side_links ul li:last-child {
+            border-bottom: none;
+        }
+
+
+
+        .services_init_wrap_side_links ul li a {
+            border: none;
+            text-decoration: none;
+            color: black;
+        }
+
+        .services_init_wrap_side_links ul li a:hover {
+            color: #4099ff;
+
+        }
+
+
+        .side_menu_details {
+            margin: 1rem;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+
+
+
+
+        #test {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+
+
+        #test li {
+            padding: 0;
+            display: inline-block;
+        }
+
+        #test li a {
+            padding: 0;
+
+        }
+
+        #test li:last-child {
+            border-bottom: 1px solid black;
+        }
+
+        @media only screen and (max-width: 767px) {
+            body {
+                font-size: 1rem;
+            }
+
+            #test {
+                display: flex;
+            }
+
+            #test2 {
+                display: none;
+            }
+
+            .services_init_side_col {
+                top: 7rem;
+            }
+
+
+
+            /* .services_init_wrap_side_links {
+                padding: 0;
+
+            } */
+
+
+
+
+        }
+
+        .how_it_works_points {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2rem;
+
+
+        }
+
+
+        .how_it_works_points div {
+            text-align: left;
+            margin-left: 4rem;
+        }
+
+        .how_it_works_cont h2 {
+
+            text-align: center;
+        }
+
+        .how_it_works_cont {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .employees_cont {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+    </style>
+
+
+
+
+    <style>
+        .fas1 {
+            position: absolute;
+            top: 35%;
+            z-index: 999;
+
+            cursor: pointer;
+            color: rgb(110, 110, 110);
+            position: absolute;
+
+            left: 0;
+
+            height: 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+    </style>
+
+
+
+    <style>
+        .fas2 {
+            position: absolute;
+            top: 35%;
+            right: 0;
+            cursor: pointer;
+            color: rgb(110, 110, 110);
+            height: 15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+
+
+            z-index: 999;
+
+
+
+
+
+        }
+
+        .right_left_icon {
+            font-size: 5rem;
+
+
+
+
+        }
+
+        .red_border {
+            border: 1px solid red;
+        }
+
+        .black_border {
+            border: 1px solid black;
+        }
+
+        .green_border {
+            border: 1px solid green;
+        }
+    </style>
+
+
+
+
+    <style>
+        .how_it_works {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        }
+
+
+        .how_it_works div {
+            text-align: left;
+            margin-left: 4rem;
+        }
+    </style>
+
+
+
+
+
+    <style>
+        .bg-c-blue {
+            background: linear-gradient(45deg, #4099ff, #73b4ff);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg, #FFB64D, #ffcb80);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg, #FF5370, #ff869a);
+        }
+
+        .bg-c-azure {
+            background: linear-gradient(45deg, rgb(227, 255, 255), white);
+        }
+
+        .counter-block {
+            color: rgb(102, 102, 102);
+            border-radius: 1rem;
+            border: none;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .card {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 1rem;
+            border: none;
+            padding: 1rem;
+            width: 37rem;
+        }
+
+        .card img {
+            border-radius: 50%;
+            height: 10rem;
+            width: 10rem;
+
+            border: none;
+            outline-style: solid;
+            outline-color: grey;
+            outline-width: 0.1rem;
+            outline-offset: 0.25rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+    </style>
+
+
+
+    <style>
+        .show_more {
+            display: block;
+            opacity: 1;
+
+        }
+
+        .hide_read_more {
+            display: none;
+            /* transition: all 2s;
+        opacity: 0;
+        height: 0; */
+        }
+    </style>
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ===== Scrollbar CSS ===== */
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #595959 #ffffff;
+        }
+
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 0.8rem;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #595959;
+            border-radius: 15px;
+            border: 3px solid #ffffff;
+        }
+
+
+
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        /* .my_col{
+        border: 1px solid red;
+       
+    }  */
+
+        .side_menu_details {
+            margin: 1rem;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+
+
+
+
+        .side_menu {
+
+
+
+            /* border: 1px solid goldenrod;  */
+            margin: 0 2rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            background: rgb(108, 143, 247);
+
+
+
+        }
+
+        .side_menu ul {
+            list-style-type: none;
+
+            text-align: center;
+            margin: 0;
+
+
+
+        }
+
+        .side_menu ul li {
+            /* border: 1px solid palevioletred;  */
+            padding: 0;
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 0rem;
+
+        }
+
+        .side_menu ul li a {
+            /* border: 1px solid black;  */
+
+            text-decoration: none;
+            color: azure;
+
+
+        }
+
+        .side_menu ul li a:hover {
+            /* background: rgb(99, 95, 95); */
+            /* color:rgb(108, 143, 247) ;
+        background: white; */
+            border-bottom: 0.2rem solid azure;
+
+
+        }
+
+
+
+        .service_details_row {
+
+            padding: 0px;
+        }
+
+
+        .my_col {
+
+            padding: 0px;
+
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <br><br><br><br><br><br><br>
+
+
+
+
+    <div class="container-fluid services_init_cont">
+        <style>
+            .services_init_heading {
+                position: sticky;
+                top: 0;
+                z-index: 9999;
+                box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+            }
+
+            .heading_wrap {
+                padding: 0;
+
+                text-align: center;
+
+
+            }
+
+            .heading_wrap div {
+
+                float: right;
+
+                padding: 0;
+                margin: auto 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .heading_wrap div a {
+                text-decoration: none;
+                color: whitesmoke;
+                font-weight: bold;
+                background: #1D4350;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #A43931, #1D4350);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #A43931, #1D4350);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                border: none;
+                padding: 1.5rem 2rem;
+                text-align: center;
+                border-radius: 0.5rem;
+
+
+
+            }
+
+
+            .heading_wrap div a:hover {
+                color: #1D4350;
+                background: white;
+
+
+            }
+
+            .heading_wrap h3 {
+                display: inline-block;
+                margin: 2rem 0;
+            }
+
+            .services_init_heading_row {
+                padding: 0.5rem;
+                background: #ECE9E6;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+                color: rgb(95, 102, 109);
+
+            }
+        </style>
+
+        <div class="row services_init_heading ">
+            <div class="col-md-12 col-sm-12 col-12 services_init_heading_row ">
+                <div class="heading_wrap">
+                    <h3>Some Stuff </h3>
+                    <div class="">
+                        <a href="">Book Now</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row services_init_row mt-4">
+            <div class=" col-md-2 col-sm-12 col-12 services_init_side_col">
+                <div class="services_init_wrap_side_links">
+
+                    <ul id="test2">
+                        <li><a href="#how_it_works_ID">How it Works</a></li>
+                        <li><a href="#employees_ID">Employees</a></li>
+                        <li><a href="#div3">Customer Reviews</a></li>
+                        <li><a href="#div4">Our achievement</a></li>
+                        <li><a href="#div5">Extra Services</a></li>
+
+
+
+
+
+
+                    </ul>
+
+                    <ul id="test">
+
+                        <li><a href="#how_it_works_ID"><i class="fa fa-tasks" aria-hidden="true"></i></a></li>
+                        <li><a href="#employees_ID"><i class="fas fa-user-check"></i></a></li>
+                        <li><a href="#div3"><i class="far fa-comments"></i></a></li>
+                        <li><a href="#div4"><i class="fas fa-trophy"></i></a></li>
+                        <li><a href="#div5"><i class="fas fa-search-plus"></i></a></li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+            <div class=" col-md-8 col-sm-12 col-12 services_init_main_col">
+                <div class="services_init_main_content">
+
+
+                    <div class="how_it_works_cont" id="how_it_works_ID">
+                        <h2>How it Works</h2>
+
+
+
+
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the time slot</h3>
+                                <p>WE provide services from 9AM to 9PM all day every.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Services At Best</h3>
+                                <p>WE provide all types of cutomer support.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="employees_cont" id="employees_ID">
+
+
+
+                        <div class="container-fluid">
+                            <div class="row" style="position: relative;">
+                                <div class="fas1">
+                                    <i class="fas fa-arrow-left right_left_icon"></i>
+                                </div>
+
+
+                                <div class="col-md-4 col-sm-6 "
+                                    style="display: flex;justify-content: flex-start;align-items:center;padding-left:0;">
+                                    <div class="card" style="margin-left: 1rem;">
+
+
+                                        <div style="display: flex; align-items: center;justify-content: center;">
+                                            <img class="card-img-top" src="../public/images/4.jpg" alt="Card image cap">
+                                        </div>
+                                        <div class="card-body justify-content-center">
+                                            <h3 class="card-title">Name</h3>
+                                            <p class="card-text">AddressAddressAddressAddressAddressAddress.</p>
+                                            <div class="bg-c-azure counter-block ">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <i class="fa fa-comment"></i>
+                                                        <p>1256</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-user"></i>
+                                                        <p>8562</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-suitcase"></i>
+                                                        <p>189</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="customer_feedback_cont">
+                                                <h5>Customer feedback</h5>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row mt-5">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div id="more_text" class="hide_read_more">
+                                                    <!-- style="display:block;transition: all 2s;opacity: 0;height: 0;"> -->
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div id="read_more_btn">
+                                                    Read more
+                                                </div>
+                                                <style>
+                                                    .show_more {
+                                                        display: block;
+                                                        opacity: 1;
+
+                                                    }
+
+                                                    .hide_read_more {
+                                                        display: none;
+                                                        /* transition: all 2s;
+                                                    opacity: 0;
+                                                    height: 0; */
+                                                    }
+                                                </style>
+
+                                                <script>
+                                                    var readMore = document.getElementById("read_more_btn")
+                                                    var moreText = document.getElementById("more_text")
+                                                    //alert(readMore)
+                                                    readMore.onclick = () => {
+                                                        //alert("l")
+                                                        if (moreText.classList.contains("hide_read_more")) {
+                                                            //alert("l")
+                                                            readMore.innerHTML = "Read Less"
+                                                            moreText.classList.remove("hide_read_more")
+                                                            moreText.classList.add("show_more")
+
+
+
+                                                        } else {
+                                                            moreText.classList.remove("show_more")
+                                                            moreText.classList.add("hide_read_more")
+                                                            readMore.innerHTML = "Read More"
+                                                        }
+
+                                                        //alert("lop")
+                                                    }
+                                                // $('#read_more_btn').click(function () {
+                                                //     alert("hello")
+                                                //     $('#more_text').slideToggle();
+                                                //     if ($('#read_more_btn').text() == "Read more") {
+                                                //         $(this).text("Read less")
+                                                //     } else {
+                                                //         $(this).text("Read more")
+                                                //     }
+                                                // });
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6 " style="display: flex;justify-content: center;">
+                                    <div class="card">
+
+
+                                        <div style="display: flex; align-items: center;justify-content: center;">
+                                            <img class="card-img-top" src="../public/images/4.jpg" alt="Card image cap">
+                                        </div>
+                                        <div class="card-body justify-content-center">
+                                            <h3 class="card-title">Name</h3>
+                                            <p class="card-text">AddressAddressAddressAddressAddressAddress.</p>
+                                            <div class="bg-c-azure counter-block ">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <i class="fa fa-comment"></i>
+                                                        <p>1256</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-user"></i>
+                                                        <p>8562</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-suitcase"></i>
+                                                        <p>189</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="customer_feedback_cont">
+                                                <h5>Customer feedback</h5>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row mt-5">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div id="more_text" class="hide_read_more">
+                                                    <!-- style="display:block;transition: all 2s;opacity: 0;height: 0;"> -->
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div id="read_more_btn">
+                                                    Read more
+                                                </div>
+                                                <style>
+                                                    .show_more {
+                                                        display: block;
+                                                        opacity: 1;
+
+                                                    }
+
+                                                    .hide_read_more {
+                                                        display: none;
+                                                        /* transition: all 2s;
+                                                    opacity: 0;
+                                                    height: 0; */
+                                                    }
+                                                </style>
+
+                                                <script>
+                                                    var readMore = document.getElementById("read_more_btn")
+                                                    var moreText = document.getElementById("more_text")
+                                                    //alert(readMore)
+                                                    readMore.onclick = () => {
+                                                        //alert("l")
+                                                        if (moreText.classList.contains("hide_read_more")) {
+                                                            //alert("l")
+                                                            readMore.innerHTML = "Read Less"
+                                                            moreText.classList.remove("hide_read_more")
+                                                            moreText.classList.add("show_more")
+
+
+
+                                                        } else {
+                                                            moreText.classList.remove("show_more")
+                                                            moreText.classList.add("hide_read_more")
+                                                            readMore.innerHTML = "Read More"
+                                                        }
+
+                                                        //alert("lop")
+                                                    }
+                                                // $('#read_more_btn').click(function () {
+                                                //     alert("hello")
+                                                //     $('#more_text').slideToggle();
+                                                //     if ($('#read_more_btn').text() == "Read more") {
+                                                //         $(this).text("Read less")
+                                                //     } else {
+                                                //         $(this).text("Read more")
+                                                //     }
+                                                // });
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6 "
+                                    style="display: flex;justify-content: flex-end;align-items: center;padding-right: 0;">
+                                    <div class="card">
+
+
+                                        <div style="display: flex; align-items: center;justify-content: center;">
+                                            <img class="card-img-top" src="../public/images/4.jpg" alt="Card image cap">
+                                        </div>
+                                        <div class="card-body justify-content-center">
+                                            <h3 class="card-title">Name</h3>
+                                            <p class="card-text">AddressAddressAddressAddressAddressAddress.</p>
+                                            <div class="bg-c-azure counter-block ">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <i class="fa fa-comment"></i>
+                                                        <p>1256</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-user"></i>
+                                                        <p>8562</p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <i class="fa fa-suitcase"></i>
+                                                        <p>189</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="customer_feedback_cont">
+                                                <h5>Customer feedback</h5>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row mt-5">
+                                                    <div class="col-3">
+                                                        <img style="height: 5rem;width: 5rem;"
+                                                            src="../public/images/4.jpg" alt="">
+                                                    </div>
+
+                                                    <div class="col-9" style="text-align: start;">
+                                                        <h5>Name</h5>
+                                                        <p>reviews</p>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div id="more_text" class="hide_read_more">
+                                                    <!-- style="display:block;transition: all 2s;opacity: 0;height: 0;"> -->
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row mt-5">
+                                                        <div class="col-3">
+                                                            <img style="height: 5rem;width: 5rem;"
+                                                                src="../../public/images/1.jpg" alt="">
+                                                        </div>
+
+                                                        <div class="col-9" style="text-align: start;">
+                                                            <h5>Name</h5>
+                                                            <p>reviews</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div id="read_more_btn">
+                                                    Read more
+                                                </div>
+                                                <style>
+                                                    .show_more {
+                                                        display: block;
+                                                        opacity: 1;
+
+                                                    }
+
+                                                    .hide_read_more {
+                                                        display: none;
+                                                        /* transition: all 2s;
+                                                    opacity: 0;
+                                                    height: 0; */
+                                                    }
+                                                </style>
+
+                                                <script>
+                                                    var readMore = document.getElementById("read_more_btn")
+                                                    var moreText = document.getElementById("more_text")
+                                                    //alert(readMore)
+                                                    readMore.onclick = () => {
+                                                        //alert("l")
+                                                        if (moreText.classList.contains("hide_read_more")) {
+                                                            //alert("l")
+                                                            readMore.innerHTML = "Read Less"
+                                                            moreText.classList.remove("hide_read_more")
+                                                            moreText.classList.add("show_more")
+
+
+
+                                                        } else {
+                                                            moreText.classList.remove("show_more")
+                                                            moreText.classList.add("hide_read_more")
+                                                            readMore.innerHTML = "Read More"
+                                                        }
+
+                                                        //alert("lop")
+                                                    }
+                                                // $('#read_more_btn').click(function () {
+                                                //     alert("hello")
+                                                //     $('#more_text').slideToggle();
+                                                //     if ($('#read_more_btn').text() == "Read more") {
+                                                //         $(this).text("Read less")
+                                                //     } else {
+                                                //         $(this).text("Read more")
+                                                //     }
+                                                // });
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="fas2">
+                                    <i class="fas fa-arrow-right right_left_icon"></i>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="how_it_works_cont" id="how_it_works_ID2">
+                        <h2>How it Works</h2>
+
+
+
+
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the time slot</h3>
+                                <p>WE provide services from 9AM to 9PM all day every.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works_points">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Services At Best</h3>
+                                <p>WE provide all types of cutomer support.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <!-- <style>
+                .test{
+                 background: #F0F2F0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #000C40, #F0F2F0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                }
+            </style> -->
+
+
+            <div class="col-md-2 col-sm-12 col-12 red_border test">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- ######################################################### -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="service_details_container ">
+        <div class="service_details_row row">
+            <div class="my_col col-md-3 col-sm-12" style="position: sticky;top: 0px;z-index: 999;margin-bottom: 2rem;">
+                <div class="side_menu">
+
+                    <ul>
+                        <li><a href="#div1">How it Works</a></li>
+                        <li><a href="#div2">Employees</a></li>
+                        <li><a href="#div3">Customer Reviews</a></li>
+                        <li><a href="#div4">Our achievement</a></li>
+                        <li><a href="#div5">Extra Services</a></li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="my_col col-md-11 col-sm-12" style="border: 1px solid green;">
+                <div id="div1" class="side_menu_details">
+                    <div>
+                        <h2>How it Works</h2>
+                    </div>
+                    <div>
+
+                        <style>
+                            .how_it_works {
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2rem;
+                                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+                            }
+
+
+                            .how_it_works div {
+                                text-align: left;
+                                margin-left: 4rem;
+                            }
+                        </style>
+                        <div class="how_it_works">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the type of Service</h3>
+                                <p>WE provide all types of service for our customers.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Choose the time slot</h3>
+                                <p>WE provide services from 9AM to 9PM all day every.</p>
+                            </div>
+                        </div>
+                        <div class="how_it_works">
+                            <i class="fa fa-wrench" aria-hidden="true"></i>
+                            <div>
+                                <h3>Services At Best</h3>
+                                <p>WE provide all types of cutomer support.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <hr>
+                <hr>
+
+                <div id="employees" class="side_menu_details" style="overflow: scroll; overflow-x:hidden;">
+
+
+                    <div>
+                        <h2>Employees</h2>
+                    </div>
+
+                    <div>
+                        <p>some text about employees and their qualification</p>
+                        <ul>
+                            <li>Only 4+ rated professionals</li>
+                            <li>Minimum 3 years of experience</li>
+                            <li>background verified and trained </li>
+                        </ul>
+                    </div>
+                    <br><br><br>
+
+                    <div>
+
+
+
+                        <style>
+                            .bg-c-blue {
+                                background: linear-gradient(45deg, #4099ff, #73b4ff);
+                            }
+
+                            .bg-c-green {
+                                background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+                            }
+
+                            .bg-c-yellow {
+                                background: linear-gradient(45deg, #FFB64D, #ffcb80);
+                            }
+
+                            .bg-c-pink {
+                                background: linear-gradient(45deg, #FF5370, #ff869a);
+                            }
+
+                            .bg-c-azure {
+                                background: linear-gradient(45deg, rgb(227, 255, 255), white);
+                            }
+
+                            .counter-block {
+                                color: rgb(102, 102, 102);
+                                border-radius: 1rem;
+                                border: none;
+                                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                            }
+
+                            .card {
+                                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                                border-radius: 1rem;
+                                border: none;
+                                padding: 1rem;
+                                width: 37rem;
+                            }
+
+                            .card img {
+                                border-radius: 50%;
+                                height: 10rem;
+                                width: 10rem;
+
+                                border: none;
+                                outline-style: solid;
+                                outline-color: grey;
+                                outline-width: 0.1rem;
+                                outline-offset: 0.25rem;
+                                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                            }
+                        </style>
+
+
+                        <div class="card">
+
+
+                            <div>
+                                <img class="card-img-top" src="../../public/images/1.jpg" alt="Card image cap">
+                            </div>
+                            <div class="card-body justify-content-center">
+                                <h3 class="card-title">Name</h3>
+                                <p class="card-text">Address.</p>
+                                <div class="bg-c-azure counter-block ">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <i class="fa fa-comment"></i>
+                                            <p>1256</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <i class="fa fa-user"></i>
+                                            <p>8562</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <i class="fa fa-suitcase"></i>
+                                            <p>189</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="customer_feedback_cont">
+                                    <h5>Customer feedback</h5>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img style="height: 5rem;width: 5rem;" src="../../public/images/1.jpg"
+                                                alt="">
+                                        </div>
+
+                                        <div class="col-9" style="text-align: start;">
+                                            <h5>Name</h5>
+                                            <p>reviews</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-3">
+                                            <img style="height: 5rem;width: 5rem;" src="../../public/images/1.jpg"
+                                                alt="">
+                                        </div>
+
+                                        <div class="col-9" style="text-align: start;">
+                                            <h5>Name</h5>
+                                            <p>reviews</p>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div id="more_text" class="hide_read_more">
+                                        <!-- style="display:block;transition: all 2s;opacity: 0;height: 0;"> -->
+                                        <div class="row mt-5">
+                                            <div class="col-3">
+                                                <img style="height: 5rem;width: 5rem;" src="../../public/images/1.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <div class="col-9" style="text-align: start;">
+                                                <h5>Name</h5>
+                                                <p>reviews</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row mt-5">
+                                            <div class="col-3">
+                                                <img style="height: 5rem;width: 5rem;" src="../../public/images/1.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <div class="col-9" style="text-align: start;">
+                                                <h5>Name</h5>
+                                                <p>reviews</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row mt-5">
+                                            <div class="col-3">
+                                                <img style="height: 5rem;width: 5rem;" src="../../public/images/1.jpg"
+                                                    alt="">
+                                            </div>
+
+                                            <div class="col-9" style="text-align: start;">
+                                                <h5>Name</h5>
+                                                <p>reviews</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div id="read_more_btn">
+                                        Read more
+                                    </div>
+                                    <style>
+                                        .show_more {
+                                            display: block;
+                                            opacity: 1;
+
+                                        }
+
+                                        .hide_read_more {
+                                            display: none;
+                                            /* transition: all 2s;
+                                            opacity: 0;
+                                            height: 0; */
+                                        }
+                                    </style>
+
+                                    <script>
+                                        var readMore = document.getElementById("read_more_btn")
+                                        var moreText = document.getElementById("more_text")
+                                        //alert(readMore)
+                                        readMore.onclick = () => {
+                                            //alert("l")
+                                            if (moreText.classList.contains("hide_read_more")) {
+                                                //alert("l")
+                                                readMore.innerHTML = "Read Less"
+                                                moreText.classList.remove("hide_read_more")
+                                                moreText.classList.add("show_more")
+
+
+
+                                            } else {
+                                                moreText.classList.remove("show_more")
+                                                moreText.classList.add("hide_read_more")
+                                                readMore.innerHTML = "Read More"
+                                            }
+
+                                            //alert("lop")
+                                        }
+                                        // $('#read_more_btn').click(function () {
+                                        //     alert("hello")
+                                        //     $('#more_text').slideToggle();
+                                        //     if ($('#read_more_btn').text() == "Read more") {
+                                        //         $(this).text("Read less")
+                                        //     } else {
+                                        //         $(this).text("Read more")
+                                        //     }
+                                        // });
+
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+                <div id="div3" class="side_menu_details">
+
+                </div>
+                <div id="div4" class="side_menu_details">
+
+                </div>
+                <div id="div5" class="side_menu_details">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ===== Scrollbar CSS ===== */
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #595959 #ffffff;
+        }
+
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 0.8rem;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #595959;
+            border-radius: 15px;
+            border: 3px solid #ffffff;
+        }
+
+
+
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        /* .my_col{
+            border: 1px solid red;
+           
+        }  */
+
+        .side_menu_details {
+            margin: 1rem;
+            text-align: center;
+            /* border: 1px solid red; */
+
+        }
+
+
+
+
+        .side_menu {
+
+
+
+            /* border: 1px solid goldenrod;  */
+            margin: 0 2rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            background: rgb(108, 143, 247);
+
+
+
+        }
+
+        .side_menu ul {
+            list-style-type: none;
+
+            text-align: center;
+            margin: 0;
+
+
+
+        }
+
+        .side_menu ul li {
+            /* border: 1px solid palevioletred;  */
+            padding: 0;
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 0rem;
+
+        }
+
+        .side_menu ul li a {
+            /* border: 1px solid black;  */
+
+            text-decoration: none;
+            color: azure;
+
+
+        }
+
+        .side_menu ul li a:hover {
+            /* background: rgb(99, 95, 95); */
+            /* color:rgb(108, 143, 247) ;
+            background: white; */
+            border-bottom: 0.2rem solid azure;
+
+
+        }
+
+
+
+        .service_details_row {
+
+            padding: 0px;
+        }
+
+
+        .my_col {
+
+            padding: 0px;
+
+        }
+    </style>
+
+
+
+
+
+
+</body>
+
+
+<!-- 
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+    /* #Primary
+================================================== */
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+        color: #212112;
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 7%;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: all 200ms linear;
+        overflow-x: hidden;
+    }
+</style>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+
+<script>
+    var readMore = document.getElementById("read_more_btn")
+    var moreText = document.getElementById("more_text")
+    //alert(readMore)
+    readMore.onclick = () => {
+        //alert("l")
+        if (moreText.classList.contains("hide_read_more")) {
+            //alert("l")
+            readMore.innerHTML = "Read Less"
+            moreText.classList.remove("hide_read_more")
+            moreText.classList.add("show_more")
+
+
+
+        } else {
+            moreText.classList.remove("show_more")
+            moreText.classList.add("hide_read_more")
+            readMore.innerHTML = "Read More"
+        }
+
+        //alert("lop")
+    }
+        // $('#read_more_btn').click(function () {
+        //     alert("hello")
+        //     $('#more_text').slideToggle();
+        //     if ($('#read_more_btn').text() == "Read more") {
+        //         $(this).text("Read less")
+        //     } else {
+        //         $(this).text("Read more")
+        //     }
+        // });
+
+</script>
+
+</html>

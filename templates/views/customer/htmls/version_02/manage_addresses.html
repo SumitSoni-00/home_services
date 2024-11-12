@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- GLOBAL HEADER (START) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!-- <meta name="description" content="Smarthr - Bootstrap Admin Template">
+<meta name="keywords"
+    content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+<meta name="robots" content="noindex, nofollow"> -->
+    <title>
+        customer|addresses
+    </title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav_icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/font-awesome.min.css">
+
+    <!-- Lineawesome CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/line-awesome.min.css">
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/dataTables.bootstrap4.min.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/select2.min.css">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="/admin_dashboard/assets/css/bootstrap-datetimepicker.min.css">
+
+
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Font Awesome CDN -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/js/all.min.js"></script>
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    <!-- GLOBAL HEADER (END) -->
+
+</head>
+
+<body>
+
+    <!--========== HEADER / SIDE_BAR (START)==========-->
+    <!--========== CSS ==========-->
+    <style>
+        /*========== GOOGLE FONTS ==========*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        /*========== VARIABLES CSS ==========*/
+        :root {
+            --header-height: 3.5rem;
+            --nav-width: 219px;
+
+            /*========== Colors ==========*/
+            --first-color: #6923D0;
+            --first-color-light: #F4F0FA;
+            --title-color: #19181B;
+            --text-color: #58555E;
+            --text-color-light: #A5A1AA;
+            --body-color: #F9F6FD;
+            --container-color: #FFFFFF;
+
+            /*========== Font and typography ==========*/
+            --body-font: 'Poppins', sans-serif;
+            --normal-font-size: .938rem;
+            --small-font-size: .75rem;
+            --smaller-font-size: .75rem;
+
+            /*========== Font weight ==========*/
+            --font-medium: 500;
+            --font-semi-bold: 600;
+
+            /*========== z index ==========*/
+            --z-fixed: 100;
+        }
+
+        @media screen and (min-width: 1024px) {
+            :root {
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+
+        /*========== BASE ==========*/
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: var(--header-height) 0 0 0;
+            padding: 1rem 1rem 0;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            /* background-color: var(--body-color); */
+            background: #FFFFFF !important;
+            color: var(--text-color);
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*========== HEADER ==========*/
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--container-color);
+            box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+            padding: 0 1rem;
+            z-index: var(--z-fixed);
+        }
+
+        .header__container {
+            display: flex;
+            align-items: center;
+            height: var(--header-height);
+            justify-content: space-between;
+        }
+
+        .header__img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .header__logo {
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            display: none;
+        }
+
+        .header__search {
+            display: flex;
+            padding: .40rem .75rem;
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+        }
+
+        .header__input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: var(--first-color-light);
+        }
+
+        .header__input::placeholder {
+            font-family: var(--body-font);
+            color: var(--text-color);
+        }
+
+        .header__icon,
+        .header__toggle {
+            font-size: 1.2rem;
+        }
+
+        .header__toggle {
+            color: var(--title-color);
+            cursor: pointer;
+        }
+
+        /*========== NAV ==========*/
+        .nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100vh;
+            padding: 1rem 1rem 0;
+            background-color: var(--container-color);
+            box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
+            z-index: var(--z-fixed);
+            transition: .4s;
+        }
+
+        .nav__container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 3rem;
+            overflow: auto;
+            scrollbar-width: none;
+            /* For mozilla */
+        }
+
+        /* For Google Chrome and others */
+        .nav__container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav__logo {
+            font-weight: var(--font-semi-bold);
+            margin-bottom: 2.5rem;
+        }
+
+        .nav__list,
+        .nav__items {
+            display: grid;
+        }
+
+        .nav__list {
+            row-gap: 2.5rem;
+        }
+
+        .nav__items {
+            row-gap: 1.5rem;
+        }
+
+        .nav__subtitle {
+            font-size: var(--normal-font-size);
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            color: var(--text-color-light);
+        }
+
+        .nav__link {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+        }
+
+        .nav__link:hover {
+            color: var(--first-color);
+        }
+
+        .nav__icon {
+            font-size: 1.2rem;
+            margin-right: .5rem;
+        }
+
+        .nav__name {
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+            white-space: nowrap;
+        }
+
+        .nav__logout {
+            margin-top: 5rem;
+        }
+
+        /* Dropdown */
+        .nav__dropdown {
+            overflow: hidden;
+            max-height: 21px;
+            transition: .4s ease-in-out;
+        }
+
+        .nav__dropdown-collapse {
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+            margin-top: 1rem;
+        }
+
+        .nav__dropdown-content {
+            display: grid;
+            row-gap: .5rem;
+            padding: .75rem 2.5rem .75rem 1.8rem;
+        }
+
+        .nav__dropdown-item {
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-medium);
+            color: var(--text-color);
+        }
+
+        .nav__dropdown-item:hover {
+            color: var(--first-color);
+        }
+
+        .nav__dropdown-icon {
+            margin-left: auto;
+            transition: .4s;
+        }
+
+        /* Show dropdown collapse */
+        .nav__dropdown:hover {
+            max-height: 100rem;
+        }
+
+        /* Rotate icon arrow */
+        .nav__dropdown:hover .nav__dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /*===== Show menu =====*/
+        .show-menu {
+            left: 0;
+        }
+
+        /*===== Active link =====*/
+        .active {
+            color: var(--first-color);
+        }
+
+        /* ========== MEDIA QUERIES ==========*/
+        /* For small devices reduce search*/
+        @media screen and (max-width: 320px) {
+            .header__search {
+                width: 70%;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                padding: 1rem 3rem 0 6rem;
+            }
+
+            .header {
+                padding: 0 3rem 0 6rem;
+            }
+
+            .header__container {
+                height: calc(var(--header-height) + .5rem);
+            }
+
+            .header__search {
+                width: 300px;
+                padding: .55rem .75rem;
+            }
+
+            .header__toggle {
+                display: none;
+            }
+
+            .header__logo {
+                display: block;
+            }
+
+            .header__img {
+                width: 40px;
+                height: 40px;
+                order: 1;
+            }
+
+            .nav {
+                left: 0;
+                padding: 1.2rem 1.5rem 0;
+                width: 68px;
+                /* Reduced navbar */
+            }
+
+            .nav__items {
+                row-gap: 1.7rem;
+            }
+
+            .nav__icon {
+                font-size: 1.3rem;
+            }
+
+            /* Element opacity */
+            .nav__logo-name,
+            .nav__name,
+            .nav__subtitle,
+            .nav__dropdown-icon {
+                opacity: 0;
+                transition: .3s;
+            }
+
+
+            /* Navbar expanded */
+            .nav:hover {
+                width: var(--nav-width);
+            }
+
+            /* Visible elements */
+            .nav:hover .nav__logo-name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__subtitle {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__dropdown-icon {
+                opacity: 1;
+            }
+        }
+    </style>
+
+
+
+
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="/images/cleaning_vector.jpg" alt="" class="header__img">
+
+            <a href="/" class="header__logo">Homework</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="/" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Homework</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">My Stuff</h3>
+
+                        <!-- <a href="/employee/home_dash" class="nav__link active">
+                        <i class='bx bx-home nav__icon'></i>
+                        <span class="nav__name">Home</span>
+                    </a> -->
+
+
+
+                        <a href="/customer/page/bookings" class="nav__link">
+                            <i class='bx bx-cart-alt nav__icon'></i>
+                            <span class="nav__name">My Bookings</span>
+                        </a>
+
+                        <!-- <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="/employee/dash_profile" class="nav__dropdown-item">View Profile</a>
+                                <a href="#" class="nav__dropdown-item">Passwords</a>
+                                <a href="#" class="nav__dropdown-item">Mail</a>
+                                <a href="#" class="nav__dropdown-item">Accounts</a>
+                                <a href="#" class="nav__dropdown-item">Accounts</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                        <!-- <a href="#" class="nav__link">
+                        <i class='bx bx-message-rounded nav__icon'></i>
+                        <span class="nav__name">Messages</span>
+                    </a> -->
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">My Account</h3>
+
+                        <!-- <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon'></i>
+                            <span class="nav__name">Notifications</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">Blocked</a>
+                                <a href="#" class="nav__dropdown-item">Silenced</a>
+                                <a href="#" class="nav__dropdown-item">Publish</a>
+                                <a href="#" class="nav__dropdown-item">Program</a>
+                            </div>
+                        </div>
+
+                    </div> -->
+
+                        <!-- <a href="#" class="nav__link">
+                        <i class='bx bx-compass nav__icon'></i>
+                        <span class="nav__name">Explore</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-bookmark nav__icon'></i>
+                        <span class="nav__name">Saved</span>
+                    </a> -->
+
+                        <a href="/customer/page" class="nav__link">
+                            <i class='bx bx-id-card nav__icon'></i>
+                            <span class="nav__name"> Profile Information</span>
+                        </a>
+
+
+
+                        <a href="/customer/page/addresses" class="nav__link">
+                            <i class='bx bx-location-plus nav__icon'></i>
+                            <span class="nav__name">Manage Addresses</span>
+                        </a>
+                        <a href="/customer/page/settings" class="nav__link">
+                            <i class='bx bx-pencil nav__icon'></i>
+                            <span class="nav__name">Settings</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/logout" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+    <!--/========== HEADER / SIDE_BAR (END)==========-->
+
+
+    <!--========== CONTENTS ==========-->
+    <main>
+        <section>
+
+
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+
+                body {
+                    overflow-x: hidden;
+                    font-family: 'Poppins', sans-serif !important;
+                    background: white !important;
+
+
+
+
+                }
+
+
+                [class*='col-'] {
+
+                    padding: 0;
+                }
+
+                .address_box_cont .address_box_heading h4 {
+                    font-weight: 600 !important;
+                    letter-spacing: 2px !important;
+                    font-size: 18px !important;
+                }
+
+                .address_box_cont .second_heading h5 {
+                    font-size: 18px !important;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                    color: rgb(37, 37, 250) !important;
+                }
+
+                .address_box_cont .address_fa {
+                    color: gray !important;
+                    font-size: 25px !important;
+                }
+
+                .address_box_cont .second_heading {
+                    padding: 15px !important;
+                }
+
+                .address_box_cont .second_col {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+                }
+
+                .address_box_cont .address_box_cont {
+                    background: white !important;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+                }
+
+                a {
+                    text-decoration: none !important;
+                }
+
+                .address_box_cont .second_heading:hover .h5_second {
+                    color: black;
+                }
+
+                .address_box_cont .address_item {
+                    border: 1.5px solid gainsboro !important;
+                    padding: 20px !important;
+                }
+
+                .address_box_cont .item_nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    font-size: 15px !important;
+                    color: darkgray !important;
+                }
+
+                .address_box_cont .three_dots {
+                    font-size: 20px !important;
+                    color: gray !important;
+                }
+
+                .address_box_cont .tag_span {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    padding: 5px !important;
+                    font-weight: 800 !important;
+                }
+
+                .address_box_cont .item_head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                .address_box_cont .item_footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                .address_box_cont .item_head h3 {
+                    font-weight: 600 !important;
+                    font-size: 17px !important;
+                    margin-right: 20px !important;
+                }
+
+                .address_box_cont .item_head h3:last-child {
+                    color: rgb(74, 1, 148) !important;
+                }
+
+                .address_box_cont .footer_main {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+                    /* max-width: 70% !important; */
+                    font-weight: 500 !important;
+                    font-size: 17px !important;
+                    color: black !important;
+                    padding: 15px !important;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                }
+
+
+
+
+                @media screen and (min-width: 768px) {
+                    .footer_main {
+
+                        max-width: 70% !important;
+
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    .footer_main {
+
+                        max-width: 100% !important;
+                        width: 100% !important;
+                    }
+                }
+
+                .address_box_cont .menu_span {
+                    cursor: pointer !important;
+
+                    padding: 10px !important;
+                }
+
+                .address_box_cont .menu_span:hover {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                }
+
+                .address_box_cont .form_item {
+                    /* border: 1.5px solid rgb(190, 187, 187); */
+                    font-size: 13px;
+                    font-weight: 700;
+                    /* background: aliceblue; */
+                    padding: 5px 10px !important;
+                    border-radius: 3px;
+
+
+                }
+
+                .address_box_cont .form_item .my_form_control {
+                    outline: none;
+                    /* border: 1px solid rgb(203, 203, 203); */
+                    box-shadow: none;
+                    border-radius: 2px;
+                    border: 1.5px solid white;
+                }
+
+                .address_box_cont .form_item .my_form_control:focus {
+                    border: 1.5px solid rgb(37, 37, 250) !important;
+                }
+
+                .address_box_cont .address_textarea:focus {
+                    border: 1.5px solid rgb(37, 37, 250) !important;
+                }
+
+
+
+                .address_box_cont .address_textarea {
+                    resize: none;
+                    outline: none;
+                    box-shadow: none;
+                    border-radius: 2px;
+                    border: 1.5px solid gainsboro;
+                    background: #fafafa;
+                    padding: 15px;
+                }
+
+                .address_box_cont .new_address_box {
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                }
+
+                .invalid_field {
+                    border: 1.5px solid tomato !important;
+                }
+            </style>
+<!-- 
+            <%if(saveAddressFailed){%>
+                <div class="alert alert-danger alert-dismissible mt-5"
+                    style="position: absolute;z-index: 9999;left:50%;right:50%; transform: translate(-50%,-50%);width: max-content; ">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <b>Error!</b> Only You can manage four addresses.
+                </div>
+                <%}%> -->
+
+
+                    <div class="container address_box_cont">
+
+                        <div class="row p-lg-5 p-3">
+
+                            <div class="col-12">
+                                <div class="address_box_heading">
+                                    <h4>Manage Addresses</h4>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-3 second_col">
+                                <a href="#" id="add_new_a">
+                                    <div class="second_heading">
+                                        <h5 class="h5_second"><i class="far fa-address-card address_fa"></i> &nbsp;
+                                            Add New
+                                            Address</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 new_address_box mt-3 p-4" id="address_box_id" style="display: none;">
+                                <form class="mt-3" id="new_address_form" action="new_address" method="post">
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                            <label for="full_name">Full Name</label>
+                                            <input type="text" name="full_name" required
+                                                class="form-control my_form_control" id="full_name"
+                                                placeholder="Full Name">
+                                        </div>
+                                        <div class="form-group col-lg-5 form_item">
+                                            <label for="pinCode">Pin Code</label>
+                                            <input type="text" name="pinCode" required
+                                                class="form-control my_form_control" id="pinCode"
+                                                placeholder="Pin Code">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+
+
+                                        <div class="form-group col-lg-5  mr-lg-3 form_item">
+                                            <label for="address"> Address</label>
+                                            <textarea class="form-control  address_textarea" required id="address"
+                                                rows="3" name="address"></textarea>
+                                        </div>
+
+                                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                            <label for="contact_phone">Contact Phone </label>
+                                            <input type="text" class="form-control my_form_control" id="contact_phone"
+                                                placeholder=" Contact Phone" required name="contact_phone">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                            <label for="city">City </label>
+                                            <input type="text" required class="form-control my_form_control" id="city"
+                                                placeholder=" City" name="city">
+                                        </div>
+                                        <div class="form-group col-lg-5  form_item">
+                                            <label for="state">State</label>
+                                            <select id="state" required class="form-control my_form_control"
+                                                name="state">
+                                                <option selected hidden value="null">State</option>
+                                                
+                                                    <option value=" <%=state.id%>">
+                                                       state 1
+                                                    </option>
+                                                    <option value=" <%=state.id%>">
+                                                        state 1
+                                                     </option>
+                                                     <option value=" <%=state.id%>">
+                                                        state 1
+                                                     </option>
+                                                     <option value=" <%=state.id%>">
+                                                        state 1
+                                                     </option>
+                                                     <option value=" <%=state.id%>">
+                                                        state 1
+                                                     </option>
+                                                     <option value=" <%=state.id%>">
+                                                        state 1
+                                                     </option>
+                                                    
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                                            <label for="alternate_phone">Alternate Phone </label>
+                                            <input type="text" name="alternate_phone"
+                                                class="form-control my_form_control" id="alternate_phone"
+                                                placeholder=" Alternate Phone">
+                                        </div>
+                                        <div class="form-group col-lg-5 form_item">
+                                            <label for="locality"> Locality</label>
+                                            <input type="text" required class="form-control my_form_control"
+                                                id="locality" placeholder=" Locality" name="locality">
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="button" class="btn btn-primary" id="cancel_add_new">Cancel</button>
+                                </form>
+                            </div>
+
+                            <div class="col-12 mt-5">
+                                <div>
+                                    
+                                        <div class="address_item mb-3">
+                                            <div class="item_nav">
+
+                                                <div>
+
+                                                    <div class="dropdown show">
+                                                        <span href="#" id="item_menu" data-toggle="dropdown"
+                                                            aria-haspopup="true" role="button" aria-expanded="false"
+                                                            class="menu_span">
+                                                            <i class="fas fa-ellipsis-v three_dots "></i>
+                                                        </span>
+
+                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                            aria-labelledby="item_menu">
+                                                            <a class="dropdown-item" href="#">Edit</a>
+                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item_head">
+                                                <h3>
+                                                    fullName
+                                                </h3>
+                                                <h3>
+                                                contactPhone
+                                                </h3>
+                                            </div>
+
+                                            <div class="item_footer">
+                                                <p class="footer_main mt-3">
+                                                    address
+                                                        <br>
+                                                        <b>
+                                                            city,
+                                                        </b><b>
+                                                            state ,
+                                                        </b><b>
+                                                            pinCode
+                                                        </b>
+                                                        <br>
+                                                        <small
+                                                            style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;font-size: 15px;letter-spacing: 1px;color: rgb(18, 126, 122);">
+                                                            locality
+                                                                
+                                                        </small>
+
+                                                </p>
+                                                <div>
+                                                    <span class="tag_span">
+                                                        Home
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="address_item mb-3">
+                                            <div class="item_nav">
+
+                                                <div>
+
+                                                    <div class="dropdown show">
+                                                        <span href="#" id="item_menu" data-toggle="dropdown"
+                                                            aria-haspopup="true" role="button" aria-expanded="false"
+                                                            class="menu_span">
+                                                            <i class="fas fa-ellipsis-v three_dots "></i>
+                                                        </span>
+
+                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                            aria-labelledby="item_menu">
+                                                            <a class="dropdown-item" href="#">Edit</a>
+                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item_head">
+                                                <h3>
+                                                    <%=value.fullName%>
+                                                </h3>
+                                                <h3>
+                                                    <%=value.contactPhone%>
+                                                </h3>
+                                            </div>
+
+                                            <div class="item_footer">
+                                                <p class="footer_main mt-3">
+                                                    <%=value.address%>
+                                                        <br>
+                                                        <b>
+                                                            <%=value.city%>,
+                                                        </b><b>
+                                                            <%=value.state%> ,
+                                                        </b><b>
+                                                            <%=value.pinCode%>
+                                                        </b>
+                                                        <br>
+                                                        <small
+                                                            style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;font-size: 15px;letter-spacing: 1px;color: rgb(18, 126, 122);">
+                                                            <%=value.locality%>
+                                                                <%=value.alternatePhone?"," + value.alternatePhone:""%>
+                                                        </small>
+
+                                                </p>
+                                                <div>
+                                                    <span class="tag_span">
+                                                        <%=value.addressType?value.addressType:"Home"%>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ##################################################################################################################### -->
+
+    <!-- GLOBAL FOOTER (START) -->
+    <%-include(".. /../partials/global/global_footer")%>
+        <!-- GLOBAL FOOTER (END) -->
+
+
+
+
+        <!--========== HEADER / SIDE_BAR JS (START)==========-->
+        <%-include(".. /../partials/customer/dash_header_side_bar_js")%>
+            <!--/========== HEADER / SIDE_BAR JS (END)==========-->
+
+
+
+
+
+
+
+            <script>
+                const addNewAddress = document.getElementById("add_new_a")
+                const addressBoxEL = document.getElementById("address_box_id")
+                const cancelBtn = document.getElementById("cancel_add_new")
+                addNewAddress.onclick = () => {
+                    addressBoxEL.style.display = "block"
+                }
+
+                cancelBtn.onclick = () => {
+                    addressBoxEL.style.display = "none"
+                }
+            </script>
+
+
+
+
+
+
+
+
+            <script>
+                const fullNameEL = document.getElementById("full_name")
+                const pinCodeEL = document.getElementById("pinCode")
+                const addressEL = document.getElementById("address")
+                const cityEL = document.getElementById("city")
+                const stateEL = document.getElementById("state")
+                const localityEL = document.getElementById("locality")
+                const contactPhoneEL = document.getElementById("contact_phone")
+
+                const alternatePhoneEL = document.getElementById("alternate_phone")
+
+
+
+
+                const newAddressForm = document.getElementById("new_address_form")
+                newAddressForm.onsubmit = () => {
+
+
+
+                    let isNamesValid = namesValid()
+                    let isAddressesValid = addressesValid()
+                    let isPhonesValid = phonesValid()
+
+                    let isFormValid = isNamesValid && isPhonesValid && isAddressesValid
+
+                    return isFormValid
+
+
+
+
+                }
+
+                function addressesValid() {
+                    let valid = true
+                    if (!isCorrectAddress(addressEL.value)) {
+                        valid = false
+                        alert("addr")
+
+                        showError(addressEL)
+                    } else {
+                        showSuccess(addressEL)
+                    }
+
+                    if (stateEL.selectedIndex === 0) {
+                        valid = false
+
+                        showError(stateEL)
+                    } else {
+                        showSuccess(stateEL)
+                    }
+
+                    if (!isPinCodeValid(pinCodeEL.value)) {
+                        valid = false
+                        showError(pinCodeEL)
+                    } else {
+                        showSuccess(pinCodeEL)
+
+                    }
+
+
+                    if (!isCorrectCity(cityEL.value)) {
+                        valid = false
+                        showError(cityEL)
+                    } else {
+                        showSuccess(cityEL)
+
+                    }
+
+
+                    if (!isCorrectLocality(localityEL.value)) {
+                        valid = false
+
+                        showError(localityEL)
+                    } else {
+                        showSuccess(localityEL)
+                    }
+
+                    return valid
+                }
+
+
+                function isPinCodeValid(value) {
+                    var regex = /^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+                    return regex.test(value.trim());
+                }
+
+
+                function namesValid() {
+                    //alert("p")
+                    let valid = true
+                    if (!isCorrectName(fullNameEL.value)) {
+                        valid = false
+                        alert("lol")
+                        showError(fullNameEL)
+                    } else {
+                        showSuccess(fullNameEL)
+                    }
+
+
+                    return valid
+                }
+
+                function phonesValid() {
+                    // alert("p")
+                    let valid = true
+                    if (!isCorrectPhone(contactPhoneEL.value)) {
+                        valid = false
+
+                        showError(contactPhoneEL)
+                    } else {
+                        showSuccess(contactPhoneEL)
+                    }
+                    if (alternatePhoneEL.value.trim().length !== 0) {
+                        if (!isCorrectPhone(alternatePhoneEL.value)) {
+                            valid = false
+                            showError(alternatePhoneEL)
+                        } else {
+                            // alert(alternatePhoneEL.value.trim().length)
+                            showSuccess(alternatePhoneEL)
+                        }
+                    } else {
+                        showSuccess(alternatePhoneEL)
+                    }
+
+
+                    return valid
+                }
+
+
+                // window.onload=()=>{
+                //     var regex=/^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+                //     alert( regex.test("482 002"))
+                // }
+
+
+                function isCorrectName(value) {
+                    var regex = /^[a-zA-Z ]{2,30}$/;
+
+                    return regex.test(value.trim());
+                    // return value.trim().length==0?false:true
+                }
+
+                function isCorrectCity(value) {
+                    var regex = /^[a-zA-Z ]{2,100}$/;
+
+                    return regex.test(value.trim());
+                    // return value.trim().length==0?false:true
+                }
+
+                // window.onload=()=>{
+                //     var regex = /^[a-zA-Z,. ]{2,30}$/;
+
+
+                // }
+
+                function isCorrectAddress(value) {
+                    var regex = /^[a-zA-Z0-9,.() ]{20,200}$/;
+                    return regex.test(value.trim());
+                }
+
+                function isCorrectLocality(value) {
+                    var regex = /^[a-zA-Z0-9,.() ]{2,50}$/;
+                    return regex.test(value.trim());
+                }
+
+
+
+
+                function isCorrectPhone(value) {
+                    var regex = /^[6-9]{1}[0-9]{9}$/;
+
+                    return regex.test(value.trim());
+                    // return value.trim().length==0?false:true
+                }
+
+                function showError(inputEl) {
+                    //inputEl.classList.remove("valid_field")
+                    inputEl.classList.add("invalid_field")
+
+                }
+
+                function showSuccess(inputEl) {
+                    inputEl.classList.remove("invalid_field")
+                    //inputEl.classList.add("valid_field")
+
+                }
+            </script>
+
+            <%if(changeUrl){%>
+                <script>
+                    if (window.history.replaceState) {
+                        //alert(window.location.href)
+                        window.history.replaceState(null, null, "<%=url%>")
+                    }
+                </script>
+
+                <%}%>
+
+
+</body>
+
+</html>

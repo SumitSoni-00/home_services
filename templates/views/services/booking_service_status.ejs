@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/js/all.min.js"></script>
+
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Hello, world!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,500&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
+
+            letter-spacing: 0.1rem;
+            overflow-x: hidden;
+
+        }
+
+        .img_col {
+            text-align: center;
+            padding: 0px;
+
+
+        }
+
+        .details_col {
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .details_col h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .details_col h3 {
+            font-size: 2rem;
+            font-weight: 550;
+            color: gray;
+            text-align: center;
+        }
+
+        .confirmed_cont {
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            border-radius: 10px;
+
+
+
+
+        }
+
+        .img_col img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            position: relative;
+
+
+        }
+
+        .confirmed_order_nav_col {
+            padding: 0;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirmed_order_nav_col a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            text-decoration: none;
+            color: rebeccapurple;
+            transition: all 0.5s ease;
+            padding: 10px;
+        }
+
+        .confirmed_order_nav_col a:hover {
+            color: blueviolet;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .order_details {
+            position: absolute;
+            top: 0;
+            right: 1%;
+            padding: 0;
+
+
+            /* border: 2px solid gainsboro; */
+            background: rgba(250, 248, 248, 0.959);
+
+        }
+
+        .order_details h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgb(15, 15, 158);
+
+        }
+
+        .order_details p {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: rgb(136, 136, 161);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 10px 5px;
+            max-width: 30rem;
+
+        }
+
+        .pin_date {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+
+        .pin_date h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pin_date h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .up_arrow_wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .up_arrow_wrap .up_arrow_icon {
+            font-size: 2rem;
+        }
+
+        .resp_cont {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .confirmed_order_nav_col {
+                padding: 7px 0;
+            }
+
+            .order_details {
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%, 0%)
+            }
+
+            .confirmed_order_nav_row {
+                display: none;
+            }
+
+            .resp_cont {
+                display: block;
+            }
+
+
+
+
+        }
+
+        .resp_btn_col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: whitesmoke;
+        }
+
+
+        .resp_btn_col {
+            padding: 10px 10px 10px 0px;
+
+        }
+
+        .ham_btn {
+            color: rgb(15, 15, 158);
+            border: none;
+            font-size: 20px;
+        }
+
+        .feedBack_wrap {
+            position: absolute;
+            top: 0;
+
+            width: 40%;
+            height: 100%;
+            padding: 20px;
+
+        }
+
+        .feedback_form {
+            
+            padding: 0;
+            margin-top: 10px;
+            height: 80%;
+        }
+
+        .text_area_feedback {
+            width: 100%;
+            resize: none;
+            height: 90%;
+            padding: 15px;
+            font-size: 2rem;
+            border: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: royalblue;
+            letter-spacing: 0.3rem;
+            outline: none;
+
+
+
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border-radius: 10px;
+
+
+        }
+    </style>
+
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #999999;
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B3AFB3;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #D9D9D9;
+            border-radius: 0px;
+            box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+        }
+    </style>
+
+    <style>
+        /* CSS */
+        .button-60 {
+            align-items: center;
+            appearance: none;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: .375em;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: #363636;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 2rem;
+            height: 2.5em;
+            justify-content: center;
+            line-height: 1.5;
+            padding: calc(.5em - 1px) 1em;
+            position: relative;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .button-60:active {
+            border-color: #4a4a4a;
+            outline: 0;
+        }
+
+        .button-60:focus {
+            border-color: #485fc7;
+            outline: 0;
+        }
+
+        .button-60:hover {
+            border-color: #b5b5b5;
+        }
+
+        .button-60:focus:not(:active) {
+            box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="container resp_cont">
+        <div class="row ">
+            <div class="col-12  resp_btn_col">
+                <button class="btn ham_btn" type="button" data-toggle="collapse" data-target="#resp_nav">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+        <div class="collapse" id="resp_nav">
+            <div class="row">
+                <div class="col-md-3 confirmed_order_nav_col">
+                    <a href="/"><i class='bx bx-home-alt'></i> &nbsp; Home</a>
+                </div>
+                <div class="col-md-3 confirmed_order_nav_col">
+                    <a href="/customer/page/bookings"><i class='bx bx-cart'></i> &nbsp; My Bookings</a>
+                </div>
+                <div class="col-md-3 confirmed_order_nav_col">
+                    <a href=""><i class='bx bxl-unity'></i> &nbsp; Something</a>
+                </div>
+                <div class="col-md-3 confirmed_order_nav_col">
+                    <a data-toggle="collapse" href="#collapseExample" role="button" data-target="#user_details_box"><i
+                            class='bx bx-menu'></i> &nbsp; Details</a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container confirmed_cont mt-0">
+        <div class="row confirmed_order_nav_row">
+            <div class="col-md-3  confirmed_order_nav_col">
+                <a href="/"><i class='bx bx-home-alt'></i> &nbsp; Home</a>
+            </div>
+            <div class="col-md-3 confirmed_order_nav_col">
+                <a href="/customer/page/bookings"><i class='bx bx-cart'></i> &nbsp; My Bookings</a>
+            </div>
+            <div class="col-md-3 confirmed_order_nav_col">
+                <a href=""><i class='bx bxl-unity'></i> &nbsp; Something</a>
+            </div>
+            <div class="col-md-3 confirmed_order_nav_col">
+                <a data-toggle="collapse" href="#collapseExample" role="button" data-target="#user_details_box"><i
+                        class='bx bx-menu'></i> &nbsp; Details</a>
+
+
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-12 img_col">
+                <div style="position: relative;">
+                    
+
+
+                    <img src=" /images/order_confirmed.png" alt="confirmed">
+                    <div class="feedBack_wrap">
+                        <form  style="height: 60%;">
+                            <div class="wrap">
+                                <div class="stars">
+
+                                    <label class="rate">
+                                        <input type="radio" name="radio1" id="star1" value="star1">
+                                        <div class="face"></div>
+                                        <i class="far fa-star star one-star"></i>
+                                    </label>
+                                    <label class="rate">
+                                        <input type="radio" name="radio1" id="star2" value="star2">
+                                        <div class="face"></div>
+                                        <i class="far fa-star star two-star"></i>
+                                    </label>
+                                    <label class="rate">
+                                        <input type="radio" name="radio1" id="star3" value="star3">
+                                        <div class="face"></div>
+                                        <i class="far fa-star star three-star"></i>
+                                    </label>
+                                    <label class="rate">
+                                        <input type="radio" name="radio1" id="star4" value="star4">
+                                        <div class="face"></div>
+                                        <i class="far fa-star star four-star"></i>
+                                    </label>
+                                    <label class="rate">
+                                        <input type="radio" name="radio1" id="star5" value="star5">
+                                        <div class="face"></div>
+                                        <i class="far fa-star star five-star"></i>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="feedback_form">
+                                <textarea name="" id="" class="text_area_feedback" maxlength="300"
+                                    placeholder="Please give us feedback!"></textarea>
+
+                                <button class="button-60" role="button">Submit</button>
+
+
+
+
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+                <div class="order_details collapse" id="user_details_box">
+                    <div class="up_arrow_wrap"><i class='bx bx-up-arrow bx-flip-horizontal bx-tada up_arrow_icon'></i>
+                    </div>
+                    <h3 class="mt-2">
+                        <%=details.name%>
+                    </h3>
+                    <p>
+                        <%=details.address%>
+                    </p>
+                    <div class="pin_date">
+                        <h4>
+                            <%=details.pinCode%>
+                        </h4>
+                        <h5>26 July 2021</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 details_col">
+                <h2>Your Order is Successfull</h2>
+                <h3>Thank you for using our service</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .wrap {
+            width: 250px;
+            height: 50px;
+            background: azure;
+            /* position: absolute;
+            top: 5%;
+
+            left: 1%; */
+            /* transform: translate(-50%, -50%);  */
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+        .stars {
+            width: fit-content;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .star {
+            color: #91a6ff !important;
+        }
+
+        .rate {
+            height: 50px;
+            margin-left: -5px;
+            padding: 5px;
+            font-size: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .rate input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            pointer-events: none;
+        }
+
+        .star-over::after {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 16px;
+            content: "\f005";
+            display: inline-block;
+            color: #d3dcff;
+            z-index: 1;
+            position: absolute;
+            top: 17px;
+            left: 10px;
+        }
+
+        .rate:nth-child(1) .face::after {
+            content: "\f119";
+            /* ☹ */
+        }
+
+        .rate:nth-child(2) .face::after {
+            content: "\f11a";
+            /* 😐 */
+        }
+
+        .rate:nth-child(3) .face::after {
+            content: "\f118";
+            /* 🙂 */
+        }
+
+        .rate:nth-child(4) .face::after {
+            content: "\f580";
+            /* 😊 */
+        }
+
+        .rate:nth-child(5) .face::after {
+            content: "\f59a";
+            /* 😄 */
+        }
+
+        .face {
+            opacity: 0;
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: #91a6ff;
+            border-radius: 5px;
+            top: -50px;
+            left: 2px;
+            transition: 0.2s;
+            pointer-events: none;
+        }
+
+        .face::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: "\f0dd";
+            display: inline-block;
+            color: #91a6ff;
+            z-index: 1;
+            position: absolute;
+            left: 9px;
+            bottom: -15px;
+        }
+
+        .face::after {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            display: inline-block;
+            color: #fff;
+            z-index: 1;
+            position: absolute;
+            left: 5px;
+            top: -1px;
+        }
+
+        .rate:hover .face {
+            opacity: 1;
+        }
+
+        /* Not sure if I like this or not. */
+        /* Makes the emoji stay displayed */
+        /* input[type="radio"]:checked + .face {
+	opacity: 1 !important;
+} */
+    </style>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        if (window.history.replaceState) {
+            //alert(window.location.href)
+            window.history.replaceState(null, null, "/")
+        }
+    </script>
+
+
+    <script>
+        $(function () {
+
+            $(document).on({
+                mouseover: function (event) {
+                    $(this).find('.far').addClass('star-over');
+                    $(this).prevAll().find('.far').addClass('star-over');
+                },
+                mouseleave: function (event) {
+                    $(this).find('.far').removeClass('star-over');
+                    $(this).prevAll().find('.far').removeClass('star-over');
+                }
+            }, '.rate');
+
+
+            $(document).on('click', '.rate', function () {
+                if (!$(this).find('.star').hasClass('rate-active')) {
+                    $(this).siblings().find('.star').addClass('far').removeClass('fas rate-active');
+                    $(this).find('.star').addClass('rate-active fas').removeClass('far star-over');
+                    $(this).prevAll().find('.star').addClass('fas').removeClass('far star-over');
+                } else {
+                    console.log('has');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

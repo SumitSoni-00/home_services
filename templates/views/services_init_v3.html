@@ -1,0 +1,2096 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+    <title>Hello, world!</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            color: #212112;
+
+
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        div[class*=col-] {
+            padding: 0;
+
+        }
+    </style>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(134deg, #7C5CFA 57%, #B3AFB3 100%);
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #052AFA;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #DBDBDB;
+            border-radius: 30px;
+            box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+        }
+    </style>
+    <style>
+        .text-white {
+            color: #fff !important;
+        }
+
+
+
+
+
+
+
+        .bg-dark {
+            background-color: rgba(24, 28, 33, 0.9) !important;
+        }
+
+        .opacity-50 {
+            opacity: .5 !important;
+        }
+
+        .bg-dark {
+            background-color: rgba(24, 28, 33, 0.9) !important;
+        }
+
+
+        @media (min-width: 992px) {
+
+            .container,
+            .container-fluid {
+                padding-right: 2rem;
+                padding-left: 2rem;
+            }
+        }
+
+
+
+        .ui-w-100 {
+            width: 100px !important;
+            height: 100px;
+        }
+
+        .font-weight-bold {
+            font-weight: 500 !important;
+        }
+
+        .opacity-75 {
+            opacity: .75 !important;
+        }
+
+        .empl_col {
+            /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+            padding: 10rem;
+        }
+    </style>
+
+
+    <style>
+        .services_init_side_col {
+            padding: 0;
+            /* border: 1px solid pink; */
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            position: sticky;
+            top: 9rem;
+            z-index: 999;
+            height: max-content;
+            background: whitesmoke;
+
+
+            color: azure;
+
+        }
+
+        .services_init_wrap_side_links {
+            padding: 2rem;
+        }
+
+        .services_init_wrap_side_links ul {
+            list-style-type: none;
+            /* border: 1px solid red; */
+            padding: 0 0rem;
+            margin: 0;
+
+        }
+
+        .services_init_wrap_side_links ul li {
+            border-bottom: 1px solid black;
+            padding: 2rem;
+        }
+
+        .services_init_wrap_side_links ul li:last-child {
+            border-bottom: none;
+        }
+
+
+
+        .services_init_wrap_side_links ul li a {
+            border: none;
+            text-decoration: none;
+            color: black;
+        }
+
+        .services_init_wrap_side_links ul li a:hover {
+            color: #4099ff;
+
+        }
+    </style>
+
+
+    <style>
+        .services_init_heading_row {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .heading_wrap {
+
+            text-align: center;
+
+
+
+        }
+
+        .heading_wrap div {
+
+            float: right;
+
+            padding: 0;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0.5rem 0.5rem 0.5rem 0;
+
+
+        }
+
+        .heading_wrap h3 {
+            display: inline-block;
+            margin: 2rem 0;
+
+
+
+
+        }
+
+
+
+
+        .heading_wrap div a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: bold;
+            background: #1D4350;
+
+            background: -webkit-linear-gradient(to left, #A43931, #1D4350);
+
+            background: linear-gradient(to left, #A43931, #1D4350);
+
+
+            border: none;
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+
+
+
+
+        }
+
+
+        .heading_wrap div a:hover {
+            color: #1D4350;
+            background: white;
+
+
+        }
+
+
+
+        .services_init_heading_col {
+            background: #ECE9E6;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+            color: rgb(95, 102, 109);
+
+        }
+
+        .employee_header {
+
+            text-align: center;
+            padding: 1.5rem 0;
+            /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: white;
+        }
+
+        .employee_header h1 {
+            color: grey;
+        }
+
+        .empl_col:nth-child(2) {
+
+            margin-top: 0 !important;
+        }
+
+        .empl_col:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .empl_col {
+            margin: 0 !important;
+        }
+
+        @media only screen and (max-width: 992px) {
+            .services_init_side_col {
+                display: none;
+            }
+        }
+
+
+
+        .sub_works ul li {
+            /* display: inline-block; */
+            list-style-type: none;
+            padding: 0;
+
+            padding-top: 0.5rem;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            padding-bottom: 0;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            background: whitesmoke;
+        }
+
+        .sub_works ul {
+
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .sub_works ul li a {
+
+            padding: 0;
+            color: grey;
+            text-decoration: none;
+        }
+
+        .extra_box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+
+
+
+
+            padding: 0px;
+            color: rgb(138, 126, 126);
+            border-radius: 5px;
+
+            /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;  */
+
+            /* background: #bc4e9c;
+            
+            background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
+           
+            background: linear-gradient(to right, #f80759, #bc4e9c); */
+
+        }
+
+
+
+        .extra_box span {
+            margin-right: 8px;
+        }
+
+        .extra_box span:last-child {
+            margin-right: 0px;
+        }
+
+        .extra_box span {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.5s;
+
+        }
+
+        .extra_box span:hover {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            color: teal;
+            padding: 0.5rem;
+
+        }
+
+        /* padding: 15px !important;  */
+        /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+        /* background: #bc4e9c; */
+        /* fallback for old browsers */
+        /* background: -webkit-linear-gradient(to right, #f80759, #bc4e9c); */
+        /* Chrome 10-25, Safari 5.1-6 */
+        /* background: linear-gradient(to right, #f80759, #bc4e9c); */
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        /* color: black;
+            border: 1px solid red;
+          
+
+        } 
+        
+
+        /* .extra_box span {
+
+            margin-right: 10px;
+           
+        } */
+
+        @media only screen and (max-width: 1460px) {
+            .extra_box {
+
+                flex-direction: column;
+                width: max-content;
+            }
+
+            .extra_box span {
+                margin-right: 0px;
+            }
+
+            .extra_box span {
+                margin-bottom: 5px;
+            }
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .extra_box {
+
+                flex-direction: row;
+                width: max-content;
+            }
+
+            .extra_box span {
+                margin-bottom: 0px;
+            }
+
+            .extra_box span {
+                margin-right: 8px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .extra_box {
+
+
+                width: 100%;
+            }
+
+
+        }
+    </style>
+
+
+    <style>
+        h3 {
+            margin-top: 2%;
+            margin-left: 27%;
+            font-family: 'Manrope', sans-serif;
+            font-weight: bold
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 40px
+        }
+
+        img {
+            border-radius: 10px;
+            padding-right: 5px;
+            width: 60px;
+            height: 55px
+        }
+
+        img:hover {
+            cursor: pointer
+        }
+
+        .round .align-self-start {
+            border-radius: 100%;
+            width: 45px;
+            height: 40px
+        }
+
+        .media .comment {
+            background: #F4F4F4;
+            border: none;
+            border-radius: 10px
+        }
+
+        h6.user {
+            color: #5C5C5C;
+            font-size: 15px !important;
+            padding-left: 15px !important;
+            margin-bottom: 0
+        }
+
+        h6.user:hover {
+            cursor: pointer;
+            text-decoration: underline
+        }
+
+        p.text {
+            margin-bottom: 0;
+            color: #8A8A8A !important;
+            font-size: 14px
+        }
+
+        .ml-auto {
+            margin-right: 10px
+        }
+
+        p .reply {
+            color: #5C5C5C;
+            font-size: 15px
+        }
+
+        @media screen and (min-width: 576px) {
+            .comment {
+                width: 470px !important
+            }
+        }
+
+        .red_border {
+            border: 2px solid red;
+        }
+
+        .black_border {
+            border: 2px solid black;
+        }
+
+        .see_more {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .see_more_a {
+            font-family: cursive;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            font-variant: small-caps;
+            color: black;
+            cursor: pointer;
+            transition: color 0s ease;
+            transition: all 0.5s;
+            padding: 10px;
+            border-radius: 5px;
+            background: #ebebeb;
+            font-size: 1.5rem;
+            border: none;
+            text-decoration: none !important;
+
+
+        }
+
+        .see_more button:hover {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+
+
+
+        }
+
+        .user_comments_li {
+            width: 70%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container-fluid  ">
+        <div class="row services_init_heading_row ">
+            <div class="col-12 services_init_heading_col">
+                <div class="heading_wrap">
+                    <h3>Some Stuff </h3>
+                    <div>
+                        <a href="/services/start_booking/<%=category%>" >Book Now</a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1  col-lg-2 services_init_side_col">
+                <div class="services_init_wrap_side_links">
+
+                    <ul id="test2" class="side_nav_wrap">
+                        <li><a href="#how_it_works_ID">How it Works</a></li>
+                        <li><a href="#employees_ID">Employees</a></li>
+                        <li><a href="#div3">Customer Reviews</a></li>
+                        <li><a href="#div4">Our achievement</a></li>
+                        <li><a href="#div5">Extra Services</a></li>
+
+
+
+
+
+
+                    </ul>
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-8 col-md-12" style="padding: 15px;">
+
+
+                <div class="how_it_works_cont" id="how_it_works_ID" style="padding: 2rem;">
+                    <h2>How it Works</h2>
+                    <hr>
+
+
+
+
+                    <div class="how_it_works_points">
+                        <i class="fa fa-wrench" aria-hidden="true"></i>
+                        <div>
+                            <h3>Choose the type of Service</h3>
+                            <p>WE provide all types of service for our customers.</p>
+                        </div>
+                    </div>
+                    <div class="how_it_works_points">
+                        <i class="fa fa-wrench" aria-hidden="true"></i>
+                        <div>
+                            <h3>Choose the type of Service</h3>
+                            <p>WE provide all types of service for our customers.</p>
+                        </div>
+                    </div>
+                    <div class="how_it_works_points">
+                        <i class="fa fa-wrench" aria-hidden="true"></i>
+                        <div>
+                            <h3>Choose the time slot</h3>
+                            <p>WE provide services from 9AM to 9PM all day every.</p>
+                        </div>
+                    </div>
+                    <div class="how_it_works_points">
+                        <i class="fa fa-wrench" aria-hidden="true"></i>
+                        <div>
+                            <h3>Services At Best</h3>
+                            <p>WE provide all types of cutomer support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="empl_profile_wrap" style="overflow-y: scroll;height: 90vh;">
+                    <div class="employee_header">
+                        <h1>Employees</h1>
+                    </div>
+
+                    <div>
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="">
+                                        <div class="panel-group">
+                                            <div class="panel panel-default">
+
+                                                <div id="collapse1" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+
+
+
+                                                        <div class="card ">
+                                                            <ul class="list-unstyled  ">
+                                                                <!--FIRST LIST ITEM-->
+                                                                <li class="media   user_comments_li">
+                                                                    <span class="round pt-2">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user pt-2">Michael Andrews</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">3m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Liked four of your artworks</p>
+                                                                        <div class="images mt-2"> <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <!--SECOND LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Craig Carder</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">9m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Followed you</p>
+                                                                    </div>
+                                                                </li>
+
+
+                                                                <!--THIRD LIST ITEM-->
+                                                                <li class="media  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Allison Kenter, Alhena
+                                                                                Culhane and
+                                                                                57
+                                                                                others</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">1h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text mb-2">Liked your "Women in Jail"
+                                                                            Artwork
+                                                                        </p> <img
+                                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                    </div>
+                                                                </li>
+                                                                <!--FOURTH LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">2h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Commented on your"Le Doux"
+                                                                            Artwork</p>
+                                                                        <div class="media mt-3 comment"> <a
+                                                                                href="#"><img
+                                                                                    src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                                    class="align-self-center mr-1"></a>
+                                                                            <div class="media-body">
+                                                                                <p class="reply">"Love this art, what
+                                                                                    inspired
+                                                                                    you to
+                                                                                    make this<br>&nbsp;wonderful
+                                                                                    artwork?"</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <!--FIFTH LIST ITEM-->
+                                                                <li class="media user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Leo Aminoff</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">24h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Bought your "Palace of
+                                                                            Versailles"</p>
+                                                                    </div>
+                                                                </li>
+
+
+
+
+
+                                                            </ul>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                    <div class="panel-footer"></div>
+                                                </div>
+
+                                                <div
+                                                    class="panel-heading  d-flex justify-content-center align-content-center">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#collapse1" class="see_more_a">
+                                                            read feedback</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <hr>
+
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="">
+                                        <div class="panel-group">
+                                            <div class="panel panel-default">
+
+                                                <div id="collapse2" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+
+
+
+                                                        <div class="card ">
+                                                            <ul class="list-unstyled  ">
+                                                                <!--FIRST LIST ITEM-->
+                                                                <li class="media   user_comments_li">
+                                                                    <span class="round pt-2">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user pt-2">Michael Andrews</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">3m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Liked four of your artworks</p>
+                                                                        <div class="images mt-2"> <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <!--SECOND LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Craig Carder</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">9m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Followed you</p>
+                                                                    </div>
+                                                                </li>
+
+
+                                                                <!--THIRD LIST ITEM-->
+                                                                <li class="media  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Allison Kenter, Alhena
+                                                                                Culhane and
+                                                                                57
+                                                                                others</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">1h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text mb-2">Liked your "Women in Jail"
+                                                                            Artwork
+                                                                        </p> <img
+                                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                    </div>
+                                                                </li>
+                                                                <!--FOURTH LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">2h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Commented on your"Le Doux"
+                                                                            Artwork</p>
+                                                                        <div class="media mt-3 comment"> <a
+                                                                                href="#"><img
+                                                                                    src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                                    class="align-self-center mr-1"></a>
+                                                                            <div class="media-body">
+                                                                                <p class="reply">"Love this art, what
+                                                                                    inspired
+                                                                                    you to
+                                                                                    make this<br>&nbsp;wonderful
+                                                                                    artwork?"</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <!--FIFTH LIST ITEM-->
+                                                                <li class="media user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Leo Aminoff</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">24h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Bought your "Palace of
+                                                                            Versailles"</p>
+                                                                    </div>
+                                                                </li>
+
+
+
+
+
+                                                            </ul>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                    <div class="panel-footer"></div>
+                                                </div>
+
+                                                <div
+                                                    class="panel-heading  d-flex justify-content-center align-content-center">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#collapse2" class="see_more_a">
+                                                            read feedback</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <hr>
+
+
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="">
+                                        <div class="panel-group">
+                                            <div class="panel panel-default">
+
+                                                <div id="collapse3" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+
+
+
+                                                        <div class="card ">
+                                                            <ul class="list-unstyled  ">
+                                                                <!--FIRST LIST ITEM-->
+                                                                <li class="media   user_comments_li">
+                                                                    <span class="round pt-2">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user pt-2">Michael Andrews</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">3m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Liked four of your artworks</p>
+                                                                        <div class="images mt-2"> <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <!--SECOND LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Craig Carder</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">9m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Followed you</p>
+                                                                    </div>
+                                                                </li>
+
+
+                                                                <!--THIRD LIST ITEM-->
+                                                                <li class="media  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Allison Kenter, Alhena
+                                                                                Culhane and
+                                                                                57
+                                                                                others</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">1h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text mb-2">Liked your "Women in Jail"
+                                                                            Artwork
+                                                                        </p> <img
+                                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                    </div>
+                                                                </li>
+                                                                <!--FOURTH LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">2h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Commented on your"Le Doux"
+                                                                            Artwork</p>
+                                                                        <div class="media mt-3 comment"> <a
+                                                                                href="#"><img
+                                                                                    src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                                    class="align-self-center mr-1"></a>
+                                                                            <div class="media-body">
+                                                                                <p class="reply">"Love this art, what
+                                                                                    inspired
+                                                                                    you to
+                                                                                    make this<br>&nbsp;wonderful
+                                                                                    artwork?"</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <!--FIFTH LIST ITEM-->
+                                                                <li class="media user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Leo Aminoff</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">24h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Bought your "Palace of
+                                                                            Versailles"</p>
+                                                                    </div>
+                                                                </li>
+
+
+
+
+
+                                                            </ul>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                    <div class="panel-footer"></div>
+                                                </div>
+
+                                                <div
+                                                    class="panel-heading  d-flex justify-content-center align-content-center">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#collapse3" class="see_more_a">
+                                                            read feedback</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <hr>
+
+
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="">
+                                        <div class="panel-group">
+                                            <div class="panel panel-default">
+
+                                                <div id="collapse4" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+
+
+
+                                                        <div class="card ">
+                                                            <ul class="list-unstyled  ">
+                                                                <!--FIRST LIST ITEM-->
+                                                                <li class="media   user_comments_li">
+                                                                    <span class="round pt-2">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user pt-2">Michael Andrews</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">3m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Liked four of your artworks</p>
+                                                                        <div class="images mt-2"> <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                            <img
+                                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <!--SECOND LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Craig Carder</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">9m</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Followed you</p>
+                                                                    </div>
+                                                                </li>
+
+
+                                                                <!--THIRD LIST ITEM-->
+                                                                <li class="media  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Allison Kenter, Alhena
+                                                                                Culhane and
+                                                                                57
+                                                                                others</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">1h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text mb-2">Liked your "Women in Jail"
+                                                                            Artwork
+                                                                        </p> <img
+                                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                                    </div>
+                                                                </li>
+                                                                <!--FOURTH LIST ITEM-->
+                                                                <li class="media my-5  user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">2h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Commented on your"Le Doux"
+                                                                            Artwork</p>
+                                                                        <div class="media mt-3 comment"> <a
+                                                                                href="#"><img
+                                                                                    src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                                    class="align-self-center mr-1"></a>
+                                                                            <div class="media-body">
+                                                                                <p class="reply">"Love this art, what
+                                                                                    inspired
+                                                                                    you to
+                                                                                    make this<br>&nbsp;wonderful
+                                                                                    artwork?"</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <!--FIFTH LIST ITEM-->
+                                                                <li class="media user_comments_li">
+                                                                    <span class="round">
+                                                                        <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                                            class="align-self-start mr-3">
+                                                                    </span>
+                                                                    <div class="media-body">
+                                                                        <div class="row d-flex">
+                                                                            <h6 class="user">Leo Aminoff</h6>
+                                                                            <!-- <div class="ml-auto">
+                                                                                <p class="text">24h</p>
+                                                                            </div> -->
+                                                                        </div>
+                                                                        <p class="text">Bought your "Palace of
+                                                                            Versailles"</p>
+                                                                    </div>
+                                                                </li>
+
+
+
+
+
+                                                            </ul>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </div>
+                                                    <div class="panel-footer"></div>
+                                                </div>
+
+                                                <div
+                                                    class="panel-heading  d-flex justify-content-center align-content-center">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#collapse4" class="see_more_a">
+                                                            read Feedback</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="container ">
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12  mt-1 d-flex  justify-content-center  ">
+                                    <div class="card">
+                                        <ul class="list-unstyled">
+                                            
+                                            <li class="media">
+                                                <span class="round pt-2">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user pt-2">Michael Andrews</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">3m</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Liked four of your artworks</p>
+                                                    <div class="images mt-2"> <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                          
+                                            <li class="media my-5">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Craig Carder</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">9m</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Followed you</p>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="media">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Allison Kenter, Alhena Culhane and 57
+                                                            others</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">1h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-2">Liked your "Women in Jail" Artwork</p> <img
+                                                        src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="media my-5">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">2h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Commented on your"Le Doux" Artwork</p>
+                                                    <div class="media mt-3 comment"> <a href="#"><img
+                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                class="align-self-center mr-1"></a>
+                                                        <div class="media-body">
+                                                            <p class="reply">"Love this art, what inspired you to
+                                                                make this<br>&nbsp;wonderful artwork?"</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="media">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Leo Aminoff</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">24h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Bought your "Palace of Versailles"</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <div class="see_more">
+
+                                        <button class="btn " type="button" data-toggle="collapse"
+                                            data-target="#collapseExample" aria-expanded="false"
+                                            aria-controls="collapseExample">
+                                            <i class="fas fa-chevron-circle-down"></i>&nbsp;see more
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                                        <img src="../../public/public/images/5.jpg" alt
+                                            class="d-block ui-w-100 rounded-circle ">
+                                        <div class="media-body ml-5" style="padding: 0 !important;">
+                                            <div class="container-fluid">
+                                                <div class="row">
+
+                                                    <div class="col-md-9 col-12">
+                                                        <h4 class=" font-weight-bold mb-4">John Doe</h4>
+                                                        <div class="text-muted mb-4">
+                                                            Niwadganj ,latkari ka padav
+                                                        </div>
+                                                        <div style=" margin:0;" class="sub_works mt-3">
+
+                                                            <ul>
+
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+                                                                <li><a href="">
+                                                                        work
+                                                                    </a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-12 extra_box_col">
+                                                        <div class="extra_box">
+                                                            <span> <i class="fa fa-star extra_box_icon"></i> &nbsp;
+                                                                5.0</span>
+                                                            <span> <i class="fa fa-book extra_box_icon"></i>&nbsp;12
+                                                                orders</span>
+                                                            <span><i class="fa fa-comment extra_box_icon"></i>&nbsp;
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12  mt-1 d-flex  justify-content-center  ">
+                                    <div class="card">
+                                        <ul class="list-unstyled">
+                                           
+                                            <li class="media">
+                                                <span class="round pt-2">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user pt-2">Michael Andrews</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">3m</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Liked four of your artworks</p>
+                                                    <div class="images mt-2"> <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/check-male.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                        <img
+                                                            src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="media my-5">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Craig Carder</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">9m</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Followed you</p>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="media">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/bubbles/100/000000/groups.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Allison Kenter, Alhena Culhane and 57
+                                                            others</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">1h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-2">Liked your "Women in Jail" Artwork</p> <img
+                                                        src="https://img.icons8.com/bubbles/100/000000/lock-female-user.png" />
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="media my-5">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/office/100/000000/user-group-man-man--v1.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Giana Ekstrom Bothman</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">2h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Commented on your"Le Doux" Artwork</p>
+                                                    <div class="media mt-3 comment"> <a href="#"><img
+                                                                src="https://img.icons8.com/bubbles/100/000000/lock-male-user.png"
+                                                                class="align-self-center mr-1"></a>
+                                                        <div class="media-body">
+                                                            <p class="reply">"Love this art, what inspired you to
+                                                                make this<br>&nbsp;wonderful artwork?"</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                           
+                                            <li class="media">
+                                                <span class="round">
+                                                    <img src="https://img.icons8.com/office/100/000000/user-group-woman-woman.png"
+                                                        class="align-self-start mr-3">
+                                                </span>
+                                                <div class="media-body">
+                                                    <div class="row d-flex">
+                                                        <h6 class="user">Leo Aminoff</h6>
+                                                        <div class="ml-auto">
+                                                            <p class="text">24h</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">Bought your "Palace of Versailles"</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <div class="see_more">
+
+                                        <button class="btn " type="button" data-toggle="collapse"
+                                            data-target="#collapseExample" aria-expanded="false"
+                                            aria-controls="collapseExample">
+                                            <i class="fas fa-chevron-circle-down"></i>&nbsp;see more
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr> -->
+
+
+
+
+                    </div>
+
+
+
+                    <!-- <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
+                            class="d-block ui-w-100 rounded-circle">
+                        <div class="media-body ml-5">
+                            <h4 class="font-weight-bold mb-4">John Doe</h4>
+                            <div class="text-muted mb-4">
+                                Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram
+                                duo,
+                                porro principes ei has.
+                            </div>
+                            <a href="#" class="d-inline-block text-dark">
+                                <strong>234</strong>
+                                <span class="text-muted">followers</span>
+                            </a>
+                            <a href="#" class="d-inline-block text-dark ml-3">
+                                <strong>111</strong>
+                                <span class="text-muted">following</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
+                            class="d-block ui-w-100 rounded-circle">
+                        <div class="media-body ml-5">
+                            <h4 class="font-weight-bold mb-4">John Doe</h4>
+                            <div class="text-muted mb-4">
+                                Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram
+                                duo,
+                                porro principes ei has.
+                            </div>
+                            <a href="#" class="d-inline-block text-dark">
+                                <strong>234</strong>
+                                <span class="text-muted">followers</span>
+                            </a>
+                            <a href="#" class="d-inline-block text-dark ml-3">
+                                <strong>111</strong>
+                                <span class="text-muted">following</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
+                            class="d-block ui-w-100 rounded-circle">
+                        <div class="media-body ml-5">
+                            <h4 class="font-weight-bold mb-4">John Doe</h4>
+                            <div class="text-muted mb-4">
+                                Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram
+                                duo,
+                                porro principes ei has.
+                            </div>
+                            <a href="#" class="d-inline-block text-dark">
+                                <strong>234</strong>
+                                <span class="text-muted">followers</span>
+                            </a>
+                            <a href="#" class="d-inline-block text-dark ml-3">
+                                <strong>111</strong>
+                                <span class="text-muted">following</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <div class=" media my-4 mx-auto empl_col" style="padding: 4rem;">
+
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
+                            class="d-block ui-w-100 rounded-circle">
+                        <div class="media-body ml-5">
+                            <h4 class="font-weight-bold mb-4">John Doe</h4>
+                            <div class="text-muted mb-4">
+                                Lorem ipsum dolor sit amet, nibh suavitate qualisque ut nam. Ad harum primis electram
+                                duo,
+                                porro principes ei has.
+                            </div>
+                            <a href="#" class="d-inline-block text-dark">
+                                <strong>234</strong>
+                                <span class="text-muted">followers</span>
+                            </a>
+                            <a href="#" class="d-inline-block text-dark ml-3">
+                                <strong>111</strong>
+                                <span class="text-muted">following</span>
+                            </a>
+                        </div>
+
+                    </div> -->
+
+
+                </div>
+
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const testDiv = document.getElementById("test_div")
+        function test() {
+            testDiv.style.display = "block"
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+
+</html>

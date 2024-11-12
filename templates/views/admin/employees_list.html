@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+
+    <style>
+        body {
+            background: #F8F8FF;
+            margin-top: 20px;
+        }
+
+        /********************
+    EMPLOYERS LIST
+*********************/
+        .employers-list-bg {
+            padding: 180px 0px 80px 0px;
+            background-image: url("../images/employers-list-bg.jpg");
+            background-size: cover;
+            position: relative;
+            background-position: center center;
+        }
+
+        .employers-list-img img {
+            max-width: 80px;
+            -webkit-box-shadow: 0 0 5px 0px #d7d7d7;
+            box-shadow: 0 0 5px 0px #d7d7d7;
+        }
+
+        .employers-icons li {
+            margin: 0px !important;
+        }
+
+        /********************
+   EMPLOYERS DETAILS
+*********************/
+        .employers-details-bg {
+            padding: 180px 0px 80px 0px;
+            background-image: url("../images/employers-details-bg.jpg");
+            background-size: cover;
+            position: relative;
+            background-position: center center;
+        }
+
+        .employers-details {
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .employers-share-job li a {
+            height: 40px;
+            width: 40px;
+            color: #777777;
+            text-align: center;
+            font-size: 19px;
+            display: inline-block;
+            line-height: 38px;
+            border-radius: 4px;
+            border: 1px solid #dddddd;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            margin: 6px 0;
+            transition: all 0.5s;
+        }
+
+        .employers-share-job li a:hover {
+            background-color: #ff4f6c;
+            color: #ffffff;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            border-color: #ff4f6c;
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+            -webkit-box-shadow: 0 3px 20px -8px #000000;
+            box-shadow: 0 3px 20px -8px #000000;
+        }
+
+        @media (min-width: 200px) and (max-width: 768px) {
+            .m-14 {
+                margin: 14px 0px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .employers-details-time h6 {
+                text-align: center !important;
+            }
+
+            .employers-details-item-border {
+                margin-bottom: 1rem !important;
+                margin-top: 1rem !important;
+            }
+        }
+
+        .list-grid-item {
+            border: 1px solid #ececec;
+            border-radius: 6px;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .list-grid-item:hover {
+            -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+            box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            border-color: transparent;
+        }
+
+        .left-sidebar .card-body {
+            border-bottom: 1px solid #ececec;
+        }
+
+        .custom-control {
+            margin: 11px 20px;
+        }
+
+        .card-header {
+            background-color: transparent;
+            margin-bottom: 0 !important;
+        }
+
+        .pagination.job-pagination .page-link {
+            border-radius: 50% !important;
+            margin: 0 4px;
+            height: 46px;
+            width: 45px;
+            line-height: 29px;
+            text-align: center;
+            color: #777777;
+        }
+
+        .page-item.active .page-link {
+            background-color: #ff4f6c;
+            border-color: #ff4f6c;
+            color: #ffffff !important;
+        }
+
+        .f-14 {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.9.95/css/materialdesignicons.css"
+        rel="stylesheet">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="show-results mt-4">
+                    <div class="float-left">
+                        <h5 class="text-dark mb-0 pt-2">Showing Results : 1-9 of 300</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="left-sidebar">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapseOne" class="job-list" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                <div class="card-header" id="headingOne">
+                                    <h6 class="mb-0 text-dark f-18">Last Activity</h6>
+                                </div>
+                            </a>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio1">Last
+                                            Hour</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio2">Last
+                                            24 hours</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio3" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio3">Last
+                                            7 days</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio4" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio4">Last
+                                            14 days</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio5" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio5">Last
+                                            30 days</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- collapse one end -->
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapsetwo" class="job-list" aria-expanded="true"
+                                aria-controls="collapsetwo">
+                                <div class="card-header" id="headingtwo">
+                                    <h6 class="mb-0 text-dark f-18">Team Size</h6>
+                                </div>
+                            </a>
+                            <div id="collapsetwo" class="collapse show" aria-labelledby="headingtwo">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck7">1 To
+                                            50</label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck8">51
+                                            To 100</label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck3">101
+                                            To 150</label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck4">151
+                                            To 200</label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck5">201
+                                            To 250</label>
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customCheck6">251
+                                            To 300</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- collapse one end -->
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapsethree" class="job-list" aria-expanded="true"
+                                aria-controls="collapsethree">
+                                <div class="card-header" id="headingthree">
+                                    <h6 class="mb-0 text-dark f-18">Categories</h6>
+                                </div>
+                            </a>
+                            <div id="collapsethree" class="collapse show" aria-labelledby="headingthree">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio7" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio7">Web
+                                            Designer</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio8" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio8">Graphic Designer</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio9" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15" for="customRadio9">PHP
+                                            Developer</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio10" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio10">UI/UX Designer</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio11" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio11">Banking</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio12" name="customRadio1"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio12">Accountancy</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-4">
+                            <a data-toggle="collapse" href="#collapsefour" class="job-list" aria-expanded="true"
+                                aria-controls="collapsefour">
+                                <div class="card-header" id="headingfour">
+                                    <h6 class="mb-0 text-dark f-18">Gender</h6>
+                                </div>
+                            </a>
+                            <div id="collapsefour" class="collapse show" aria-labelledby="headingfour">
+                                <div class="card-body p-0">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio13" name="customRadio3"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio13">Male</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio14" name="customRadio3"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio14">Female</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio15" name="customRadio3"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label ml-1 text-muted f-15"
+                                            for="customRadio15">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- collapse one end -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Kyle Jones</a></h5>
+                                    <p class="text-muted f-14 mb-0">Web Delveloper, Graphic Disegner</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>419 Lakeland
+                                        Terrace Detroit, MI 48226</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.9</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Susan Roth</a></h5>
+                                    <p class="text-muted f-14 mb-0">PHP Delveloper, Web Disegner</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2984 Woodhill
+                                        Avenue Easton, MD 21601</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-half f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.5</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Ricky Cash</a></h5>
+                                    <p class="text-muted f-14 mb-0">UI/UX Designer, Software Developer</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2683 Farland
+                                        Street Chicago, IL 60631</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-outline f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.0</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Kelly Perez</a></h5>
+                                    <p class="text-muted f-14 mb-0">Software Developer, Graphic Disegner</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2120 County
+                                        Line Road St George, FL 34683</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-half f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.5</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Dale Gambill</a></h5>
+                                    <p class="text-muted f-14 mb-0">Graphic Disegner, Web Designer</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>3633 Cessna
+                                        Drive Fort Wayne, IN 46802</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-half f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.7</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Rita Guidry</a></h5>
+                                    <p class="text-muted f-14 mb-0">PHP Delveloper, Web Disegner</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2797 Bartlett
+                                        Avenue Southfield, MI 48075</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.8</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Matt Morgan</a></h5>
+                                    <p class="text-muted f-14 mb-0">Web Delveloper, PHP Delveloper</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2639 Warner
+                                        Street Casper, WY 82601</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">5.0</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Hattie Blaser</a></h5>
+                                    <p class="text-muted f-14 mb-0">Graphic Disegner, Web Designer</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>4883
+                                        Patterson Road Brooklyn, NY 11230</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-half f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.5</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="list-grid-item mt-4">
+                            <div class="grid-item-content p-2">
+                                <div class="employers-list-img mt-3">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar9.png" alt=""
+                                        class="img-fluid mx-auto d-block rounded-circle">
+                                </div>
+                                <div class="grid-list-desc text-center mt-4">
+                                    <h5 class="mb-1"><a href="#" class="text-dark">Robert Cole</a></h5>
+                                    <p class="text-muted f-14 mb-0">Web Delveloper, Graphic Disegner</p>
+                                    <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2424 Lowland
+                                        Drive Chicago, IL 60606</p>
+                                    <ul class="employers-icons list-inline mb-1">
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star f-19"></i></a></li>
+                                        <li class="list-inline-item"><a href="#" class="text-warning"><i
+                                                    class="mdi mdi-star-outline f-19"></i></a></li>
+                                    </ul>
+                                    <span class="badge badge-warning text-white">4.2</span>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-0">
+                            <div class="apply-button text-center mt-2 mb-2">
+                                <a href="#" class="btn btn-custom btn-sm">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination job-pagination justify-content-center mt-5 mb-5">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class="mdi mdi-chevron-double-left f-15"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="mdi mdi-chevron-double-right f-15"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <footer class="footer_area section_padding_130_0">
+        <div class="container">
+            <div class="row">
+                <!-- Single Widget-->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-footer-widget section_padding_0_130">
+                        <!-- Footer Logo-->
+                        <div class="footer-logo mb-3"></div>
+                        <p>Appland is completely creative, lightweight, clean app landing page.</p>
+                        <!-- Copywrite Text-->
+                        <div class="copywrite-text mb-5">
+                            <p class="mb-0">Made with <i class="lni-heart mr-1"></i>by<a class="ml-1"
+                                    href="https://wrapbootstrap.com/user/DesigningWorld">Designing World</a></p>
+                        </div>
+                        <!-- Footer Social Area-->
+                        <div class="footer_social_area"><a href="#" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#"
+                                data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i
+                                    class="fa fa-pinterest"></i></a><a href="#" data-toggle="tooltip"
+                                data-placement="top" title="" data-original-title="Skype"><i
+                                    class="fa fa-skype"></i></a><a href="#" data-toggle="tooltip" data-placement="top"
+                                title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
+                    </div>
+                </div>
+                <!-- Single Widget-->
+                <div class="col-12 col-sm-6 col-lg">
+                    <div class="single-footer-widget section_padding_0_130">
+                        <!-- Widget Title-->
+                        <h5 class="widget-title">About</h5>
+                        <!-- Footer Menu-->
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Corporate Sale</a></li>
+                                <li><a href="#">Terms &amp; Policy</a></li>
+                                <li><a href="#">Community</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Widget-->
+                <div class="col-12 col-sm-6 col-lg">
+                    <div class="single-footer-widget section_padding_0_130">
+                        <!-- Widget Title-->
+                        <h5 class="widget-title">Support</h5>
+                        <!-- Footer Menu-->
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Term &amp; Conditions</a></li>
+                                <li><a href="#">Help &amp; Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Widget-->
+                <div class="col-12 col-sm-6 col-lg">
+                    <div class="single-footer-widget section_padding_0_130">
+                        <!-- Widget Title-->
+                        <h5 class="widget-title">Contact</h5>
+                        <!-- Footer Menu-->
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="#">Call Centre</a></li>
+                                <li><a href="#">Email Us</a></li>
+                                <li><a href="#">Term &amp; Conditions</a></li>
+                                <li><a href="#">Help Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        body {
+            margin-top: 20px;
+        }
+
+        .footer_area {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            webkit-box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
+            box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
+            padding: 60px;
+        }
+
+        .footer_area .row {
+            margin-left: -25px;
+            margin-right: -25px;
+        }
+
+        .footer_area .row .col,
+        .footer_area .row .col-1,
+        .footer_area .row .col-10,
+        .footer_area .row .col-11,
+        .footer_area .row .col-12,
+        .footer_area .row .col-2,
+        .footer_area .row .col-3,
+        .footer_area .row .col-4,
+        .footer_area .row .col-5,
+        .footer_area .row .col-6,
+        .footer_area .row .col-7,
+        .footer_area .row .col-8,
+        .footer_area .row .col-9,
+        .footer_area .row .col-auto,
+        .footer_area .row .col-lg,
+        .footer_area .row .col-lg-1,
+        .footer_area .row .col-lg-10,
+        .footer_area .row .col-lg-11,
+        .footer_area .row .col-lg-12,
+        .footer_area .row .col-lg-2,
+        .footer_area .row .col-lg-3,
+        .footer_area .row .col-lg-4,
+        .footer_area .row .col-lg-5,
+        .footer_area .row .col-lg-6,
+        .footer_area .row .col-lg-7,
+        .footer_area .row .col-lg-8,
+        .footer_area .row .col-lg-9,
+        .footer_area .row .col-lg-auto,
+        .footer_area .row .col-md,
+        .footer_area .row .col-md-1,
+        .footer_area .row .col-md-10,
+        .footer_area .row .col-md-11,
+        .footer_area .row .col-md-12,
+        .footer_area .row .col-md-2,
+        .footer_area .row .col-md-3,
+        .footer_area .row .col-md-4,
+        .footer_area .row .col-md-5,
+        .footer_area .row .col-md-6,
+        .footer_area .row .col-md-7,
+        .footer_area .row .col-md-8,
+        .footer_area .row .col-md-9,
+        .footer_area .row .col-md-auto,
+        .footer_area .row .col-sm,
+        .footer_area .row .col-sm-1,
+        .footer_area .row .col-sm-10,
+        .footer_area .row .col-sm-11,
+        .footer_area .row .col-sm-12,
+        .footer_area .row .col-sm-2,
+        .footer_area .row .col-sm-3,
+        .footer_area .row .col-sm-4,
+        .footer_area .row .col-sm-5,
+        .footer_area .row .col-sm-6,
+        .footer_area .row .col-sm-7,
+        .footer_area .row .col-sm-8,
+        .footer_area .row .col-sm-9,
+        .footer_area .row .col-sm-auto,
+        .footer_area .row .col-xl,
+        .footer_area .row .col-xl-1,
+        .footer_area .row .col-xl-10,
+        .footer_area .row .col-xl-11,
+        .footer_area .row .col-xl-12,
+        .footer_area .row .col-xl-2,
+        .footer_area .row .col-xl-3,
+        .footer_area .row .col-xl-4,
+        .footer_area .row .col-xl-5,
+        .footer_area .row .col-xl-6,
+        .footer_area .row .col-xl-7,
+        .footer_area .row .col-xl-8,
+        .footer_area .row .col-xl-9,
+        .footer_area .row .col-xl-auto {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+
+        .single-footer-widget {
+            position: relative;
+            z-index: 1;
+        }
+
+        .single-footer-widget .copywrite-text a {
+            color: #747794;
+            font-size: 1rem;
+        }
+
+        .single-footer-widget .copywrite-text a:hover,
+        .single-footer-widget .copywrite-text a:focus {
+            color: #3f43fd;
+        }
+
+        .single-footer-widget .widget-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .single-footer-widget .footer_menu li a {
+            color: #747794;
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .single-footer-widget .footer_menu li a:hover,
+        .single-footer-widget .footer_menu li a:focus {
+            color: #3f43fd;
+        }
+
+        .single-footer-widget .footer_menu li:last-child a {
+            margin-bottom: 0;
+        }
+
+        .footer_social_area {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer_social_area a {
+            border-radius: 50%;
+            height: 40px;
+            text-align: center;
+            width: 40px;
+            display: inline-block;
+            background-color: #f5f5ff;
+            line-height: 40px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            margin-right: 10px;
+        }
+
+        .footer_social_area a i {
+            line-height: 36px;
+        }
+
+        .footer_social_area a:hover,
+        .footer_social_area a:focus {
+            color: #ffffff;
+        }
+
+        @-webkit-keyframes bi-cycle {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes bi-cycle {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        ol li,
+        ul li {
+            list-style: none;
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

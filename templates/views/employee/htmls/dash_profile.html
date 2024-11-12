@@ -1,0 +1,2157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <title>
+        title
+    </title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../public/images/fav_icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+
+
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+
+
+    <link rel="stylesheet" href="../../../../public/css/global.css">
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <!--========== HEADER / SIDE_BAR (START)==========-->
+    <!--========== CSS ==========-->
+    <style>
+        /*========== GOOGLE FONTS ==========*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        /*========== VARIABLES CSS ==========*/
+        :root {
+            --header-height: 3.5rem;
+            --nav-width: 219px;
+
+            /*========== Colors ==========*/
+            --first-color: #6923D0;
+            --first-color-light: #F4F0FA;
+            --title-color: #19181B;
+            --text-color: #58555E;
+            --text-color-light: #A5A1AA;
+            --body-color: #F9F6FD;
+            --container-color: #FFFFFF;
+
+            /*========== Font and typography ==========*/
+            --body-font: 'Poppins', sans-serif;
+            --normal-font-size: .938rem;
+            --small-font-size: .75rem;
+            --smaller-font-size: .75rem;
+
+            /*========== Font weight ==========*/
+            --font-medium: 500;
+            --font-semi-bold: 600;
+
+            /*========== z index ==========*/
+            --z-fixed: 100;
+        }
+
+        @media screen and (min-width: 1024px) {
+            :root {
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+
+        /*========== BASE ==========*/
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: var(--header-height) 0 0 0;
+            padding: 1rem 1rem 0;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*========== HEADER ==========*/
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--container-color);
+            box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+            padding: 0 1rem;
+            z-index: var(--z-fixed);
+        }
+
+        .header__container {
+            display: flex;
+            align-items: center;
+            height: var(--header-height);
+            justify-content: space-between;
+        }
+
+        .header__img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .header__logo {
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            display: none;
+        }
+
+        .header__search {
+            display: flex;
+            padding: .40rem .75rem;
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+        }
+
+        .header__input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: var(--first-color-light);
+        }
+
+        .header__input::placeholder {
+            font-family: var(--body-font);
+            color: var(--text-color);
+        }
+
+        .header__icon,
+        .header__toggle {
+            font-size: 1.2rem;
+        }
+
+        .header__toggle {
+            color: var(--title-color);
+            cursor: pointer;
+        }
+
+        /*========== NAV ==========*/
+        .nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100vh;
+            padding: 1rem 1rem 0;
+            background-color: var(--container-color);
+            box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
+            z-index: var(--z-fixed);
+            transition: .4s;
+        }
+
+        .nav__container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 3rem;
+            overflow: auto;
+            scrollbar-width: none;
+            /* For mozilla */
+        }
+
+        /* For Google Chrome and others */
+        .nav__container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav__logo {
+            font-weight: var(--font-semi-bold);
+            margin-bottom: 2.5rem;
+        }
+
+        .nav__list,
+        .nav__items {
+            display: grid;
+        }
+
+        .nav__list {
+            row-gap: 2.5rem;
+        }
+
+        .nav__items {
+            row-gap: 1.5rem;
+        }
+
+        .nav__subtitle {
+            font-size: var(--normal-font-size);
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            color: var(--text-color-light);
+        }
+
+        .nav__link {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+        }
+
+        .nav__link:hover {
+            color: var(--first-color);
+        }
+
+        .nav__icon {
+            font-size: 1.2rem;
+            margin-right: .5rem;
+        }
+
+        .nav__name {
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+            white-space: nowrap;
+        }
+
+        .nav__logout {
+            margin-top: 5rem;
+        }
+
+        /* Dropdown */
+        .nav__dropdown {
+            overflow: hidden;
+            max-height: 21px;
+            transition: .4s ease-in-out;
+        }
+
+        .nav__dropdown-collapse {
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+            margin-top: 1rem;
+        }
+
+        .nav__dropdown-content {
+            display: grid;
+            row-gap: .5rem;
+            padding: .75rem 2.5rem .75rem 1.8rem;
+        }
+
+        .nav__dropdown-item {
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-medium);
+            color: var(--text-color);
+        }
+
+        .nav__dropdown-item:hover {
+            color: var(--first-color);
+        }
+
+        .nav__dropdown-icon {
+            margin-left: auto;
+            transition: .4s;
+        }
+
+        /* Show dropdown collapse */
+        .nav__dropdown:hover {
+            max-height: 100rem;
+        }
+
+        /* Rotate icon arrow */
+        .nav__dropdown:hover .nav__dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /*===== Show menu =====*/
+        .show-menu {
+            left: 0;
+        }
+
+        /*===== Active link =====*/
+        .active {
+            color: var(--first-color);
+        }
+
+        /* ========== MEDIA QUERIES ==========*/
+        /* For small devices reduce search*/
+        @media screen and (max-width: 320px) {
+            .header__search {
+                width: 70%;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                padding: 1rem 3rem 0 6rem;
+            }
+
+            .header {
+                padding: 0 3rem 0 6rem;
+            }
+
+            .header__container {
+                height: calc(var(--header-height) + .5rem);
+            }
+
+            .header__search {
+                width: 300px;
+                padding: .55rem .75rem;
+            }
+
+            .header__toggle {
+                display: none;
+            }
+
+            .header__logo {
+                display: block;
+            }
+
+            .header__img {
+                width: 40px;
+                height: 40px;
+                order: 1;
+            }
+
+            .nav {
+                left: 0;
+                padding: 1.2rem 1.5rem 0;
+                width: 68px;
+                /* Reduced navbar */
+            }
+
+            .nav__items {
+                row-gap: 1.7rem;
+            }
+
+            .nav__icon {
+                font-size: 1.3rem;
+            }
+
+            /* Element opacity */
+            .nav__logo-name,
+            .nav__name,
+            .nav__subtitle,
+            .nav__dropdown-icon {
+                opacity: 0;
+                transition: .3s;
+            }
+
+
+            /* Navbar expanded */
+            .nav:hover {
+                width: var(--nav-width);
+            }
+
+            /* Visible elements */
+            .nav:hover .nav__logo-name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__subtitle {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__dropdown-icon {
+                opacity: 1;
+            }
+        }
+    </style>
+
+
+
+
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="" alt="" class="header__img">
+
+            <a href="/" class="header__logo">Homework</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="/" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Homework</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+
+                        <!-- <a href="/employee/home_dash" class="nav__link active">
+                        <i class='bx bx-home nav__icon'></i>
+                        <span class="nav__name">Home</span>
+                    </a> -->
+
+
+
+                        <a href="/employee/dash_profile" class="nav__link">
+                            <i class='bx bx-id-card nav__icon'></i>
+                            <span class="nav__name">My Profile</span>
+                        </a>
+
+                        <!-- <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="/employee/dash_profile" class="nav__dropdown-item">View Profile</a>
+                                <a href="#" class="nav__dropdown-item">Passwords</a>
+                                <a href="#" class="nav__dropdown-item">Mail</a>
+                                <a href="#" class="nav__dropdown-item">Accounts</a>
+                                <a href="#" class="nav__dropdown-item">Accounts</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cart-alt nav__icon'></i>
+                            <span class="nav__name">My Orders</span>
+                        </a>
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Menu</h3>
+
+                        <!-- <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bell nav__icon'></i>
+                            <span class="nav__name">Notifications</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">Blocked</a>
+                                <a href="#" class="nav__dropdown-item">Silenced</a>
+                                <a href="#" class="nav__dropdown-item">Publish</a>
+                                <a href="#" class="nav__dropdown-item">Program</a>
+                            </div>
+                        </div>
+
+                    </div> -->
+
+                        <!-- <a href="#" class="nav__link">
+                        <i class='bx bx-compass nav__icon'></i>
+                        <span class="nav__name">Explore</span>
+                    </a>
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-bookmark nav__icon'></i>
+                        <span class="nav__name">Saved</span>
+                    </a> -->
+                        <!-- <a href="/customer/addresses" class="nav__link">
+                        <i class='bx bx-bookmark nav__icon'></i>
+                        <span class="nav__name">Manage Addresses</span>
+                    </a> -->
+                        <a href="/employee/settings" class="nav__link">
+                            <i class='bx bx-pencil nav__icon'></i>
+                            <span class="nav__name">Settings</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/logout" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+    <!--/========== HEADER / SIDE_BAR (END)==========-->
+
+
+
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+        @import url("https://fonts.googleapis.com/css?family=Bree+Serif&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background: #e9e9e9; */
+            overflow-x: hidden;
+
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        .profile-header {
+            background: #fff !important;
+            /* width: 100%; */
+            display: flex;
+            height: 190px;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+            /* align-items: center;
+            justify-content: flex-start; */
+        }
+
+        .profile-img {
+            float: left;
+            width: 300px;
+            height: 100px;
+
+        }
+
+        /* .profile-img{
+            border: 1px solid black;
+        } */
+
+        .profile-img img {
+            border-radius: 50%;
+            height: 210px;
+            width: 210px;
+            /* width: 100%;
+            height: auto; */
+            border: 5px solid #fff;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            position: absolute !important;
+            /* left: 50px;
+            top: 20px;  */
+            top: 8%;
+            left: 3%;
+            z-index: 5;
+             /* border: 1px solid red;  */
+            background: #fff;
+        }
+
+        .profile-nav-info {
+            float: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .profile-nav-info h3 {
+            font-variant: small-caps;
+            font-size: 2rem;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .profile-nav-info .address {
+            display: flex;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .profile-nav-info .address p {
+            margin-right: 5px;
+        }
+
+        .profile-option {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            outline: none;
+            background: #e40046;
+        }
+
+        .profile-option:hover {
+            background: #fff;
+            /* border: 1px solid #e40046; */
+        }
+
+        .profile-option:hover .notification i {
+            color: #e40046;
+        }
+
+        .profile-option:hover span {
+            background: #e40046;
+        }
+
+        .profile-option .notification i {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .profile-option .notification .alert-message {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #fff;
+            color: #e40046;
+            /* border: 1px solid #e40046; */
+            padding: 5px;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* ################################################################################### */
+
+
+
+
+        .main-bd {
+            width: 100%;
+            display: flex;
+            padding-right: 15px;
+            /* border: 10px solid green; */
+        }
+
+        .profile-side {
+            /* width: 300px; */
+
+            /* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); */
+            /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); */
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 90px 30px 20px;
+            /* font-family: "Bree Serif", serif; */
+            /* margin-left: 10px; */
+            z-index: 99;
+
+        }
+
+        .profile-side p {
+            margin-bottom: 7px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .profile-side p i {
+            color: #e40046;
+            margin-right: 10px;
+        }
+
+        .mobile-no i {
+            transform: rotateY(180deg);
+            color: #e40046;
+        }
+
+        .profile-btn {
+            display: flex;
+        }
+
+        button.chatbtn,
+        button.createbtn {
+            border: 0;
+            padding: 10px;
+            width: 100%;
+            border-radius: 3px;
+            background: #e40046;
+            color: #fff;
+            font-family: "Bree Serif";
+            font-size: 1rem;
+            margin: 5px 2px;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 10px;
+            transition: background 0.3s ease-in-out;
+            box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        button.chatbtn:hover,
+        button.createbtn:hover {
+            background: rgba(288, 0, 70, 0.9);
+        }
+
+        button.chatbtn i,
+        button.createbtn i {
+            margin-right: 5px;
+        }
+
+        .user-rating {
+            display: flex;
+        }
+
+        .user-rating h3 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin-right: 5px;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .user-rating .no-of-user-rate {
+            font-size: 0.9rem;
+        }
+
+        .rate {
+            padding-top: 6px;
+        }
+
+        .rate i {
+            font-size: 0.9rem;
+            color: rgba(228, 0, 70, 1);
+        }
+
+        .nav_bar {
+            /* width: 100%; */
+            /* z-index: -1; */
+            /* box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3); */
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            /* margin: 10px 0 10px 12px; */
+            /* border: 1px solid red; */
+        }
+
+        .nav_bar ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style-type: none;
+            height: 60px;
+            /* background: #fff; */
+            background: none;
+            margin-bottom: 0 !important;
+
+            /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+        }
+
+        .nav_bar ul li {
+            padding: 15px;
+            padding-right: 20px;
+            /* width: 100%; */
+            cursor: pointer;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+
+            transition: all 0.2s ease-in-out;
+        }
+
+        .nav_bar ul li:hover,
+        .nav_bar ul li.nav_active {
+            box-shadow: 0px -2px 0px navy inset;
+
+        }
+
+
+
+        /* #################################################################################### */
+        .nav_bar_responsive {
+            /* width: 100%; */
+            /* z-index: -1; */
+            /* box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3); */
+            /* margin: 10px; */
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            /* border: 1px solid black; */
+            padding: 0 !important;
+        }
+
+        .nav_bar_responsive ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style-type: none;
+            /* height: 60px; */
+            /* background: #fff; */
+            background: none;
+            /* border: 1px solid red; */
+            padding: 0 !important;
+            margin-bottom: 0 !important;
+            /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+        }
+
+        .nav_bar_responsive ul li {
+            /* padding-right: 30px !important; */
+            /* width: 100%; */
+            margin-right: 30px;
+
+            cursor: pointer;
+            padding: 15px;
+
+            text-align: center !important;
+            /* border: 1px solid green; */
+            transition: all 0.2s ease-in-out;
+        }
+
+        .nav_bar_responsive ul li:hover,
+        .nav_bar_responsive ul li.nav_active {
+            box-shadow: 0px -2px 0px navy inset;
+
+        }
+
+
+
+
+
+
+        /* ############################################################################## */
+
+
+
+
+        .profile-body {
+            width: 100%;
+            /* z-index: -1; */
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab {
+            padding: 20px;
+            width: 100%;
+
+        }
+
+        .nav_bar_responsive {
+            display: none;
+        }
+
+        @media (max-width: 576px) {
+            .nav_bar_responsive {
+                display: block;
+            }
+
+            .nav_bar {
+                display: none;
+            }
+
+            /* .nav_bar_responsive {
+                padding: 0;
+                height: 50px;
+
+            }
+
+            .nav_bar_responsive ul {
+                padding: 0;
+                margin: 0;
+                height: auto;
+                display: flex;
+            }
+
+            .nav_bar_responsive ul li {
+                width: 30px;
+                padding: 0;
+
+                margin: 0;
+            } */
+
+        }
+
+
+
+        @media (max-width: 1100px) and (min-width:901px) {
+            .profile-side {
+                /* width: 250px; */
+                padding: 90px 15px 20px;
+
+                /* border: 1px solid red; */
+            }
+
+            .profile-img img {
+                height: 200px !important;
+                width: 200px !important;
+                left: 30px !important;
+                top: 20px !important;
+            }
+
+           
+        }
+
+        @media (max-width: 900px) {
+            /* body {
+                margin: 0 20px;
+                border: 2px solid black;
+            } */
+
+            /* .profile_cont {
+                border: 2px solid black;
+                margin-top: 80px;
+            } */
+
+            .profile-header {
+                display: flex;
+                height: 100%;
+                /* border: 2px solid blue; */
+                flex-direction: column;
+                text-align: center !important;
+                /* padding-bottom: 20px; */
+                padding: 20px;
+            }
+
+            .profile-img {
+                /* float: left; */
+                width: 100%;
+                height: 200px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+                /* border: 4px solid blueviolet; */
+                display: flex;
+                /* align-items: center; */
+                justify-content: center;
+                position: relative;
+
+
+                /*  */
+
+            }
+
+            .profile-img img {
+                /* position: relative; */
+                /* height: 200px;
+                width: 200px; */
+                /* left: 0px; */
+
+                /*  */
+                position: relative !important;
+                /* top: 0 !important; */
+
+                top: 30px !important;
+                /* top:40px !important;
+                left: 50% !important;
+                right: 50% !important;
+                translate: (-50%,-50%) ;  */
+
+
+
+            }
+
+
+            .profile-img img {
+                height: 200px !important;
+                width: 200px !important;
+
+            }
+
+            .profile-nav-info {
+                text-align: center;
+            }
+
+            /* .profile-option {
+                    right: 20px;
+                    top: 75%;
+                    transform: translateY(-100%);
+                } */
+
+            .profile-option {
+
+                right: 30px;
+                top: 15%;
+                position: absolute;
+                /* border: 2px solid green; */
+            }
+
+            /* .profile-header{
+                    position: relative;
+                } */
+
+            /* .main-bd {
+                flex-direction: column;
+                padding-right: 0;
+                border: 40px solid blueviolet;
+            } */
+
+            .profile-side {
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                /* border: 4px solid blueviolet; */
+                /* margin: 5px 0; */
+
+            }
+
+            .profile-nav-info .address {
+                justify-content: center;
+                /* border: 4px solid blueviolet; */
+            }
+
+            .user-rating {
+                justify-content: center;
+
+            }
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 992px) {
+            html {
+                font-size: 80%;
+            }
+        }
+
+        /* @media (max-width: 992px) {
+             .nav_bar {
+                 border: 2px solid pink; 
+                margin-left: 0;
+                margin-right: 0;
+            } 
+
+            .nav_bar_responsive {
+                /* display: block;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        } */
+
+        @media (max-width: 1024px) {
+
+
+            .profile-nav-info {
+
+                left: 0;
+
+            }
+
+            .profile-img {
+
+                padding: 0;
+
+            }
+
+
+
+
+            .profile-img img {
+                margin: 0;
+                position: relative;
+                height: 190px !important;
+                width: 190px !important;
+
+                /* border: 3px solid navy; */
+            }
+        }
+
+        /* @media (max-width: 991px) {
+            .profile-posts {
+
+                padding: 0; 
+                border: 2px solid red;
+            }
+        } */
+
+        @media (max-width: 400px) {
+            /* body {
+                margin: ;
+            } */
+
+            /* .profile-header h3 {} */
+
+            /* .profile-option {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    right: 15px;
+                    top: 83%;
+                } */
+
+            /* .profile-img {
+                border: 3px solid red;
+            } */
+
+            .profile-header {
+                /* border: 2px solid green; */
+                padding: 0 !important;
+            }
+
+            .profile-option {
+
+                right: 5%;
+                top: 10%;
+                /* border: 2px solid green; */
+                position: absolute;
+                /* border: 2px solid green; */
+            }
+
+            .profile-img img {
+                height: 150px !important;
+                width: 150px !important;
+
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+
+
+                /* top: 50px; */
+            }
+
+            .profile-side {
+                /* border: 2px solid red; */
+                padding: 10px !important;
+            }
+
+            .profile-nav-info {
+                /* border: 2px solid green; */
+                padding: 15px !important;
+            }
+
+            .profile-nav-info .address {
+                /* border: 3px solid dimgrey; */
+                margin-top: 5px;
+            }
+
+            .profile-option .notification .alert-message {
+                top: -3px;
+                right: -4px;
+                padding: 4px;
+                height: 15px;
+                width: 15px;
+                font-size: 0.7rem;
+                /* border: 3px solid navy; */
+            }
+
+            .profile-nav-info h3 {
+                font-size: 1.9rem;
+            }
+
+            .profile-nav-info .address p,
+            .profile-nav-info .address span {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+
+    <style>
+        .upload_icon {
+            font-size: 35px;
+            /* float: left; */
+            cursor: pointer;
+            padding: 3px;
+            top: 0;
+            left: 0;
+             margin: 3px 0 0 3px; 
+            border-radius: 50%;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            position: absolute;
+            
+        }
+
+        /* .profile-img{
+        border: 1px solid red;
+    } */
+    </style>
+
+
+    <style>
+        .form_item {
+            /* border: 1.5px solid rgb(190, 187, 187); */
+            font-size: 13px;
+            font-weight: 700;
+            /* background: aliceblue; */
+            padding: 5px 10px !important;
+            border-radius: 3px;
+
+
+        }
+
+        .form_item .my_form_control {
+            outline: none;
+            /* border: 1px solid rgb(203, 203, 203); */
+            box-shadow: none;
+            border-radius: 2px;
+            border: 1.5px solid white;
+        }
+
+        .form_item .my_form_control:focus {
+            border: 1.5px solid rgb(37, 37, 250) !important;
+        }
+
+
+        .form_item .my_form_control {
+            outline: none !important;
+            /* border: 1px solid rgb(203, 203, 203); */
+            box-shadow: none !important;
+            border-radius: 2px !important;
+            border: 1.5px solid white !important;
+        }
+
+        .form_item .my_form_control:focus {
+            border: 1.5px solid rgb(37, 37, 250) !important;
+        }
+
+
+
+        .address_textarea:focus {
+            border: 1.5px solid rgb(37, 37, 250) !important;
+        }
+
+
+
+        .address_textarea {
+            resize: none;
+            outline: none !important;
+            box-shadow: none !important;
+            border-radius: 2px !important;
+            border: 1.5px solid gainsboro !important;
+            background: #fafafa !important;
+            padding: 15px !important;
+        }
+
+
+        .primary_text {
+            font-size: 1.15rem;
+            color: navy
+        }
+
+        body {
+            background: white !important;
+        }
+
+        .profile_cont {
+            background: white !important;
+        }
+    </style>
+
+
+<style>
+    body{
+        
+        background-image: url("../../../../public/images/services/cleaning_vector.jpg");
+                
+    }
+</style>
+
+    <div class="container-fluid profile_cont mt-5">
+        <div class="row">
+            <div class="col-md-12" style="padding: 0;">
+                <div class="profile-header">
+                    <div class="profile-img">
+
+
+                         <i class='bx bx-upload  upload_icon'></i> 
+
+
+                        <img class="user_img"
+                            src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg"
+                            width="200" alt="Profile Image">
+                    </div>
+                    <div class="profile-nav-info">
+                        <h3 class="user-name">
+                            Sumit Soni
+                        </h3>
+                        <div class="address">
+                            <p id="state" class="state">
+                                Jabalpur,
+                            </p>
+                            <br>
+                            <span id="country" class="country">
+                                Madhya Pradesh.
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="profile-option">
+                        <div class="notification">
+                            <i class="fa fa-bell"></i>
+                            <span class="alert-message">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-12 col-lg-3" style="padding: 0;">
+
+
+                <div class="left-side mt-3" style="padding: 0;">
+                    <div class="profile-side">
+                        <p class="mobile-no"><i class="fa fa-phone"></i>
+                            +91(8989898989)
+                        </p>
+
+
+                        <p class="user-mail"><i class="fa fa-envelope"></i>
+                            email
+                        </p>
+
+                        <div class="user-bio">
+                            <h3>
+                                Title
+                            </h3>
+                            <p class="bio">
+
+                                Lorem ipsum dolor sit amet, hello how consectetur adipisicing elit. Sint
+                                consectetur
+
+                            </p>
+                        </div>
+                        <div class="profile-btn">
+                            <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Chat</button>
+                            <button class="createbtn" id="Create-post"><i class="fa fa-plus"></i>
+                                Create</button>
+                        </div>
+                        <div class="user-rating">
+                            <h3 class="rating">
+                                3
+                            </h3>
+                            <div class="rate">
+                                <div class="star-outer">
+                                    <div class="star-inner">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12" style="padding: 0 !important;">
+                <div class="right-side" style="padding: 0 !important;">
+
+
+
+
+                    <div class="nav_bar ml-lg-3 mt-3 mb-3">
+                        <ul>
+                            <li onclick="tabs(0)" class="user-post nav_active">Profile</li>
+                            <li onclick="tabs(1)" class="user-review ">Identity Information</li>
+                            <!-- <li onclick="tabs(3)" class="user-setting"> Settings</li>
+                            <li onclick="tabs(4)" class="user-setting"> Settings</li>
+                            <li onclick="tabs(5)" class="user-setting"> Settings</li> -->
+                        </ul>
+                    </div>
+
+                    <div class="nav_bar_responsive ml-lg-3 mt-3 mb-3 ">
+                        <ul>
+                            <li onclick="tabs(0)" class="user-post nav_active"><i style="font-size: 30px;"
+                                    class='bx bx-user-circle'></i></li>
+                            <li onclick="tabs(1)" class="user-review"><i style="font-size: 30px;"
+                                    class='bx bx-id-card'></i></li>
+                            <!-- <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                    class='bx bxl-docker'></i></li>
+                            <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                    class='bx bxl-docker'></i></li>
+                            <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                    class='bx bxl-docker'></i></li> -->
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <div class="profile-body">
+                        <div class="profile-posts tab p-0 pl-lg-3">
+
+                            <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                                                <h6 class="mb-2  primary_text">Personal Details</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">First Name</label>
+                                                    <input type="text" name="first_name"
+                                                        class="form-control edit_fields my_form_control" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Last Name</label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Phone </label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control  form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Email </label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control  form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mt-3 mb-3 primary_text">Address</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <!-- <div class="form-group form_item">
+                                                    <label for="Street">Address</label>
+                                                    <input type="name" class="my_form_control  form-control edit_fields" id="Street"
+                                                        placeholder="Enter Address" name="address" required 
+                                                        value="<%=emplProfile.address%>">
+                                                </div> -->
+
+
+                                                <div class="form-group  form_item">
+                                                    <label for="address"> Address</label>
+                                                    <textarea class="form-control  address_textarea edit_fields"
+                                                        required id="address" rows="3" name="address"
+                                                        placeholder="Enter Address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="ciTy">City</label>
+                                                    <input type="name" class="my_form_control  form-control edit_fields"
+                                                        id="ciTy" placeholder="Enter City" name="city" required
+                                                        value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="sTate">State</label>
+                                                    <input type="text" class="my_form_control  form-control edit_fields"
+                                                        id="sTate" placeholder="Enter State" name="state" required
+                                                        value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="zIp">Pin Code</label>
+                                                    <input type="text" class="my_form_control  form-control edit_fields"
+                                                        id="zIp" placeholder="Pin Code" name="pin_code" required
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="text-right">
+                                                    <button type="button" id="cancel" class="btn btn-secondary"
+                                                        disabled>Cancel</button>
+
+                                                    <button type="button" id="edit"
+                                                        class="btn btn-primary">Edit</button>
+                                                    <button type="submit" id="submit" class="btn btn-primary"
+                                                        style="display: none;">Save</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+
+                        <div class="profile-posts tab p-0 pl-lg-3">
+
+                            <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+                                                <h6 class="mb-2  primary_text">Identity Details</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName"> Aadhar Number</label>
+                                                    <input type="text" name="first_name"
+                                                        class="form-control edit_fields my_form_control" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+
+                                            </div>
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Last Name</label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Phone </label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control  form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div> -->
+
+
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="fullName">Email </label>
+                                                    <input type="text" name="last_name"
+                                                        class="my_form_control  form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required value="">
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mt-3 mb-3 primary_text">Other</h6>
+                                            </div>
+
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="sTate">Main Work</label>
+                                                    <input type="text" class="my_form_control  form-control edit_fields"
+                                                        id="sTate" placeholder="Enter State" name="state" required
+                                                        value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group form_item">
+                                                    <label for="sTate">Sub Work</label>
+                                                    <input type="text" class="my_form_control  form-control edit_fields"
+                                                        id="sTate" placeholder="Enter State" name="state" required
+                                                        value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
+
+
+                                                <div class="form-group  form_item">
+                                                    <label for="address"> Extra Details</label>
+                                                    <textarea class="form-control  address_textarea edit_fields"
+                                                        required id="address" rows="3" name="address"
+                                                        placeholder="Enter Address"></textarea>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="text-right">
+                                                    <button type="button" id="cancel" class="btn btn-secondary"
+                                                        disabled>Cancel</button>
+
+                                                    <button type="button" id="edit"
+                                                        class="btn btn-primary">Edit</button>
+                                                    <button type="submit" id="submit" class="btn btn-primary"
+                                                        style="display: none;">Save</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+
+                        <div class="profile-settings tab">
+
+                            <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary">Personal Details</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="fullName">Full Name</label>
+                                                    <input type="text" name="first_name"
+                                                        class="form-control edit_fields" id="fullName"
+                                                        placeholder="Enter full name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="fullName">Last Name</label>
+                                                    <input type="text" name="last_name" class="form-control edit_fields"
+                                                        id="fullName" placeholder="Enter full name" required disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="text" class="form-control" id="phone"
+                                                        placeholder="Enter phone number">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="eMail">Email</label>
+                                                    <input type="email" class="form-control" id="eMail"
+                                                        placeholder="Enter email ID" required>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="Street">Street</label>
+                                                    <input type="name" class="form-control edit_fields" id="Street"
+                                                        placeholder="Enter Street" name="address" required disabled
+                                                        value="ded">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="ciTy">City</label>
+                                                    <input type="name" class="form-control edit_fields" id="ciTy"
+                                                        placeholder="Enter City" name="city" required disabled
+                                                        value="city">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="sTate">State</label>
+                                                    <input type="text" class="form-control edit_fields" id="sTate"
+                                                        placeholder="Enter State" name="state" required disabled
+                                                        value="state">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="zIp">Pin Code</label>
+                                                    <input type="text" class="form-control edit_fields" id="zIp"
+                                                        placeholder="Zip Code" name="pin_code" required disabled
+                                                        value="pin">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="text-right">
+                                                    <button type="button" id="cancel" class="btn btn-secondary"
+                                                        disabled>Cancel</button>
+
+                                                    <button type="button" id="edit"
+                                                        class="btn btn-primary">Edit</button>
+                                                    <button type="submit" id="submit" class="btn btn-primary"
+                                                        style="display: none;">Save</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+                        <!-- 
+
+                        <div class="profile-reviews tab">
+                            <h1>User reviews</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur officia,
+                                aperiam
+                                quidem quasi, tenetur molestiae. Architecto mollitia laborum possimus iste esse.
+                                Perferendis
+                                tempora consectetur, quae qui nihil voluptas. Maiores debitis
+                                repellendus excepturi quisquam temporibus quam nobis voluptatem, reiciendis distinctio
+                                deserunt vitae! Maxime provident, distinctio animi commodi nemo, eveniet fugit porro
+                                quos
+                                nesciunt quidem a, corporis nisi dolorum minus sit eaque error
+                                sequi ullam. Quidem ut fugiat, praesentium velit aliquam!</p>
+                        </div>
+                        <div class="profile-settings tab">
+                            <div class="account-setting">
+                                <h1>Acount Setting</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis eaque,
+                                    expedita nostrum, facere libero provident laudantium. Quis, hic doloribus!
+                                    Laboriosam
+                                    nemo tempora praesentium. Culpa quo velit omnis, debitis maxime, sequi
+                                    animi dolores commodi odio placeat, magnam, cupiditate facilis impedit veniam?
+                                    Soluta
+                                    aliquam excepturi illum natus adipisci ipsum quo, voluptatem, nemo, commodi,
+                                    molestiae
+                                    doloribus magni et. Cum, saepe enim quam voluptatum vel debitis
+                                    nihil, recusandae, omnis officiis tenetur, ullam rerum.</p>
+                            </div>
+                        </div>
+ -->
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <style>
+                        .tabs {
+                            display: flex;
+                            position: relative;
+                        }
+
+                        .tabs .line {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 0;
+                            height: 6px;
+                            border-radius: 15px;
+                            background-color: #c23564;
+                            transition: all 0.2s ease;
+                        }
+
+                        .tab-item {
+                            min-width: 80px;
+                            padding: 16px 20px 11px 20px;
+                            font-size: 20px;
+                            text-align: center;
+                            color: #c23564;
+                            background-color: #fff;
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+                            border-bottom: 5px solid transparent;
+                            opacity: 0.6;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+                        }
+
+                        .tab-icon {
+                            font-size: 24px;
+                            width: 32px;
+                            position: relative;
+                            top: 2px;
+                        }
+
+
+                        .tab-item:hover {
+                            opacity: 1;
+                            background-color: rgba(194, 53, 100, 0.05);
+                            border-color: rgba(194, 53, 100, 0.1);
+                        }
+
+                        .tab-item.active {
+                            opacity: 1;
+                        }
+                    </style>
+
+                    <div class="tabs">
+                        <div class="tab-item active">
+                            <i class="tab-icon fas fa-code"></i>
+                            React
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-cog"></i>
+                            Angular
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-plus-circle"></i>
+                            Ember
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-pen-nib"></i>
+                            Vue.JS
+                        </div>
+                        <div class="line"></div>
+                    </div> -->
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <!--========== MAIN JS ==========-->
+
+    <script>
+        /*==================== SHOW NAVBAR ====================*/
+        const showMenu = (headerToggle, navbarId) => {
+            const toggleBtn = document.getElementById(headerToggle),
+                nav = document.getElementById(navbarId)
+
+            // Validate that variables exist
+            if (headerToggle && navbarId) {
+                toggleBtn.addEventListener('click', () => {
+                    // We add the show-menu class to the div tag with the nav__menu class
+                    nav.classList.toggle('show-menu')
+                    // change icon
+                    toggleBtn.classList.toggle('bx-x')
+                })
+            }
+        }
+        showMenu('header-toggle', 'navbar')
+
+        /*==================== LINK ACTIVE ====================*/
+        const linkColor = document.querySelectorAll('.nav__link')
+
+        function colorLink() {
+            linkColor.forEach(l => l.classList.remove('nav_active'))
+            this.classList.add('nav_active')
+        }
+
+        linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+    </script>
+
+    <script>
+        $(".nav_bar ul li").click(function () {
+            //alert("plmj")
+            $(this)
+                .addClass("nav_active")
+                .siblings()
+                .removeClass("nav_active");
+        });
+
+        $(".nav_bar_responsive ul li").click(function () {
+            //alert("plmj")
+            $(this)
+                .addClass("nav_active")
+                .siblings()
+                .removeClass("nav_active");
+        });
+
+        const tabBtn = document.querySelectorAll(".nav_bar ul li");
+        const tab = document.querySelectorAll(".tab");
+
+        function tabs(panelIndex) {
+            tab.forEach(function (node) {
+                node.style.display = "none";
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+
+        let bio = document.querySelector(".bio");
+        const bioMore = document.querySelector("#see-more-bio");
+        const bioLength = bio.innerText.length;
+
+        function bioText() {
+            bio.oldText = bio.innerText;
+
+            bio.innerText = bio.innerText.substring(0, 100) + "...";
+            bio.innerHTML += `<span onclick='addLength()' id='see-more-bio'>See More</span>`;
+        }
+        //        console.log(bio.innerText)
+
+        bioText();
+
+        function addLength() {
+            bio.innerText = bio.oldText;
+            bio.innerHTML +=
+                "&nbsp;" + `<span onclick='bioText()' id='see-less-bio'>See Less</span>`;
+            document.getElementById("see-less-bio").addEventListener("click", () => {
+                document.getElementById("see-less-bio").style.display = "none";
+            });
+        }
+        if (document.querySelector(".alert-message").innerText > 9) {
+            document.querySelector(".alert-message").style.fontSize = ".7rem";
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+    <script>
+        const editBtn = document.getElementById("edit")
+        const cancelBtn = document.getElementById("cancel")
+        const editFieldsColl = document.getElementsByClassName("edit_fields")
+        const updateForm = document.getElementById("update_form")
+
+        updateForm.onsubmit = () => {
+            submitBtn.setAttribute("disabled", "disabled")
+            //alert("true")
+        }
+        const submitBtn = document.getElementById("submit")
+
+        editBtn.onclick = () => {
+            for (const field of editFieldsColl) {
+                field.removeAttribute("disabled")
+            }
+
+
+            //editBtn.setAttribute("disabled", "disabled")
+            cancelBtn.removeAttribute("disabled")
+            submitBtn.style.display = "inline-block"
+            editBtn.style.display = "none"
+            editBtn.setAttribute("disabled", "disabled")
+
+
+        }
+
+        cancelBtn.onclick = () => {
+            for (const field of editFieldsColl) {
+                field.setAttribute("disabled", "disabled")
+            }
+            editBtn.removeAttribute("disabled")
+            editBtn.style.display = "inline-block"
+            cancelBtn.setAttribute("disabled", "disabled")
+            submitBtn.style.display = "none"
+        }
+    </script>
+
+
+
+
+    <script>
+
+        if (window.history.replaceState) {
+            //alert(window.location.href)
+            window.history.replaceState(null, null, "/employee/dash_profile")
+        }
+    </script>
+</body>
+
+</html>

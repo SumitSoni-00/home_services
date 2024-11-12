@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+  <!--========== BOX ICONS ==========-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <title>Hello, world!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,500&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
+
+      letter-spacing: 0.1rem;
+      overflow-x: hidden;
+
+    }
+
+    .img_col {
+      text-align: center;
+      padding: 0px;
+
+
+    }
+
+    .details_col {
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .details_col h2 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .details_col h3 {
+      font-size: 2rem;
+      font-weight: 550;
+      color: gray;
+      text-align: center;
+    }
+
+    .confirmed_cont {
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      border-radius: 10px;
+
+
+
+
+    }
+
+    .img_col img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      position: relative;
+
+
+    }
+
+    .confirmed_order_nav_col {
+      padding: 0;
+      text-align: center;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .confirmed_order_nav_col a {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-decoration: none;
+      color: palevioletred;
+      transition: all 0.5s ease;
+      padding: 10px;
+    }
+
+    .confirmed_order_nav_col a:hover {
+      color: blueviolet;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .order_details {
+      position: absolute;
+      top: 0;
+      right: 1%;
+      padding: 0;
+
+
+      /* border: 2px solid gainsboro; */
+      background: rgba(250, 248, 248, 0.959);
+
+    }
+
+    .order_details h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgb(15, 15, 158);
+
+    }
+
+    .order_details p {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: rgb(136, 136, 161);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      padding: 10px 5px;
+      max-width: 30rem;
+
+    }
+
+    .pin_date {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
+    }
+
+    .pin_date h4 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .pin_date h5 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .up_arrow_wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .up_arrow_wrap .up_arrow_icon {
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .confirmed_order_nav_col {
+        padding: 7px 0;
+      }
+
+      .order_details {
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, 0%)
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container confirmed_cont mt-0">
+    <div class="row confirmed_order_nav_row">
+      <div class="col-md-3 confirmed_order_nav_col">
+        <a href=""><i class='bx bx-home-alt'></i> &nbsp; Home</a>
+      </div>
+      <div class="col-md-3 confirmed_order_nav_col">
+        <a href=""><i class='bx bx-cart'></i> &nbsp; My Bookings</a>
+      </div>
+      <div class="col-md-3 confirmed_order_nav_col">
+        <a href=""><i class='bx bxl-unity'></i> &nbsp; Something</a>
+      </div>
+      <div class="col-md-3 confirmed_order_nav_col">
+        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample"><i class='bx bx-menu'></i> &nbsp; Details</a>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 img_col">
+        <img src="../../public/images/order_confirmed.png" alt="confirmed">
+        <div class="order_details collapse" id="collapseExample">
+          <div class="up_arrow_wrap"><i class='bx bx-up-arrow bx-flip-horizontal bx-tada up_arrow_icon'></i></div>
+          <h3 class="mt-2">Sumit Soni</h3>
+          <p>niwadganj latkari ka padav jabalpu Mp Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nihil?
+          </p>
+          <div class="pin_date">
+            <h4>482002</h4>
+            <h5>26 July 2021</h5>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 details_col">
+        <h2>Your Order is Successfull</h2>
+        <h3>Thank you for using our service</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

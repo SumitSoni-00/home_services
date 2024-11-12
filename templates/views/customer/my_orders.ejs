@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <!-- GLOBAL HEADER (START) -->
+    <%-include("../../partials/global/global_header",{title:"customer page"})%>
+        <!-- GLOBAL HEADER (END) -->
+
+
+
+
+</head>
+
+<body>
+    <div class="loader_cont" style="display: none;" id="loader_EL">
+        <img src="/images/loader4.gif" alt="">
+    </div>
+    <div id="body_content">
+
+        <!--========== HEADER / SIDE_BAR (START)==========-->
+        <%-include("../../partials/customer/dash_header_side_bar")%>
+            <!--/========== HEADER / SIDE_BAR (END)==========-->
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--========== CONTENTS (START) ==========-->
+
+            <main>
+                <section>
+
+                    <style>
+                        .red_border {
+                            border: 1px solid red;
+                        }
+
+                        .black_border {
+                            border: 1px solid black;
+                        }
+
+                        .green_border {
+                            border: 1px solid green;
+                        }
+
+                        .pink_border {
+                            border: 1px solid palevioletred;
+                        }
+
+                        .my_orders_cont .side_menu_col {
+                            padding: 0;
+
+                            /* border: 1px solid red; */
+                            height: max-content;
+                            position: sticky;
+                            top: calc(var(--header-height) + 1.3rem);
+                            ;
+                            /*  */
+                            z-index: 99;
+                            background: white;
+
+                        }
+
+
+                        /* .my_orders_row{
+                    border: 1px solid black;
+                    
+                } */
+
+
+
+                        .my_orders_cont .side_menu_wrap {
+
+                            margin: 0 1rem;
+                            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                            padding: 1rem;
+
+
+                        }
+
+                        .my_orders_cont .my_orders_main_col {
+                            padding: 0;
+                        }
+
+                        .my_orders_cont .my_orders_main_wrap {
+                            margin: 0;
+
+
+                        }
+
+                        .my_orders_cont .side_menu_heading_wrap {
+                            text-align: center;
+
+
+
+                        }
+
+                        .my_orders_cont .side_menu_heading_wrap h3 {
+                            font-size: 1.35rem;
+
+                        }
+
+                        .my_orders_cont .order_status_header_div {
+                            margin-bottom: 0.5rem;
+
+                        }
+
+                        .my_orders_cont .order_status_header_div span {
+
+                            font-variant: small-caps;
+                            font-weight: 600;
+                            letter-spacing: 0.2rem;
+
+                        }
+
+                        .my_orders_cont .order_status_checkboxes {
+                            margin-left: 1rem;
+
+
+                        }
+
+                        .my_orders_cont .my_orders_main_nav {
+                            height: 4rem;
+                            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+                        }
+
+                        .my_orders_cont .order_item {
+                            margin-bottom: 0.5rem;
+                            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+                        }
+
+                        .my_orders_cont .my_orders_main_nav {
+                            margin-bottom: 2.5rem;
+
+                        }
+
+
+
+                        .my_orders_cont .order_item_img_col {
+                            padding: 0;
+
+
+                            /* border: 1px solid red; */
+                        }
+
+
+
+                        .my_orders_cont .order_item_img_col .order_item_img_wrap img {
+                            width: 100%;
+                            height: auto;
+
+
+
+                        }
+
+
+                        .my_orders_cont .order_item {
+
+                            padding-top: 0.5rem;
+
+                        }
+
+                        .my_orders_cont .order_item_meta_col {
+                            padding: 0;
+                        }
+
+                        .my_orders_cont .order_item_status_col {
+                            padding: 0;
+                        }
+
+                        .my_orders_cont .order_status_wrap {
+                            padding: 1rem;
+
+                            /* box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em; */
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+                        }
+
+                        .my_orders_cont .order_status_wrap h4 {
+                            letter-spacing: 0.1rem;
+
+                            font-weight: 500;
+
+                            font-size: 1rem;
+                        }
+
+                        .my_orders_cont .awesome_circle {
+                            border: none;
+                            /* color: aquamarine; */
+                            font-size: 1rem;
+
+
+                        }
+
+                        .new {
+                            color: rgb(20, 20, 209);
+                        }
+
+                        .alloted {
+                            color: rgb(79, 176, 255);
+                        }
+
+                        .completed {
+                            color: aquamarine;
+                        }
+
+                        .cancelled {
+                            color: tomato;
+                        }
+
+                        .my_orders_cont .order_item_meta_heading h3 {
+
+                            font-size: 1.45rem;
+                            color: gray;
+                            font-weight: 400;
+                            letter-spacing: 0.1rem;
+
+                        }
+
+                        .my_orders_cont .order_item_meta_wrap {
+                            padding-right: 0.5rem;
+
+                        }
+
+                        .my_orders_cont .order_item_meta_meta2 h4 {
+
+                            font-weight: 500;
+                            letter-spacing: 0.1rem;
+                            font-size: 1.15rem;
+
+                        }
+
+                        .my_orders_cont .order_item_meta_meta2 p {
+
+                            font-weight: 450;
+                            letter-spacing: 0.1rem;
+                            text-align: center;
+                            font-size: 0.9rem;
+                            background: whitesmoke;
+
+
+                        }
+                    </style>
+
+
+                    <style>
+                        .my_orders_cont a {
+                            text-decoration: none;
+                        }
+
+                        .my_orders_cont .view_details_div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .my_orders_cont .meta_footer {
+
+                            margin-top: 0rem !important;
+                            display: flex;
+
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+
+                        .my_orders_cont .view_details_a {
+                            text-decoration: none;
+                            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                            font-size: 1rem;
+                            color: rgb(1, 1, 145);
+                            padding: 0.25rem;
+                            letter-spacing: 0.1rem;
+                            transition: all 0.5s;
+
+
+
+                        }
+
+                        .my_orders_cont .view_details_a:hover {
+                            color: rgb(114, 31, 192);
+                            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+                        }
+
+
+
+                        .my_orders_cont .tag {
+                            background: white;
+                            /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+                            color: gray;
+                            font-size: 1rem;
+                            font-weight: 500;
+
+
+
+                            padding: 0.1rem;
+                            position: relative;
+
+
+
+                        }
+
+                        /* @media screen and (max-width: 992px) {
+            .order_status_checkboxes {
+                border: 1px solid red;
+            }
+
+            .side_menu_heading_wrap {
+                border: 1px solid green;
+            }
+        } */
+
+
+                        .my_orders_cont .resp_filter {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 20px;
+                            flex-wrap: wrap;
+                            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        }
+
+                        .my_orders_cont .btn_icon {
+                            border: none;
+                            box-shadow: none;
+                            font-size: 15px;
+                            border-radius: none;
+                            outline: none;
+                        }
+
+                        .my_orders_cont .btn_icon:focus {
+                            border: 1.5px solid grey;
+                            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                        }
+
+
+                        @media screen and (max-width: 576px) {
+                            .my_orders_cont .my_orders_main_col {
+                                padding: 0 !important;
+                            }
+
+                            .my_orders_cont .my_orders_main_wrap {
+
+                                margin: 0 !important;
+
+                            }
+
+
+
+                            .my_orders_cont .order_item {
+                                padding: 10px !important;
+                                margin-top: 20px !important;
+                            }
+
+                            body {
+                                padding: 10px !important;
+                                font-size: 15px;
+                            }
+                        }
+
+                        .my_orders_cont .btn_icon {
+                            display: none;
+                        }
+
+
+
+                        @media screen and (max-width: 992px) {
+
+
+                            .my_orders_cont .btn_icon {
+                                display: block;
+                            }
+
+                            .my_orders_cont .all_filter_box {
+                                display: none !important;
+                            }
+
+                            .my_orders_cont .side_menu_col {
+
+                                top: calc(var(--header-height) + 9px);
+
+                            }
+
+                            .side_menu_heading_wrap h3 {
+                                /* border: 1px solid red; */
+                                font-size: 1.3rem !important;
+
+                            }
+
+                            .resp_filter {
+                                padding: 0.5rem !important;
+                            }
+
+
+                        }
+
+                        @media screen and (max-width: 992px) {
+                            .my_orders_cont .side_menu_col {
+
+                                top: calc(var(--header-height) + 1px);
+
+                            }
+                        }
+
+
+
+
+
+
+                        @media screen and (min-width: 993px) {
+
+
+
+                            .my_orders_cont .filter_collapse {
+                                display: none !important;
+                            }
+                        }
+
+                        .order_status_checkboxes label,
+                        input {
+                            cursor: pointer;
+                        }
+                    </style>
+
+                    <style>
+                        .loader_cont {
+
+
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            z-index: 999999;
+                            background: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            margin: 0 auto;
+                            height: 100vh;
+                        }
+                    </style>
+
+
+
+
+
+
+
+
+                    <div class="container-fluid  my_orders_cont mt-5">
+                        <div class="row my_orders_row p-0">
+                            <div class="col-lg-2 col-md-12  side_menu_col">
+                                <!-- <div class="side_menu_wrap" style="display: none;">
+                                <div class="side_menu_heading_wrap">
+                                    <h3>
+                                        Filters what
+                                    </h3>
+                                    <hr>
+                                </div> 
+
+                                <div class="side_menu_main">
+                                    <div>
+                                        <div class="order_status_header_div">
+                                            <span>Order Status what</span>
+                                        </div> 
+
+                                                                                
+                                        <div class=" order_status_checkboxes">
+                                            <div>
+                                                <input type="checkbox" id="resp_booked"  name="filter_order_status" class="filter_checkBoxes_resp"
+                                                    value="">
+                                                <label for="resp_booked">Resp Booked</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="resp_completed" name="filter_order_status" class="filter_checkBoxes_resp"
+                                                    value="">
+                                                <label for="resp_completed">Resp Completed</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="resp_ongoing" name="filter_order_status" class="filter_checkBoxes_resp"
+                                                    value="">
+                                                <label for="resp_ongoing">Resp Ongoing</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="resp_cancelled"  name="filter_order_status" class="filter_checkBoxes_resp"
+                                                    value="">
+                                                <label for="resp_cancelled">Resp Cancelled</label>
+                                            </div>
+                                        </div> 
+                                        
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div> -->
+
+                                <div>
+                                    <div class="resp_filter">
+                                        <div class="side_menu_heading_wrap">
+                                            <h3>
+                                                Filters test
+                                            </h3>
+
+
+                                        </div>
+
+                                        <button class="btn btn_icon" type="button" data-toggle="collapse"
+                                            data-target="#collapseExample" aria-expanded="false"
+                                            aria-controls="collapseExample">
+                                            <i class="fas fa-sliders-h filter_icon"></i>
+                                        </button>
+
+
+                                    </div>
+
+
+
+                                    <div class=" mt-3 all_filter_box" style=" transition:all 0.5s; 
+                    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">
+                                        <div class="side_menu_main">
+                                            <div>
+                                                <div class="order_status_header_div" style="padding-left: 10px;">
+                                                    <span>Order Status</span>
+                                                </div>
+                                                <div class=" order_status_checkboxes">
+                                                    <div>
+                                                        <input type="checkbox" id="booked" 
+                                                            name="filter_order_status" value=""
+                                                            class="filter_checkBoxes">
+                                                        <label for="booked"> Booked</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" id="completed"
+                                                             name="filter_order_status"
+                                                            value="" class="filter_checkBoxes">
+                                                        <label for="completed"> Completed</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" id="ongoing"
+                                                             name="filter_order_status"
+                                                            value="" class="filter_checkBoxes">
+                                                        <label for="ongoing"> Ongoing</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="checkbox" id="cancelled"
+                                                             name="filter_order_status"
+                                                            value="" class="filter_checkBoxes">
+                                                        <label for="cancelled"> Cancelled</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <!-- #################################################################### -->
+                                    <div class="collapse filter_collapse" id="collapseExample">
+
+                                        <div class=" mt-3 large_filter_box" style=" transition:all 0.5s; 
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">
+                                            <div class="side_menu_main">
+                                                <div>
+                                                    <div class="order_status_header_div" style="padding-left: 10px;">
+                                                        <span>Order Status</span>
+                                                    </div>
+                                                    <div class=" order_status_checkboxes">
+                                                        <div>
+                                                            <input type="checkbox" id="resp_booked" 
+                                                                class="resp_filter_checkboxes"
+                                                                name="filter_order_status" value="">
+                                                            <label for="booked" class="resp_filter_label">
+                                                                Booked</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="checkbox" id="resp_completed"
+                                                                class="resp_filter_checkboxes"
+                                                                name="filter_order_status" value="">
+                                                            <label for="completed" class="resp_filter_label">
+                                                                Completed</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="checkbox" id="resp_ongoing"
+                                                                class="resp_filter_checkboxes"
+                                                                name="filter_order_status" value="">
+                                                            <label for="ongoing" class="resp_filter_label">
+                                                                Ongoing</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="checkbox" id="resp_cancelled"
+                                                                class="resp_filter_checkboxes"
+                                                                name="filter_order_status" value="">
+                                                            <label for="cancelled" class="resp_filter_label">
+                                                                Cancelled</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ########################################################################## -->
+                                </div>
+
+                            </div>
+                            <div class="col-lg-10 col-md-12   my_orders_main_col p-0">
+                                <div class="my_orders_main_wrap ml-lg-4 mt-md-5 mt-lg-0 mt-sm-5">
+
+                                    <div class="my_orders_main_nav" style="display: none;">
+
+                                    </div>
+                                    <div class="my_orders_main_content ">
+                                        <div class="container-fluid  order_items_cont " id="orders_stage">
+                                            <div class="row" id="empty_cart_row" style="display: <%=allOrders.length?"none":"block"%>;">
+                                                <div class="col-12" style="padding: 0;text-align: center;">
+                                                    <img src="/images/empty_cart3.png" alt=""
+                                                        style="width: 30%;margin-top:20px;">
+                                                </div>
+                                            </div>
+                                            <div id="all_orders" style="display: block;"
+                                                data-size="<%=allOrders.length%>">
+                                                <!-- <%if(allOrders.length===0){%>
+                                            <div class="row" id="empty_cart_row" style="display: block;">
+                                                <div class="col-12" style="padding: 0;text-align: center;">
+                                                    <img src="/images/empty_cart3.png" alt="" style="width: 30%;margin-top:20px;">
+                                                </div>
+                                            </div> 
+                                            <%}%> -->
+                                                <%allOrders.forEach((order)=>{%>
+                                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                                        <div class="col-lg-2 col-sm-4 col-12 order_item_img_col ">
+                                                            <div class="order_item_img_wrap ">
+                                                                <img src="/images/services/<%=`${order.service}_vector`%>.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                                            <div class="order_item_meta_wrap">
+                                                                <div class="order_item_meta_heading">
+                                                                    <h3>
+                                                                        <%=order.service%>
+                                                                    </h3>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="order_item_meta_meta2 ">
+                                                                    <h4>Sumit Soni</h4>
+                                                                    <p class="">
+                                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur
+                                                                        ,Mp
+                                                                        482002
+                                                                    </p>
+                                                                    <div class="meta_footer">
+
+                                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                                style="margin-right: 0.5rem;"></i>createdAt
+                                                                        </div>
+
+                                                                        <div class="view_details_div">
+                                                                            <a href="#" class="view_details_a"
+                                                                                style="text-decoration: none;">
+                                                                                view Details</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                                            <div class="order_status_wrap">
+                                                                <h4>
+                                                                    <i
+                                                                        class="fas fa-circle awesome_circle <%=order.status.toLowerCase()%>"></i>
+                                                                    Processing Booking
+
+                                                                </h4>
+
+                                                                <hr>
+                                                                <p>Delivered on expected wednesday</p>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <%})%>
+                                            </div>
+
+
+                                            <div id="booked_orders" style="display:none"
+                                                data-size="<%=bookedOrders.length%>">
+                                                <!-- <%if(bookedOrders.length===0){%>
+                                                <div class="row" id="empty_cart_row" style="display: block;">
+                                                    <div class="col-12" style="padding: 0;text-align: center;">
+                                                        <img src="/images/empty_cart3.png" alt="" style="width: 30%;margin-top:20px;">
+                                                    </div>
+                                                </div> 
+                                                <%}%> -->
+                                                <%bookedOrders.forEach((order)=>{%>
+                                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                                            <div class="order_item_img_wrap ">
+                                                                <img src="/images/services/<%=`${order.service}_vector`%>.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                                            <div class="order_item_meta_wrap">
+                                                                <div class="order_item_meta_heading">
+                                                                    <h3>
+                                                                        <%=order.service%>
+                                                                    </h3>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="order_item_meta_meta2 ">
+                                                                    <h4>Sumit Soni</h4>
+                                                                    <p class="">
+                                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur
+                                                                        ,Mp
+                                                                        482002
+                                                                    </p>
+                                                                    <div class="meta_footer">
+
+                                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                                style="margin-right: 0.5rem;"></i>createdAt
+                                                                        </div>
+
+                                                                        <div class="view_details_div">
+                                                                            <a href="#" class="view_details_a"
+                                                                                style="text-decoration: none;">
+                                                                                view Details</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                                            <div class="order_status_wrap">
+                                                                <h4>
+                                                                    <i class="fas fa-circle awesome_circle new"></i>
+                                                                    Processing Booking
+
+                                                                </h4>
+
+                                                                <hr>
+                                                                <p>Delivered on expected wednesday</p>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <%})%>
+                                            </div>
+
+
+                                            <div id="completed_orders" style="display:none"
+                                                data-size="<%=completedOrders.length%>">
+
+                                                <!-- <%if(completedOrders.length===0){%>
+                                                <div class="row" id="empty_cart_row" style="display: block;">
+                                                    <div class="col-12" style="padding: 0;text-align: center;">
+                                                        <img src="/images/empty_cart3.png" alt="" style="width: 30%;margin-top:20px;">
+                                                    </div>
+                                                </div> 
+                                                <%}%> -->
+
+                                                <%completedOrders.forEach((order)=>{%>
+                                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                                            <div class="order_item_img_wrap ">
+                                                                <img src="/images/services/<%=`${order.service}_vector`%>.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                                            <div class="order_item_meta_wrap">
+                                                                <div class="order_item_meta_heading">
+                                                                    <h3>
+                                                                        <%=order.service%>
+                                                                    </h3>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="order_item_meta_meta2 ">
+                                                                    <h4>Sumit Soni</h4>
+                                                                    <p class="">
+                                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur
+                                                                        ,Mp
+                                                                        482002
+                                                                    </p>
+                                                                    <div class="meta_footer">
+
+                                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                                style="margin-right: 0.5rem;"></i>createdAt
+                                                                        </div>
+
+                                                                        <div class="view_details_div">
+                                                                            <a href="#" class="view_details_a"
+                                                                                style="text-decoration: none;">
+                                                                                view Details</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                                            <div class="order_status_wrap">
+                                                                <h4>
+                                                                    <i
+                                                                        class="fas fa-circle awesome_circle completed"></i>
+                                                                    Completed Booking
+
+                                                                </h4>
+
+                                                                <hr>
+                                                                <p>Delivered on expected wednesday</p>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <%})%>
+                                            </div>
+
+
+                                            <div id="ongoing_orders" style="display:none"
+                                                data-size="<%=ongoingOrders.length%>">
+                                                <!-- <%if(ongoingOrders.length===0){%>
+                                                <div class="row" id="empty_cart_row" style="display: block;">
+                                                    <div class="col-12" style="padding: 0;text-align: center;">
+                                                        <img src="/images/empty_cart3.png" alt="" style="width: 30%;margin-top:20px;">
+                                                    </div>
+                                                </div> 
+                                                <%}%> -->
+                                                <%ongoingOrders.forEach((order)=>{%>
+                                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                                            <div class="order_item_img_wrap ">
+                                                                <img src="/images/services/<%=`${order.service}_vector`%>.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                                            <div class="order_item_meta_wrap">
+                                                                <div class="order_item_meta_heading">
+                                                                    <h3>
+                                                                        <%=order.service%>
+                                                                    </h3>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="order_item_meta_meta2 ">
+                                                                    <h4>Sumit Soni</h4>
+                                                                    <p class="">
+                                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur
+                                                                        ,Mp
+                                                                        482002
+                                                                    </p>
+                                                                    <div class="meta_footer">
+
+                                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                                style="margin-right: 0.5rem;"></i>createdAt
+                                                                        </div>
+
+                                                                        <div class="view_details_div">
+                                                                            <a href="#" class="view_details_a"
+                                                                                style="text-decoration: none;">
+                                                                                view Details</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                                            <div class="order_status_wrap">
+                                                                <h4>
+                                                                    <i class="fas fa-circle awesome_circle alloted"></i>
+                                                                    Processing Booking
+
+                                                                </h4>
+
+                                                                <hr>
+                                                                <p>Delivered on expected wednesday</p>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <%})%>
+                                            </div>
+
+
+
+
+
+                                            <div id="cancelled_orders" style="display:none"
+                                                data-size="<%=cancelledOrders.length%>">
+                                                <!-- <%if(cancelledOrders.length===0){%>
+                                                <div class="row" id="empty_cart_row" style="display: block;">
+                                                    <div class="col-12" style="padding: 0;text-align: center;">
+                                                        <img src="/images/empty_cart3.png" alt="" style="width: 30%;margin-top:20px;">
+                                                    </div>
+                                                </div> 
+                                                <%}%> -->
+
+                                                <%cancelledOrders.forEach((order)=>{%>
+                                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                                            <div class="order_item_img_wrap ">
+                                                                <img src="/images/services/<%=`${order.service}_vector`%>.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                                            <div class="order_item_meta_wrap">
+                                                                <div class="order_item_meta_heading">
+                                                                    <h3>
+                                                                        <%=order.service%>
+                                                                    </h3>
+                                                                    <hr>
+                                                                </div>
+                                                                <div class="order_item_meta_meta2 ">
+                                                                    <h4>Sumit Soni</h4>
+                                                                    <p class="">
+                                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur
+                                                                        ,Mp
+                                                                        482002
+                                                                    </p>
+                                                                    <div class="meta_footer">
+
+                                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                                style="margin-right: 0.5rem;"></i>createdAt
+                                                                        </div>
+
+                                                                        <div class="view_details_div">
+                                                                            <a href="#" class="view_details_a"
+                                                                                style="text-decoration: none;">
+                                                                                view Details</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                                            <div class="order_status_wrap">
+                                                                <h4>
+                                                                    <i
+                                                                        class="fas fa-circle awesome_circle cancelled"></i>
+                                                                    Processing Booking
+
+                                                                </h4>
+
+                                                                <hr>
+                                                                <p>Delivered on expected wednesday</p>
+
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <%})%>
+                                            </div>
+
+
+
+
+
+
+                                            <!-- <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div> -->
+
+
+
+
+                                            <!-- 
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/gardening_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/cleaning_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/electricity_work.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/plumbing_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/electricity_work.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+-->
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </section>
+            </main>
+    </div>
+    <!--========== CONTENTS (END) ==========-->
+
+
+
+
+
+
+
+
+    <!-- GLOBAL FOOTER (START) -->
+    <%-include("../../partials/global/global_footer")%>
+        <!-- GLOBAL FOOTER (END) -->
+
+
+
+        <!--========== HEADER / SIDE_BAR JS (START)==========-->
+        <%-include("../../partials/customer/dash_header_side_bar_js")%>
+            <!--/========== HEADER / SIDE_BAR JS (END)==========-->
+
+
+
+            <script>
+                const booked = document.getElementById("booked")
+                const completed = document.getElementById("completed")
+                const ongoing = document.getElementById("ongoing")
+                const cancelled = document.getElementById("cancelled")
+
+                const bookedOrders = document.getElementById("booked_orders")
+                const completedOrders = document.getElementById("completed_orders")
+                const ongoingOrders = document.getElementById("ongoing_orders")
+                const cancelledOrders = document.getElementById("cancelled_orders")
+
+                const allOrders = document.getElementById("all_orders")
+
+                const ordersStage = document.getElementById("orders_stage")
+                const emptyCartEL = document.getElementById("empty_cart_row")
+
+                const filterCheckBoxes = document.getElementsByClassName("filter_checkBoxes")
+                const respFilterLabel = document.getElementsByClassName("resp_filter_label")
+                const respFilterCheckboxes = document.getElementsByClassName("resp_filter_checkboxes")
+
+                // booked.onclick=()=>{
+                //     //ordersStage.innerHTML=""
+                //     allOrders.style.display="none"
+                //     bookedOrders.style.display="block"
+                //     //alert(bookedOrders)
+                // }
+
+                // function filterOrders(event){
+                //     alert(event.target.checked)
+                // }
+
+               for (let index = 0; index < respFilterLabel.length; index++) {
+                   const element = respFilterLabel[index];
+                   element.onclick=()=>{
+                    respFilterCheckboxes[index].click()
+                   }
+                   
+               }
+                let previousState = null
+                let previousEmptyOrderIndex = null
+                //alert(previousState)
+                let allOrdersEmpty = false
+                function onloadFun() {
+                    if (allOrders.getAttribute("data-size") === "0") {
+                        //previousState="empty"
+                        allOrdersEmpty = true
+                    }
+                    // alert(previousState)
+                }
+
+                onloadFun()
+                const filterMap = {
+                    0: bookedOrders,
+                    1: completedOrders,
+                    2: ongoingOrders,
+                    3: cancelledOrders
+                }
+
+                var bookedOrdersChecked = false, completedOrdersChecked = false, ongoingOrdersChecked = false, cancelledOrdersChecked = false
+
+                for (let index = 0; index < 4; index++) {
+                    const element = filterCheckBoxes[index];
+                    element.onclick = () => {
+                        //respFilterCheckboxes[index].click()
+                        //respFilterCheckboxes[index].click()
+                        if (allOrdersEmpty) {
+                            return
+                        }
+                        document.getElementById("loader_EL").style.display = "block"
+                        document.getElementById("body_content").style.display = "none"
+                        window.setTimeout(() => {
+                            if (element.checked) {
+                                if (index === 0) {
+                                    bookedOrdersChecked = true
+                                } else if (index === 1) {
+                                    completedOrdersChecked = true
+                                } else if (index === 2) {
+                                    ongoingOrdersChecked = true
+                                } else {
+                                    cancelledOrdersChecked = true
+                                }
+
+
+                                //alert(filterMap[index].id)
+                                if (allOrders.style.display === "block") {
+                                    allOrders.style.display = "none"
+                                    filterMap[index].style.display = "block"
+                                    // if(filterMap[index].getAttribute("data-size")==="0"){
+
+                                    //     previousEmptyOrderIndex=index
+                                    //  }
+                                    if (filterMap[index].getAttribute("data-size") !== "0") {
+
+                                        filterMap[index].style.display = "block"
+                                    } else {
+
+                                        emptyCartEL.style.display = "block"
+                                    }
+                                } else {
+                                    if (filterMap[index].getAttribute("data-size") !== "0") {
+                                        if (emptyCartEL.style.display === "block") {
+                                            previousState = "empty"
+                                        }
+
+                                        else {
+                                            previousState = null
+                                        }
+                                        emptyCartEL.style.display = "none"
+                                        // if(previousEmptyOrderIndex){
+                                        //     filterMap[previousEmptyOrderIndex].style.display = "none"
+                                        // }
+
+                                        filterMap[index].style.display = "block"
+                                    }
+
+                                }
+                            } else {
+                                if (index === 0) {
+                                    bookedOrdersChecked = false
+                                } else if (index === 1) {
+                                    completedOrdersChecked = false
+                                } else if (index === 2) {
+                                    ongoingOrdersChecked = false
+                                } else {
+                                    cancelledOrdersChecked = false
+                                }
+
+
+                                filterMap[index].style.display = "none"
+                                if (!bookedOrdersChecked && !cancelledOrdersChecked && !ongoingOrdersChecked && !completedOrdersChecked) {
+                                    emptyCartEL.style.display = "none"
+                                    allOrders.style.display = "block"
+
+
+
+                                } else {
+                                    if (filterMap[index].getAttribute("data-size") !== "0") {
+
+                                        if (previousState === "empty") {
+                                            emptyCartEL.style.display = "block"
+                                            //previousState=null
+                                        } else {
+                                            alert("plmko")
+                                            let emptyOrders = true
+                                            for (let i = 0; i < 4; i++) {
+                                                if (i !== index) {
+                                                    const element = filterCheckBoxes[i];
+                                                    if (element.checked) {
+                                                        if (filterMap[i].getAttribute("data-size") !== "0") {
+                                                            emptyOrders = false
+                                                            filterMap[i].style.display = "block"
+                                                        }
+                                                    }
+                                                }
+
+
+                                            }
+
+                                            if (emptyOrders) {
+                                                emptyCartEL.style.display = "block"
+
+                                            }
+
+                                        }
+
+                                    }
+                                }
+
+
+
+                                // else{
+                                //     let emptyOrders=true
+                                //     for (let i = 0; i < 4; i++) {
+                                //         if(i!==index){
+                                //             const element = filterCheckBoxes[i];
+                                //             if(element.checked){
+                                //             if(filterMap[i].getAttribute("data-size")!=="0"){
+                                //                 emptyOrders=false
+                                //                 filterMap[i].style.display="block"
+                                //             }
+                                //             }
+                                //         }
+
+
+                                // }
+
+                                // if(emptyOrders){
+
+
+                                // }
+                                // }
+
+
+
+                            } document.getElementById("loader_EL").style.display = "none"
+                            document.getElementById("body_content").style.display = "block"
+                        }, 500)
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+</body>
+
+</html>
+
+<!-- 
+for (let index = 0; index < 4; index++) {
+    const element = respFilterCheckboxes[index];
+    element.onclick = () => {
+        filterCheckBoxes[index].click()
+
+
+
+
+    }
+} -->

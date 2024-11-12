@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hello, world!</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+
+        body {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+
+
+            overflow-x: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
+            /* background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff; */
+
+            transition: all 200ms linear;
+
+        }
+
+        html {
+            font-size: 62.5%;
+
+
+        }
+
+        .red_border {
+            border: 1px solid red;
+        }
+
+        .black_border {
+            border: 1px solid black;
+        }
+
+        .green_border {
+            border: 1px solid green;
+        }
+
+        .pink_border {
+            border: 1px solid palevioletred;
+        }
+
+        .side_menu_col {
+            padding: 0;
+
+            /* border: 1px solid red; */
+            height: max-content;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: white;
+
+        }
+
+        .side_menu_wrap {
+
+            margin: 0 2rem;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding: 1.5rem;
+
+
+        }
+
+        .my_orders_main_col {
+            padding: 0;
+        }
+
+        .my_orders_main_wrap {
+            margin: 0 2rem 0 0;
+
+        }
+
+        .side_menu_heading_wrap {
+            text-align: center;
+
+
+        }
+
+        .side_menu_heading_wrap h3 {
+            font-size: 2.5rem;
+        }
+
+        .order_status_header_div {
+            margin-bottom: 1rem;
+        }
+
+        .order_status_header_div span {
+
+            font-variant: small-caps;
+            font-weight: 450;
+            letter-spacing: 0.25rem;
+        }
+
+        .order_status_checkboxes {
+            margin-left: 1rem;
+        }
+
+        .my_orders_main_nav {
+            height: 4rem;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        }
+
+        .order_item {
+            margin-bottom: 2rem;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+        .my_orders_main_nav {
+            margin-bottom: 2.5rem;
+        }
+
+
+
+        .order_item_img_col {
+            padding: 0;
+
+            /* border: 1px solid red; */
+        }
+
+        .order_item_img_col .order_item_img_wrap {
+
+            text-align: center;
+
+        }
+
+        .order_item_img_col .order_item_img_wrap img {
+            width: 15rem;
+
+        }
+
+
+        .order_item {
+
+            padding-top: 1rem;
+        }
+
+        .order_item_meta_col {
+            padding: 0;
+        }
+
+        .order_item_status_col {
+            padding: 0;
+        }
+
+        .order_status_wrap {
+            padding: 2rem;
+            box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+        }
+
+        .order_status_wrap h4 {
+            letter-spacing: 0.1rem;
+
+            font-weight: 450;
+        }
+
+        .awesome_circle {
+            border: none;
+            color: aquamarine;
+            font-size: 1.5rem;
+
+        }
+
+        .order_item_meta_heading h3 {
+
+            font-size: 2.5rem;
+            color: darkblue;
+            font-weight: 400;
+            letter-spacing: 0.2rem;
+        }
+
+        .order_item_meta_wrap {
+            padding-right: 1rem;
+        }
+
+        .order_item_meta_meta2 h4 {
+
+            font-weight: 500;
+            letter-spacing: 0.1rem;
+            font-size: 2rem;
+        }
+
+        .order_item_meta_meta2 p {
+
+            font-weight: 450;
+            letter-spacing: 0.1rem;
+            text-align: center;
+            background: whitesmoke;
+
+        }
+    </style>
+
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .view_details_div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .meta_footer {
+
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .view_details_a {
+            text-decoration: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            font-size: 2rem;
+            color: rgb(1, 1, 145);
+            padding: 0.5rem;
+            letter-spacing: 0.1rem;
+
+        }
+
+        .view_details_a:hover {
+            color: palevioletred;
+            box-shadow: none;
+        }
+
+
+
+        .tag {
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            color: rgb(1, 1, 145);
+            font-size: 2rem;
+            font-weight: 500;
+
+
+            padding: 1rem 1rem 0 1rem;
+            position: relative;
+            margin: 0;
+
+
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <div class="container-fluid  my_orders_cont ">
+        <div class="row my_orders_row ">
+            <div class="col-md-2  side_menu_col">
+                <div class="side_menu_wrap">
+                    <div class="side_menu_heading_wrap">
+                        <h3>
+                            Filters
+                        </h3>
+                        <hr>
+                    </div>
+
+                    <div class="side_menu_main">
+                        <div>
+                            <div class="order_status_header_div">
+                                <span>Order Status</span>
+                            </div>
+                            <div class=" order_status_checkboxes">
+                                <div>
+                                    <input type="checkbox" id="booked" name="filter_order_status" value="booked">
+                                    <label for="booked">Booked</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="completed" name="filter_order_status" value="completed">
+                                    <label for="completed">Completed</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="ongoing" name="filter_order_status" value="ongoing">
+                                    <label for="ongoing">Ongoing</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="cancelled" name="filter_order_status" value="cancelled">
+                                    <label for="cancelled">Cancelled</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10  my_orders_main_col ">
+                <div class="my_orders_main_wrap ">
+
+                    <div class="my_orders_main_nav">
+
+                    </div>
+                    <div class="my_orders_main_content ">
+                        <div class="container-fluid  order_items_cont ">
+                            <div class="row order_item " >
+                                <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                    <div class="order_item_img_wrap ">
+                                        <img src="../public/images/plumbing_work.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 col-12 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2 ">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+                                            <div class="meta_footer">
+
+                                                <div class="tag"><i class="far fa-calendar-alt"
+                                                        style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 col-12 order_item_status_col ">
+                                    <div class="order_status_wrap">
+                                        <h4>
+                                            <i class="fas fa-circle awesome_circle"
+                                                style="color:rgb(248, 235, 184);"></i>
+                                            Processing Booking
+
+                                        </h4>
+
+                                        <hr>
+                                        <p>Delivered on expected wednesday</p>
+
+                                      
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row order_item ">
+                                <div class="col-md-2 col-sm-4 order_item_img_col">
+                                    <div class="order_item_img_wrap">
+                                        <img src="../public/images/gardening_vector.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+
+                                            <div class="meta_footer">
+
+                                                <div class="tag"><i class="far fa-calendar-alt"
+                                                        style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 order_item_status_col">
+                                    <div class="order_status_wrap">
+                                        <h4 style="text-align: start;">
+                                            <i class="fas fa-circle awesome_circle"></i>
+                                            Thanku For taking Our Service
+
+                                        </h4>
+                                        <hr>
+
+                                        <p>give us feedback and stars</p>
+
+                                       
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row order_item ">
+                                <div class="col-md-2 col-sm-4 order_item_img_col">
+                                    <div class="order_item_img_wrap">
+                                        <img src="../public/images/cleaning_vector.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+
+                                            <div class="meta_footer">
+
+                                                <div class="tag"><i class="far fa-calendar-alt"
+                                                        style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 order_item_status_col">
+                                    <div class="order_status_wrap">
+                                        <h4 style="text-align: start;">
+                                            <i class="fas fa-circle awesome_circle"></i>
+                                            Thanku For taking Our Service
+
+                                        </h4>
+                                        <hr>
+
+                                        <p>give us feedback and stars</p>
+
+                                       
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="row order_item ">
+                                <div class="col-md-2 col-sm-4 order_item_img_col">
+                                    <div class="order_item_img_wrap">
+                                        <img src="../public/images/electricity_work.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 order_item_status_col">
+                                    <div class="order_status_wrap">
+                                        <h4 style="text-align: start;">
+                                            <i class="fas fa-circle awesome_circle"></i>
+                                            Thanku For taking Our Service
+
+                                        </h4>
+                                        <hr>
+
+                                        <p>give us feedback and stars</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row order_item ">
+                                <div class="col-md-2 col-sm-4 order_item_img_col">
+                                    <div class="order_item_img_wrap">
+                                        <img src="../public/images/plumbing_vector.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+
+                                            <div class="meta_footer">
+
+                                                <div class="tag"><i class="far fa-calendar-alt"
+                                                        style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 order_item_status_col">
+                                    <div class="order_status_wrap">
+                                        <h4 style="text-align: start;">
+                                            <i class="fas fa-circle awesome_circle"></i>
+                                            Thanku For taking Our Service
+
+                                        </h4>
+                                        <hr>
+
+                                        <p>give us feedback and stars</p>
+
+                                      
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row order_item ">
+                                <div class="col-md-2 col-sm-4 order_item_img_col">
+                                    <div class="order_item_img_wrap">
+                                        <img src="../public/images/electricity_work.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                    <div class="order_item_meta_wrap">
+                                        <div class="order_item_meta_heading">
+                                            <h3>Electricity</h3>
+                                            <hr>
+                                        </div>
+                                        <div class="order_item_meta_meta2">
+                                            <h4>Sumit Soni</h4>
+                                            <p class="">
+                                                Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                482002
+                                            </p>
+
+                                            <div class="meta_footer">
+
+                                                <div class="tag"><i class="far fa-calendar-alt"
+                                                        style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                                <div class="view_details_div">
+                                                    <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                        view Details</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 order_item_status_col">
+                                    <div class="order_status_wrap">
+                                        <h4 style="text-align: start;">
+                                            <i class="fas fa-circle awesome_circle"></i>
+                                            Thanku For taking Our Service
+
+                                        </h4>
+                                        <hr>
+
+                                        <p>give us feedback and stars</p>
+
+                                      
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

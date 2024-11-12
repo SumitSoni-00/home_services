@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--========== CSS ==========-->
+    <style>
+        /*========== GOOGLE FONTS ==========*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        /*========== VARIABLES CSS ==========*/
+        :root {
+            --header-height: 3.5rem;
+            --nav-width: 219px;
+
+            /*========== Colors ==========*/
+            --first-color: #6923D0;
+            --first-color-light: #F4F0FA;
+            --title-color: #19181B;
+            --text-color: #58555E;
+            --text-color-light: #A5A1AA;
+            --body-color: #F9F6FD;
+            --container-color: #FFFFFF;
+
+            /*========== Font and typography ==========*/
+            --body-font: 'Poppins', sans-serif;
+            --normal-font-size: .938rem;
+            --small-font-size: .75rem;
+            --smaller-font-size: .75rem;
+
+            /*========== Font weight ==========*/
+            --font-medium: 500;
+            --font-semi-bold: 600;
+
+            /*========== z index ==========*/
+            --z-fixed: 100;
+        }
+
+        @media screen and (min-width: 1024px) {
+            :root {
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+
+        /*========== BASE ==========*/
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: var(--header-height) 0 0 0;
+            padding: 1rem 1rem 0;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+             /* background-color: var(--body-color);  */
+             background: #FFFFFF !important;
+            color: var(--text-color);
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*========== HEADER ==========*/
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--container-color);
+            box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+            padding: 0 1rem;
+            z-index: var(--z-fixed);
+
+        }
+
+        .header__container {
+            display: flex;
+            align-items: center;
+            height: var(--header-height);
+            justify-content: space-between;
+
+        }
+
+        .header__img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .header__logo {
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            display: none;
+        }
+
+        .header__search {
+            display: flex;
+            padding: .40rem .75rem;
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+        }
+
+        .header__input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: var(--first-color-light);
+        }
+
+        .header__input::placeholder {
+            font-family: var(--body-font);
+            color: var(--text-color);
+        }
+
+        .header__icon,
+        .header__toggle {
+            font-size: 1.2rem;
+        }
+
+        .header__toggle {
+            color: var(--title-color);
+            cursor: pointer;
+        }
+
+        /*========== NAV ==========*/
+        .nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100vh;
+            padding: 1rem 1rem 0;
+            background-color: var(--container-color);
+            box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
+            z-index: var(--z-fixed);
+            transition: .4s;
+        }
+
+        .nav__container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 3rem;
+            overflow: auto;
+            scrollbar-width: none;
+            /* For mozilla */
+        }
+
+        /* For Google Chrome and others */
+        .nav__container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav__logo {
+            font-weight: var(--font-semi-bold);
+            margin-bottom: 2.5rem;
+        }
+
+        .nav__list,
+        .nav__items {
+            display: grid;
+        }
+
+        .nav__list {
+            row-gap: 2.5rem;
+        }
+
+        .nav__items {
+            row-gap: 1.5rem;
+        }
+
+        .nav__subtitle {
+            font-size: var(--normal-font-size);
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            color: var(--text-color-light);
+        }
+
+        .nav__link {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+        }
+
+        .nav__link:hover {
+            color: var(--first-color);
+        }
+
+        .nav__icon {
+            font-size: 1.2rem;
+            margin-right: .5rem;
+        }
+
+        .nav__name {
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+            white-space: nowrap;
+        }
+
+        .nav__logout {
+            margin-top: 5rem;
+        }
+
+        /* Dropdown */
+        .nav__dropdown {
+            overflow: hidden;
+            max-height: 21px;
+            transition: .4s ease-in-out;
+        }
+
+        .nav__dropdown-collapse {
+            background-color: var(--first-color-light);
+            border-radius: .25rem;
+            margin-top: 1rem;
+        }
+
+        .nav__dropdown-content {
+            display: grid;
+            row-gap: .5rem;
+            padding: .75rem 2.5rem .75rem 1.8rem;
+        }
+
+        .nav__dropdown-item {
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-medium);
+            color: var(--text-color);
+        }
+
+        .nav__dropdown-item:hover {
+            color: var(--first-color);
+        }
+
+        .nav__dropdown-icon {
+            margin-left: auto;
+            transition: .4s;
+        }
+
+        /* Show dropdown collapse */
+        .nav__dropdown:hover {
+            max-height: 100rem;
+        }
+
+        /* Rotate icon arrow */
+        .nav__dropdown:hover .nav__dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /*===== Show menu =====*/
+        .show-menu {
+            left: 0;
+        }
+
+        /*===== Active link =====*/
+        .active {
+            color: var(--first-color);
+        }
+
+        /* ========== MEDIA QUERIES ==========*/
+        /* For small devices reduce search*/
+        @media screen and (max-width: 320px) {
+            .header__search {
+                width: 70%;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                padding: 1rem 3rem 0 6rem;
+            }
+
+            .header {
+                padding: 0 3rem 0 6rem;
+            }
+
+            .header__container {
+                height: calc(var(--header-height) + .5rem);
+            }
+
+            .header__search {
+                width: 300px;
+                padding: .55rem .75rem;
+            }
+
+            .header__toggle {
+                display: none;
+            }
+
+            .header__logo {
+                display: block;
+            }
+
+            .header__img {
+                width: 40px;
+                height: 40px;
+                order: 1;
+            }
+
+            .nav {
+                left: 0;
+                padding: 1.2rem 1.5rem 0;
+                width: 68px;
+                /* Reduced navbar */
+            }
+
+            .nav__items {
+                row-gap: 1.7rem;
+            }
+
+            .nav__icon {
+                font-size: 1.3rem;
+            }
+
+            /* Element opacity */
+            .nav__logo-name,
+            .nav__name,
+            .nav__subtitle,
+            .nav__dropdown-icon {
+                opacity: 0;
+                transition: .3s;
+            }
+
+
+            /* Navbar expanded */
+            .nav:hover {
+                width: var(--nav-width);
+            }
+
+            /* Visible elements */
+            .nav:hover .nav__logo-name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__subtitle {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__name {
+                opacity: 1;
+            }
+
+            .nav:hover .nav__dropdown-icon {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Responsive sidebar submenus</title>
+</head>
+
+<body>
+
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="assets/img/perfil.jpg" alt="" class="header__img">
+
+            <a href="#" class="header__logo">Swingcodes</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Swingcodes</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+
+
+
+                        <a href="/customer/page/bookings" class="nav__link">
+                            <i class='bx bx-compass nav__icon'></i>
+                            <span class="nav__name">My Bookings</span>
+                        </a>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name">Profile</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
+
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    <a href="#" class="nav__dropdown-item">Passwords</a>
+                                    <a href="#" class="nav__dropdown-item">Mail</a>
+                                    <a href="#" class="nav__dropdown-item">Accounts</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-message-rounded nav__icon'></i>
+                            <span class="nav__name">Messages</span>
+                        </a>
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Menu</h3>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bell nav__icon'></i>
+                                <span class="nav__name">Notifications</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
+
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    <a href="#" class="nav__dropdown-item">Blocked</a>
+                                    <a href="#" class="nav__dropdown-item">Silenced</a>
+                                    <a href="#" class="nav__dropdown-item">Publish</a>
+                                    <a href="#" class="nav__dropdown-item">Program</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-compass nav__icon'></i>
+                            <span class="nav__name">Explore</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Saved</span>
+                        </a>
+
+                        <a href="/customer/addresses" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Manage Addresses</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!--========== CONTENTS ==========-->
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding-top: 40px;
+            color: #2e323c;
+            background: #f5f6fa;
+            position: relative;
+            height: 100%;
+        }
+
+        .account-settings .user-profile {
+            margin: 0 0 1rem 0;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+
+        .account-settings .user-profile .user-avatar {
+            margin: 0 0 1rem 0;
+        }
+
+        .account-settings .user-profile .user-avatar img {
+            width: 90px;
+            height: 90px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+        }
+
+        .account-settings .user-profile h5.user-name {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .account-settings .user-profile h6.user-email {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #9fa8b9;
+        }
+
+        .account-settings .about {
+            margin: 2rem 0 0 0;
+            text-align: center;
+        }
+
+        .account-settings .about h5 {
+            margin: 0 0 15px 0;
+            color: #007ae1;
+        }
+
+        .account-settings .about p {
+            font-size: 0.825rem;
+        }
+
+        .form-control {
+            border: 1px solid #cfd1d8;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            font-size: .825rem;
+            background: #ffffff;
+            color: #2e323c;
+        }
+
+        .card {
+            background: #ffffff;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            border: 0;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main>
+        <section>
+
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+
+
+
+                /* body {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+
+
+            overflow-x: hidden;
+            padding: 20px;
+ /* background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff; 
+
+            transition: all 200ms linear;
+
+        } */
+
+
+
+
+                /* html {
+            font-size: 62.5%;
+
+
+        } */
+
+                .red_border {
+                    border: 1px solid red;
+                }
+
+                .black_border {
+                    border: 1px solid black;
+                }
+
+                .green_border {
+                    border: 1px solid green;
+                }
+
+                .pink_border {
+                    border: 1px solid palevioletred;
+                }
+
+                .my_orders_cont .side_menu_col {
+                    padding: 0;
+
+                    /* border: 1px solid red; */
+                    height: max-content;
+                    position: sticky;
+                    top: calc(var(--header-height) + 1.3rem);
+                    ;
+                    /*  */
+                    z-index: 99;
+                    background: white;
+
+                }
+
+
+                /* .my_orders_row{
+                    border: 1px solid black;
+                    
+                } */
+
+
+
+                .my_orders_cont .side_menu_wrap {
+
+                    margin: 0 1rem;
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    padding: 1rem;
+
+
+                }
+
+                .my_orders_cont .my_orders_main_col {
+                    padding: 0;
+                }
+
+                .my_orders_cont .my_orders_main_wrap {
+                    margin: 0 ;
+                   
+
+                }
+
+                .my_orders_cont .side_menu_heading_wrap {
+                    text-align: center;
+                  
+
+
+                }
+
+                .my_orders_cont .side_menu_heading_wrap h3 {
+                    font-size: 1.35rem;
+                    
+                }
+
+                .my_orders_cont .order_status_header_div {
+                    margin-bottom: 0.5rem;
+                   
+                }
+
+                .my_orders_cont .order_status_header_div span {
+
+                    font-variant: small-caps;
+                    font-weight: 600;
+                    letter-spacing: 0.2rem;
+                  
+                }
+
+                .my_orders_cont .order_status_checkboxes {
+                    margin-left: 1rem;
+                  
+                    
+                }
+
+                .my_orders_cont .my_orders_main_nav {
+                    height: 4rem;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                   
+
+                }
+
+                .my_orders_cont .order_item {
+                    margin-bottom: 0.5rem;
+                    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                    
+                }
+
+                .my_orders_cont .my_orders_main_nav {
+                    margin-bottom: 2.5rem;
+                    
+                }
+
+
+
+                .my_orders_cont .order_item_img_col {
+                    padding: 0;
+
+
+                    /* border: 1px solid red; */
+                }
+
+
+
+                .my_orders_cont .order_item_img_col .order_item_img_wrap img {
+                    width: 100%;
+                    height: auto;
+
+
+
+                }
+
+
+                .my_orders_cont .order_item {
+
+                    padding-top: 0.5rem;
+                   
+                }
+
+                .my_orders_cont .order_item_meta_col {
+                    padding: 0;
+                }
+
+                .my_orders_cont .order_item_status_col {
+                    padding: 0;
+                }
+
+                .my_orders_cont .order_status_wrap {
+                    padding: 1rem;
+                   
+                    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+                }
+
+                .my_orders_cont .order_status_wrap h4 {
+                    letter-spacing: 0.1rem;
+
+                    font-weight: 500;
+                    
+                    font-size: 1rem;
+                }
+
+                .my_orders_cont .awesome_circle {
+                    border: none;
+                    color: aquamarine;
+                    font-size: 1rem;
+                   
+
+                }
+
+                .my_orders_cont .order_item_meta_heading h3 {
+
+                    font-size: 1.45rem;
+                    color: gray;
+                    font-weight: 400;
+                    letter-spacing: 0.1rem;
+                    
+                }
+
+                .my_orders_cont .order_item_meta_wrap {
+                    padding-right: 0.5rem;
+                   
+                }
+
+                .my_orders_cont .order_item_meta_meta2 h4 {
+
+                    font-weight: 500;
+                    letter-spacing: 0.1rem;
+                    font-size: 1.15rem;
+                    
+                }
+
+                .my_orders_cont .order_item_meta_meta2 p {
+
+                    font-weight: 450;
+                    letter-spacing: 0.1rem;
+                    text-align: center;
+                    font-size: 0.9rem;
+                    background: whitesmoke;
+                    
+
+                }
+            </style>
+
+
+            <style>
+                .my_orders_cont a {
+                    text-decoration: none;
+                }
+
+                .my_orders_cont .view_details_div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .my_orders_cont .meta_footer {
+
+                    margin-top: 0rem !important;
+                    display: flex;
+                    
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .my_orders_cont .view_details_a {
+                    text-decoration: none;
+                    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                    font-size: 1rem;
+                    color: rgb(1, 1, 145);
+                    padding: 0.25rem;
+                    letter-spacing: 0.1rem;
+                    transition: all 0.5s;
+                    
+                    
+
+                }
+
+                .my_orders_cont .view_details_a:hover {
+                    color: rgb(114, 31, 192);
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+                }
+
+
+
+                .my_orders_cont .tag {
+                    background: white;
+                    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+                    color: gray;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    
+
+
+                    padding: 0.1rem;
+                    position: relative;
+                    
+
+
+                }
+
+                /* @media screen and (max-width: 992px) {
+            .order_status_checkboxes {
+                border: 1px solid red;
+            }
+
+            .side_menu_heading_wrap {
+                border: 1px solid green;
+            }
+        } */
+
+
+                .my_orders_cont .resp_filter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 20px;
+                    flex-wrap: wrap;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                }
+
+                .my_orders_cont .btn_icon {
+                    border: none;
+                    box-shadow: none;
+                    font-size: 15px;
+                    border-radius: none;
+                    outline: none;
+                }
+
+                .my_orders_cont .btn_icon:focus {
+                    border: 1.5px solid grey;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                }
+
+
+                @media screen and (max-width: 576px) {
+                    .my_orders_cont .my_orders_main_col {
+                        padding: 0 !important;
+                    }
+
+                    .my_orders_cont .my_orders_main_wrap {
+
+                        margin: 0 !important;
+
+                    }
+
+
+
+                    .my_orders_cont .order_item {
+                        padding: 10px !important;
+                        margin-top: 20px !important;
+                    }
+
+                    body {
+                        padding: 10px !important;
+                        font-size: 15px;
+                    }
+                }
+
+                .my_orders_cont .btn_icon {
+                    display: none;
+                }
+
+
+
+                @media screen and (max-width: 992px) {
+
+
+                    .my_orders_cont .btn_icon {
+                        display: block;
+                    }
+
+                    .my_orders_cont .all_filter_box {
+                        display: none !important;
+                    }
+
+                    .my_orders_cont .side_menu_col {
+
+                        top: calc(var(--header-height) + 9px);
+
+                    }
+
+                    .side_menu_heading_wrap h3{
+                        border: 1px solid red;
+                        font-size: 1.3rem !important;
+                        
+                    }
+
+                    .resp_filter{
+                        padding: 0.5rem !important;
+                    }
+
+
+                }
+
+                @media screen and (max-width: 992px) {
+                    .my_orders_cont .side_menu_col {
+
+                        top: calc(var(--header-height) + 1px);
+
+                    }
+                }
+
+
+
+
+
+
+                @media screen and (min-width: 993px) {
+
+
+
+                    .my_orders_cont .filter_collapse {
+                        display: none !important;
+                    }
+                }
+            </style>
+
+
+
+
+
+
+            <div class="container-fluid  my_orders_cont mt-5">
+                <div class="row my_orders_row p-0">
+                    <div class="col-lg-2 col-md-12  side_menu_col">
+                        <div class="side_menu_wrap" style="display: none;">
+                            <div class="side_menu_heading_wrap">
+                                <h3>
+                                    Filters
+                                </h3>
+                                <hr>
+                            </div>
+
+                            <div class="side_menu_main">
+                                <div>
+                                    <div class="order_status_header_div">
+                                        <span>Order Status</span>
+                                    </div>
+                                    <div class=" order_status_checkboxes">
+                                        <div>
+                                            <input type="checkbox" id="booked" name="filter_order_status"
+                                                value="booked">
+                                            <label for="booked">Booked</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="completed" name="filter_order_status"
+                                                value="completed">
+                                            <label for="completed">Completed</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="ongoing" name="filter_order_status"
+                                                value="ongoing">
+                                            <label for="ongoing">Ongoing</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" id="cancelled" name="filter_order_status"
+                                                value="cancelled">
+                                            <label for="cancelled">Cancelled</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="resp_filter">
+                                <div class="side_menu_heading_wrap">
+                                    <h3>
+                                        Filters
+                                    </h3>
+
+
+                                </div>
+
+                                <button class="btn btn_icon" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <i class="fas fa-sliders-h filter_icon"></i>
+                                </button>
+
+
+                            </div>
+                            <div class=" mt-3 all_filter_box" style=" transition:all 0.5s; 
+                    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">
+                                <div class="side_menu_main">
+                                    <div>
+                                        <div class="order_status_header_div" style="padding-left: 10px;">
+                                            <span>Order Status</span>
+                                        </div>
+                                        <div class=" order_status_checkboxes">
+                                            <div>
+                                                <input type="checkbox" id="booked" name="filter_order_status"
+                                                    value="booked">
+                                                <label for="booked">Booked</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="completed" name="filter_order_status"
+                                                    value="completed">
+                                                <label for="completed">Completed</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="ongoing" name="filter_order_status"
+                                                    value="ongoing">
+                                                <label for="ongoing">Ongoing</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="cancelled" name="filter_order_status"
+                                                    value="cancelled">
+                                                <label for="cancelled">Cancelled</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- #################################################################### -->
+                            <div class="collapse filter_collapse" id="collapseExample">
+
+                                <div class=" mt-3 large_filter_box" style=" transition:all 0.5s; 
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;">
+                                    <div class="side_menu_main">
+                                        <div>
+                                            <div class="order_status_header_div" style="padding-left: 10px;">
+                                                <span>Order Status</span>
+                                            </div>
+                                            <div class=" order_status_checkboxes">
+                                                <div>
+                                                    <input type="checkbox" id="booked" name="filter_order_status"
+                                                        value="booked">
+                                                    <label for="booked">Booked</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" id="completed" name="filter_order_status"
+                                                        value="completed">
+                                                    <label for="completed">Completed</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" id="ongoing" name="filter_order_status"
+                                                        value="ongoing">
+                                                    <label for="ongoing">Ongoing</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" id="cancelled" name="filter_order_status"
+                                                        value="cancelled">
+                                                    <label for="cancelled">Cancelled</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ########################################################################## -->
+                        </div>
+
+                    </div>
+                    <div class="col-lg-10 col-md-12   my_orders_main_col p-0">
+                        <div class="my_orders_main_wrap ml-lg-4 mt-md-5 mt-lg-0 mt-sm-5">
+
+                            <div class="my_orders_main_nav" style="display: none;">
+
+                            </div>
+                            <div class="my_orders_main_content ">
+                                <div class="container-fluid  order_items_cont ">
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 pl-sm-3">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4  col-md-12 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row order_item mt-md-4 mt-lg-0 mt-sm-4"
+                                        style="padding: 20px;background: transparent;border: 1px solid gainsboro;border-radius: 2px;">
+                                        <div class="col-md-2 col-sm-4 col-12 order_item_img_col ">
+                                            <div class="order_item_img_wrap ">
+                                                <img src="../../../public/images/cleaning_vector.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-8 col-12 order_item_meta_col pl-lg-4 p-0">
+                                            <div class="order_item_meta_wrap">
+                                                <div class="order_item_meta_heading">
+                                                    <h3>booking service</h3>
+                                                    <hr>
+                                                </div>
+                                                <div class="order_item_meta_meta2 ">
+                                                    <h4>Sumit Soni</h4>
+                                                    <p class="">
+                                                        Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002 Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                                        482002
+                                                    </p>
+                                                    <div class="meta_footer">
+
+                                                        <div class="tag"><i class="far fa-calendar-alt"
+                                                                style="margin-right: 0.5rem;"></i>createdAt</div>
+
+                                                        <div class="view_details_div">
+                                                            <a href="#" class="view_details_a"
+                                                                style="text-decoration: none;">
+                                                                view Details</a>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12 order_item_status_col mt-sm-3">
+                                            <div class="order_status_wrap">
+                                                <h4>
+                                                    <i class="fas fa-circle awesome_circle"
+                                                        style="color:rgb(248, 235, 184);"></i>
+                                                    Processing Booking
+
+                                                </h4>
+
+                                                <hr>
+                                                <p>Delivered on expected wednesday</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <!-- 
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/gardening_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/cleaning_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/electricity_work.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/plumbing_vector.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row order_item ">
+                            <div class="col-md-2 col-sm-4 order_item_img_col">
+                                <div class="order_item_img_wrap">
+                                    <img src="../public/images/electricity_work.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-8 order_item_meta_col">
+                                <div class="order_item_meta_wrap">
+                                    <div class="order_item_meta_heading">
+                                        <h3>Electricity</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="order_item_meta_meta2">
+                                        <h4>Sumit Soni</h4>
+                                        <p class="">
+                                            Niwadganj near Latkari ka padav ,Jabalpur ,Mp
+                                            482002
+                                        </p>
+
+                                        <div class="meta_footer">
+
+                                            <div class="tag"><i class="far fa-calendar-alt"
+                                                    style="margin-right: 0.5rem;"></i>5/11/12 , Tues, 11:51 AM</div>
+
+                                            <div class="view_details_div">
+                                                <a href="#" class="view_details_a" style="text-decoration: none;">
+                                                    view Details</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 order_item_status_col">
+                                <div class="order_status_wrap">
+                                    <h4 style="text-align: start;">
+                                        <i class="fas fa-circle awesome_circle"></i>
+                                        Thanku For taking Our Service
+
+                                    </h4>
+                                    <hr>
+
+                                    <p>give us feedback and stars</p>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+-->
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+    </main>
+
+
+
+
+
+    <!--========== MAIN JS ==========-->
+    <script>
+        /*==================== SHOW NAVBAR ====================*/
+        const showMenu = (headerToggle, navbarId) => {
+            const toggleBtn = document.getElementById(headerToggle),
+                nav = document.getElementById(navbarId)
+
+            // Validate that variables exist
+            if (headerToggle && navbarId) {
+                toggleBtn.addEventListener('click', () => {
+                    // We add the show-menu class to the div tag with the nav__menu class
+                    nav.classList.toggle('show-menu')
+                    // change icon
+                    toggleBtn.classList.toggle('bx-x')
+                })
+            }
+        }
+        showMenu('header-toggle', 'navbar')
+
+        /*==================== LINK ACTIVE ====================*/
+        const linkColor = document.querySelectorAll('.nav__link')
+
+        function colorLink() {
+            linkColor.forEach(l => l.classList.remove('active'))
+            this.classList.add('active')
+        }
+
+        linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

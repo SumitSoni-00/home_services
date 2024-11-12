@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+        integrity="sha512-ZYg+hQvLlM0W9C3P6vTpes5LmJ66G2EsroxDNzwD6qiulckldb29eD9I672HL2X+LH5nRhY1sQqZLJGB+aUUPg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/js/all.min.js"
+        integrity="sha512-NBPDzmbzjlbKiCJ4gojF6V5hwwaiATqKnSRisMaVpJVECLJ10Dd88t/YV42Y8PMWBlqvIOJtXVBz79wgYlTY7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Hello, world!</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+
+
+
+
+        }
+
+
+        [class*='col-'] {
+
+            padding: 0;
+        }
+
+        .address_box_cont  .address_box_heading h4 {
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 18px;
+        }
+
+        .address_box_cont  .second_heading h5 {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(37, 37, 250);
+        }
+
+        .address_box_cont  .address_fa {
+            color: gray;
+            font-size: 25px;
+        }
+
+        .address_box_cont  .second_heading {
+            padding: 15px;
+        }
+
+        .address_box_cont  .second_col {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .address_box_cont  .address_box_cont {
+            background: white;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        .address_box_cont  .second_heading:hover .h5_second {
+            color: black;
+        }
+
+        .address_box_cont  .address_item {
+            border: 1.5px solid gainsboro;
+            padding: 20px;
+        }
+
+        .address_box_cont  .item_nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            font-size: 15px;
+            color: darkgray;
+        }
+
+        .address_box_cont  .three_dots {
+            font-size: 20px !important;
+            color: gray;
+        }
+
+        .address_box_cont  .tag_span {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding: 5px;
+            font-weight: 800;
+        }
+
+        .address_box_cont  .item_head {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .address_box_cont  .item_footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .address_box_cont  .item_head h3 {
+            font-weight: 600;
+            font-size: 17px;
+            margin-right: 20px;
+        }
+
+        .address_box_cont  .item_head h3:last-child {
+            color: rgb(74, 1, 148);
+        }
+
+        .address_box_cont  .footer_main {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            max-width: 70%;
+            font-weight: 500;
+            font-size: 17px;
+            color: black;
+            padding: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+       .address_box_cont   .menu_span {
+            cursor: pointer;
+
+            padding: 10px;
+        }
+
+        .address_box_cont  .menu_span:hover {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .address_box_cont  .form_item {
+            /* border: 1.5px solid rgb(190, 187, 187); */
+            font-size: 13px;
+            font-weight: 700;
+            /* background: aliceblue; */
+            padding: 5px 10px !important;
+            border-radius: 3px;
+
+
+        }
+
+        .address_box_cont  .form_item .my_form_control {
+            outline: none;
+            /* border: 1px solid rgb(203, 203, 203); */
+            box-shadow: none;
+            border-radius: 2px;
+            border: 1.5px solid white;
+        }
+
+        .address_box_cont  .form_item .my_form_control:focus {
+            border: 1.5px solid rgb(37, 37, 250) !important;
+        }
+
+        .address_box_cont  .address_item {
+            resize: none;
+            border: 2px solid gray !important;
+            background: #fafafa;
+        }
+
+       .address_box_cont   .new_address_box{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container address_box_cont">
+        <div class="row p-lg-5 p-3">
+            <div class="col-12">
+                <div class="address_box_heading">
+                    <h4>Manage Addresses</h4>
+                </div>
+            </div>
+           
+            <div class="col-12 mt-3 second_col">
+                <a href="#" id="add_new_a">
+                    <div class="second_heading">
+                        <h5 class="h5_second"><i class="far fa-address-card address_fa"></i> &nbsp; Add New Address</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 new_address_box mt-3 p-4" id="address_box_id" style="display: none;">
+                <form class="mt-3">
+                    <div class="form-row">
+                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                            <label for="inputEmail4">Full Name</label>
+                            <input type="text" required class="form-control my_form_control" id="inputEmail4"
+                                placeholder="Full Name" >
+                        </div>
+                        <div class="form-group col-lg-5 form_item">
+                            <label for="inputPassword4">Pin Code</label>
+                            <input type="text" required class="form-control my_form_control" id="inputPassword4"
+                                placeholder="Pin Code">
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+
+                        <div class="form-group col-lg-5 form_item">
+                            <label for="exampleFormControlTextarea1"> Address</label>
+                            <textarea class="form-control my_form_control address_item" required
+                                id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                            <label for="inputEmail4">City </label>
+                            <input type="text" required class="form-control my_form_control" id="inputEmail4"
+                                placeholder=" City">
+                        </div>
+                        <div class="form-group col-lg-5  form_item">
+                            <label for="inputState">State</label>
+                            <select id="inputState" required class="form-control my_form_control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-lg-5 mr-lg-3 form_item">
+                            <label for="inputEmail4">Alternate Phone </label>
+                            <input type="text" class="form-control my_form_control" id="inputEmail4"
+                                placeholder=" Alternate Phone">
+                        </div>
+                        <div class="form-group col-lg-5 form_item">
+                            <label for="inputPassword4"> Locality</label>
+                            <input type="text" required class="form-control my_form_control" id="inputPassword4"
+                                placeholder=" Locality">
+                        </div>
+
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" id="cancel_add_new">Cancel</button>
+                </form>
+            </div>
+
+            <div class="col-12 mt-5">
+                <div>
+                    <div class="address_item">
+                        <div class="item_nav">
+
+                            <div>
+
+                                <div class="dropdown show">
+                                    <span href="#" id="item_menu" data-toggle="dropdown" aria-haspopup="true"
+                                        role="button" aria-expanded="false" class="menu_span">
+                                        <i class="fas fa-ellipsis-v three_dots "></i>
+                                    </span>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="item_menu">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item_head">
+                            <h3>Amit Soni</h3>
+                            <h3>8817709238</h3>
+                        </div>
+
+                        <div class="item_footer">
+                            <p class="footer_main">Niwadganj near latkari ka padav,Jabalpur lorem20 Mp
+
+                            </p>
+                            <div>
+                                <span class="tag_span">Home</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+        <script>
+            const addNewAddress=document.getElementById("add_new_a")
+            const addressBoxEL=document.getElementById("address_box_id")
+            const cancelBtn=document.getElementById("cancel_add_new")
+            addNewAddress.onclick=()=>{
+                addressBoxEL.style.display="block"
+            }
+
+            cancelBtn.onclick=()=>{
+                addressBoxEL.style.display="none"
+            }
+        </script>
+</body>
+
+</html>

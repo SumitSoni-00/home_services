@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include("../../partials/global_header.ejs",{title:"Book"})%>
+
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0-1/css/all.min.css" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0-1/js/all.min.js"></script>
+</head>
+
+<body>
+
+    <!--========== HEADER / NAV (START)==========-->
+
+    <!--========== HEADER / NAV (END)==========-->
+
+    <!--========== CONTENTS ==========-->
+
+    <style>
+        body {
+            margin-top: 20px;
+        }
+
+        /* User Cards */
+        .user-box {
+            width: 110px;
+            margin: auto;
+            margin-bottom: 20px;
+
+        }
+
+        .user-box img {
+            width: 100%;
+            border-radius: 50%;
+            padding: 3px;
+            background: #fff;
+            -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+            -ms-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-card-2 .card {
+            position: relative;
+        }
+
+        .profile-card-2 .card .card-body {
+            z-index: 1;
+        }
+
+        .profile-card-2 .card::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+            height: 112px;
+            background-color: #e6e6e6;
+        }
+
+        .profile-card-2 .card.profile-primary::before {
+            background-color: #008cff;
+        }
+
+        .profile-card-2 .card.profile-success::before {
+            background-color: #15ca20;
+        }
+
+        .profile-card-2 .card.profile-danger::before {
+            background-color: #fd3550;
+        }
+
+        .profile-card-2 .card.profile-warning::before {
+            background-color: #ff9700;
+        }
+
+        .profile-card-2 .user-box {
+            margin-top: 30px;
+        }
+
+        .profile-card-3 .user-fullimage {
+            position: relative;
+        }
+
+        .profile-card-3 .user-fullimage .details {
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            width: 100%;
+        }
+
+        .profile-card-4 .user-box {
+            width: 110px;
+            margin: auto;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .profile-card-4 .list-icon {
+            display: table-cell;
+            font-size: 30px;
+            padding-right: 20px;
+            vertical-align: middle;
+            color: #223035;
+        }
+
+        .profile-card-4 .list-details {
+            display: table-cell;
+            vertical-align: middle;
+            font-weight: 600;
+            color: #223035;
+            font-size: 15px;
+            line-height: 15px;
+        }
+
+        .profile-card-4 .list-details small {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 12px;
+            font-weight: 400;
+            color: #808080;
+        }
+
+        /*Nav Tabs & Pills */
+        .nav-tabs .nav-link {
+            color: #223035;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin: 2px;
+            margin-bottom: 0;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+
+        }
+
+        .nav-tabs .nav-link:hover {
+            border: 1px solid transparent;
+        }
+
+        .nav-tabs .nav-link i {
+            margin-right: 2px;
+            font-weight: 600;
+        }
+
+        .top-icon.nav-tabs .nav-link i {
+            margin: 0px;
+            font-weight: 500;
+            display: block;
+            font-size: 20px;
+            padding: 5px 0;
+        }
+
+        .nav-tabs-primary.nav-tabs {
+            border-bottom: 1px solid #008cff;
+        }
+
+        .nav-tabs-primary .nav-link.active,
+        .nav-tabs-primary .nav-item.show>.nav-link {
+            color: #008cff;
+            background-color: #fff;
+            border-color: #008cff #008cff #fff;
+            border-top: 3px solid #008cff;
+        }
+
+        .nav-tabs-success.nav-tabs {
+            border-bottom: 1px solid #15ca20;
+        }
+
+        .nav-tabs-success .nav-link.active,
+        .nav-tabs-success .nav-item.show>.nav-link {
+            color: #15ca20;
+            background-color: #fff;
+            border-color: #15ca20 #15ca20 #fff;
+            border-top: 3px solid #15ca20;
+        }
+
+        .nav-tabs-info.nav-tabs {
+            border-bottom: 1px solid #0dceec;
+        }
+
+        .nav-tabs-info .nav-link.active,
+        .nav-tabs-info .nav-item.show>.nav-link {
+            color: #0dceec;
+            background-color: #fff;
+            border-color: #0dceec #0dceec #fff;
+            border-top: 3px solid #0dceec;
+        }
+
+        .nav-tabs-danger.nav-tabs {
+            border-bottom: 1px solid #fd3550;
+        }
+
+        .nav-tabs-danger .nav-link.active,
+        .nav-tabs-danger .nav-item.show>.nav-link {
+            color: #fd3550;
+            background-color: #fff;
+            border-color: #fd3550 #fd3550 #fff;
+            border-top: 3px solid #fd3550;
+        }
+
+        .nav-tabs-warning.nav-tabs {
+            border-bottom: 1px solid #ff9700;
+        }
+
+        .nav-tabs-warning .nav-link.active,
+        .nav-tabs-warning .nav-item.show>.nav-link {
+            color: #ff9700;
+            background-color: #fff;
+            border-color: #ff9700 #ff9700 #fff;
+            border-top: 3px solid #ff9700;
+        }
+
+        .nav-tabs-dark.nav-tabs {
+            border-bottom: 1px solid #223035;
+        }
+
+        .nav-tabs-dark .nav-link.active,
+        .nav-tabs-dark .nav-item.show>.nav-link {
+            color: #223035;
+            background-color: #fff;
+            border-color: #223035 #223035 #fff;
+            border-top: 3px solid #223035;
+        }
+
+        .nav-tabs-secondary.nav-tabs {
+            border-bottom: 1px solid #75808a;
+        }
+
+        .nav-tabs-secondary .nav-link.active,
+        .nav-tabs-secondary .nav-item.show>.nav-link {
+            color: #75808a;
+            background-color: #fff;
+            border-color: #75808a #75808a #fff;
+            border-top: 3px solid #75808a;
+        }
+
+        .tabs-vertical .nav-tabs .nav-link {
+            color: #223035;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin: 2px;
+            margin-right: -1px;
+            padding: 12px 1px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            border-radius: 0;
+            border-top-left-radius: .25rem;
+            border-bottom-left-radius: .25rem;
+        }
+
+        .tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical .nav-tabs .nav-link.active {
+            color: #495057;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+            border-bottom: 1px solid #dee2e6;
+            border-right: 0;
+            border-left: 1px solid #dee2e6;
+        }
+
+        .tabs-vertical-primary.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #008cff;
+        }
+
+        .tabs-vertical-primary.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-primary.tabs-vertical .nav-tabs .nav-link.active {
+            color: #008cff;
+            background-color: #fff;
+            border-color: #008cff #008cff #fff;
+            border-bottom: 1px solid #008cff;
+            border-right: 0;
+            border-left: 3px solid #008cff;
+        }
+
+        .tabs-vertical-success.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #15ca20;
+        }
+
+        .tabs-vertical-success.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-success.tabs-vertical .nav-tabs .nav-link.active {
+            color: #15ca20;
+            background-color: #fff;
+            border-color: #15ca20 #15ca20 #fff;
+            border-bottom: 1px solid #15ca20;
+            border-right: 0;
+            border-left: 3px solid #15ca20;
+        }
+
+        .tabs-vertical-info.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #0dceec;
+        }
+
+        .tabs-vertical-info.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-info.tabs-vertical .nav-tabs .nav-link.active {
+            color: #0dceec;
+            background-color: #fff;
+            border-color: #0dceec #0dceec #fff;
+            border-bottom: 1px solid #0dceec;
+            border-right: 0;
+            border-left: 3px solid #0dceec;
+        }
+
+        .tabs-vertical-danger.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #fd3550;
+        }
+
+        .tabs-vertical-danger.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-danger.tabs-vertical .nav-tabs .nav-link.active {
+            color: #fd3550;
+            background-color: #fff;
+            border-color: #fd3550 #fd3550 #fff;
+            border-bottom: 1px solid #fd3550;
+            border-right: 0;
+            border-left: 3px solid #fd3550;
+        }
+
+        .tabs-vertical-warning.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #ff9700;
+        }
+
+        .tabs-vertical-warning.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-warning.tabs-vertical .nav-tabs .nav-link.active {
+            color: #ff9700;
+            background-color: #fff;
+            border-color: #ff9700 #ff9700 #fff;
+            border-bottom: 1px solid #ff9700;
+            border-right: 0;
+            border-left: 3px solid #ff9700;
+        }
+
+        .tabs-vertical-dark.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #223035;
+        }
+
+        .tabs-vertical-dark.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-dark.tabs-vertical .nav-tabs .nav-link.active {
+            color: #223035;
+            background-color: #fff;
+            border-color: #223035 #223035 #fff;
+            border-bottom: 1px solid #223035;
+            border-right: 0;
+            border-left: 3px solid #223035;
+        }
+
+        .tabs-vertical-secondary.tabs-vertical .nav-tabs {
+            border: 0;
+            border-right: 1px solid #75808a;
+        }
+
+        .tabs-vertical-secondary.tabs-vertical .nav-tabs .nav-item.show .nav-link,
+        .tabs-vertical-secondary.tabs-vertical .nav-tabs .nav-link.active {
+            color: #75808a;
+            background-color: #fff;
+            border-color: #75808a #75808a #fff;
+            border-bottom: 1px solid #75808a;
+            border-right: 0;
+            border-left: 3px solid #75808a;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: .25rem;
+            color: #223035;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 3px;
+            padding: 12px 20px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+
+        }
+
+        .nav-pills .nav-link:hover {
+            background-color: #f4f5fa;
+        }
+
+        .nav-pills .nav-link i {
+            margin-right: 2px;
+            font-weight: 600;
+        }
+
+        .top-icon.nav-pills .nav-link i {
+            margin: 0px;
+            font-weight: 500;
+            display: block;
+            font-size: 20px;
+            padding: 5px 0;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #fff;
+            background-color: #008cff;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 140, 255, 0.5);
+        }
+
+        .nav-pills-success .nav-link.active,
+        .nav-pills-success .show>.nav-link {
+            color: #fff;
+            background-color: #15ca20;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(21, 202, 32, .5);
+        }
+
+        .nav-pills-info .nav-link.active,
+        .nav-pills-info .show>.nav-link {
+            color: #fff;
+            background-color: #0dceec;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(13, 206, 236, 0.5);
+        }
+
+        .nav-pills-danger .nav-link.active,
+        .nav-pills-danger .show>.nav-link {
+            color: #fff;
+            background-color: #fd3550;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(253, 53, 80, .5);
+        }
+
+        .nav-pills-warning .nav-link.active,
+        .nav-pills-warning .show>.nav-link {
+            color: #fff;
+            background-color: #ff9700;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(255, 151, 0, .5);
+        }
+
+        .nav-pills-dark .nav-link.active,
+        .nav-pills-dark .show>.nav-link {
+            color: #fff;
+            background-color: #223035;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(34, 48, 53, .5);
+        }
+
+        .nav-pills-secondary .nav-link.active,
+        .nav-pills-secondary .show>.nav-link {
+            color: #fff;
+            background-color: #75808a;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(117, 128, 138, .5);
+        }
+
+        .card .tab-content {
+            padding: 1rem 0 0 0;
+        }
+
+        .z-depth-3 {
+            /* -webkit-box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3); */
+            -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        /* 
+        .tab-pane {
+            height: 400px;
+        } */
+
+        @media screen and (max-width: 992px) {
+            .tab-pane {
+                height: auto;
+            }
+        }
+    </style>
+
+
+
+    <style>
+        .selected_class {
+            border: 2px solid gray;
+            background: white !important;
+        }
+
+        .active_btn {
+            border: 2px solid rgb(64, 190, 178);
+            outline: none;
+            color: rgb(49, 155, 144) !important;
+        }
+
+        .select_btn {
+
+            font-variant: small-caps;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            color: rgb(35, 35, 133);
+            background: white;
+            transition: all 0.5s;
+            outline: none;
+        }
+
+        .select_btn:hover {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            color: rgb(64, 190, 178);
+        }
+
+        .address_box {
+            padding: 15px;
+            margin: 0;
+
+            background: whitesmoke;
+            margin: 10px auto;
+            margin-top: 0px;
+            width: 90%;
+            border-radius: 10px;
+            cursor: pointer;
+
+        }
+
+        .address_box:hover {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+
+        .items_wrap {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .address_box_items {
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 5px;
+            background: #dee2e6;
+            color: black;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 2px;
+
+        }
+
+        .address_box_street {
+            font-family: cursive;
+            padding: 0;
+            margin-bottom: 10px;
+            color: navy;
+
+        }
+
+        .address_box_items:last-child {
+            margin-right: 0px;
+        }
+
+
+
+        @media screen and (max-width: 422px) {
+            .address_box_items {
+
+                font-size: 15px;
+                font-weight: 500;
+
+            }
+        }
+
+        .invalid_field {
+            border: 1px solid red;
+        }
+
+        .valid_field {
+            border: 2px solid rgb(29, 230, 129);
+        }
+
+
+        .span_items {
+
+
+            width: 70%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        input {
+            outline: none !important;
+        }
+
+        @media screen and (max-width: 576px) {
+            .span_items {
+                width: 100%;
+            }
+
+            .address_box {
+                width: 100%;
+
+            }
+
+            .tab-content {
+                padding: 0 !important;
+            }
+        }
+    </style>
+
+
+    <style>
+        input[type="text"],
+        textarea,
+        select {
+            outline: none;
+            box-shadow: none !important;
+            /* border:1px solid #ccc !important; */
+        }
+    </style>
+    <form action="/services/book_service" method="post" id="service_submit_form">
+        <input type="hidden" name="category" value="<%=category%>">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="profile-card-4 z-depth-3">
+                        <div class="card">
+                            <div class="card-body text-center bg-primary rounded-top">
+                                <div class="user-box">
+                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user avatar"> -->
+                                </div>
+                                <h5 class="mb-1 text-white">Something</h5>
+                                <h6 class="text-light">Something</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group shadow-none">
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-phone-square"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>something</span>
+                                            <small>something </small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>something</span>
+                                            <small>something</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="list-icon">
+                                            <i class="fa fa-globe"></i>
+                                        </div>
+                                        <div class="list-details">
+                                            <span>something</span>
+                                            <small>something</small>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- <div class="row text-center mt-4">
+                                <div class="col p-2">
+                                    <h4 class="mb-1 line-height-5">154</h4>
+                                    <small class="mb-0 font-weight-bold">Projects</small>
+                                </div>
+                                <div class="col p-2">
+                                    <h4 class="mb-1 line-height-5">2.2k</h4>
+                                    <small class="mb-0 font-weight-bold">Followers</small>
+                                </div>
+                                <div class="col p-2">
+                                    <h4 class="mb-1 line-height-5">9.1k</h4>
+                                    <small class="mb-0 font-weight-bold">Views</small>
+                                </div>
+                            </div> -->
+
+
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="javascript:void()"
+                                    class="btn-social btn-facebook waves-effect waves-light m-1"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="javascript:void()"
+                                    class="btn-social btn-google-plus waves-effect waves-light m-1"><i
+                                        class="fa fa-google-plus"></i></a>
+                                <a href="javascript:void()"
+                                    class="list-inline-item btn-social btn-behance waves-effect waves-light"><i
+                                        class="fa fa-behance"></i></a>
+                                <a href="javascript:void()"
+                                    class="list-inline-item btn-social btn-dribbble waves-effect waves-light"><i
+                                        class="fa fa-dribbble"></i></a>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card z-depth-3">
+                        <div class="card-body">
+                            <ul class="nav nav-pills nav-pills-primary nav-justified">
+                                <li class="nav-item">
+                                    <a href="javascript:void();" data-target="#edit" data-toggle="pill"
+                                        class="nav-link active show"><i class="icon-user"></i> <span
+                                            class="hidden-xs">Your
+                                            Contact Details </span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void();" data-target="#messages" data-toggle="pill"
+                                        class="nav-link"><i class="icon-envelope-open"></i> <span
+                                            class="hidden-xs">Address</span></a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href="javascript:void();" data-target="#saved_address" data-toggle="pill"
+                                        class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">
+                                            Select Saved Address</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void();" data-target="#profile" data-toggle="pill"
+                                        class="nav-link"><i class="icon-note"></i> <span class="hidden-xs">Service
+                                            Details</span></a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content p-2">
+
+
+
+
+                                <div class="tab-pane active show" id="edit">
+                                    <div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" name="first_name" required
+                                                    style="outline: none;" id="first_name" <%if(details.firstName){%>
+                                                value="<%=details.firstName%>" disabled readonly
+                                                    <%}%>
+
+                                                        >
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" name="last_name" required
+                                                    id="last_name" <%if(details.lastName){%>
+                                                value="<%=details.lastName%>" disabled readonly
+                                                    <%}%>
+
+                                                        >
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                                <div class="col-lg-9">
+                                                    <input class="form-control" type="email"
+                                                        value="<%=details.primaryEmail%>">
+                                                </div>
+                                            </div> -->
+
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Contact
+                                                Phone</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" required name="contact_phone"
+                                                    id="contact_phone" <%if(details.contactPhone){%>
+                                                value="<%=details.contactPhone%>" disabled readonly
+                                                    <%}%>
+
+                                                        >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Alternate
+                                                Phone</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" name="alternate_phone"
+                                                    id="alternate_phone" value="<%=details.alternatePhone%>"
+                                                    <%if(details.alternatePhone){%>
+                                                value="<%=details.alternatePhone%>"
+                                                    <%}%>
+
+                                                        >
+
+
+                                                        <small>You can also add your alternate phone </small>
+                                            </div>
+
+                                        </div>
+                                        <!-- <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Change profile</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="file">
+                                        </div>
+                                    </div> -->
+                                        <!-- <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="url" value="">
+                                        </div>
+                                    </div> -->
+                                        <!-- <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="text" value="" placeholder="Street">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label"></label>
+                                        <div class="col-lg-6">
+                                            <input class="form-control" type="text" value="" placeholder="City">
+                                        </div>
+                                        <div class="col-lg-3 mt-md-3 mt-lg-0">
+                                            <input class="form-control" type="text" value="" placeholder="State">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Pin Code</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="text" value="">
+                                        </div>
+                                    </div> -->
+
+
+
+                                        <!-- <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="password" value="11111122333">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label">Confirm
+                                            password</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" type="password" value="11111122333">
+                                        </div>
+                                    </div> -->
+
+
+                                        <!-- <div class="form-group row " style="margin-top: 50px;">
+                                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                                <div class="col-lg-9">
+                                                    <input type="reset" class="btn btn-secondary" value="Cancel">
+                                                    <input type="button" class="btn btn-primary" value="Save Changes">
+                                                </div>
+                                            </div> -->
+                                    </div>
+                                </div>
+
+
+
+                                <div class="tab-pane" id="messages">
+
+
+                                    <div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control address_fields" type="text"
+                                                    value="<%=details.address%>" placeholder="Street" name="address"
+                                                    required id="address">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">city</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control address_fields" type="text"
+                                                    value="<%=details.city%>" placeholder="City" name="city" required
+                                                    id="city">
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label form-control-label">state</label>
+                                                <div class="col-lg-9">
+                                                    <input class="form-control address_fields" type="text"
+                                                        value="<%=details.state%>" placeholder="Street" name="state"
+                                                        required>
+                                                </div>
+                                            </div> -->
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">state</label>
+                                            <div class="col-lg-9">
+                                                <!-- <input class="form-control address_fields" type="text"
+                                                        value="<%=details.state%>" placeholder="Street" name="state"
+                                                        required> -->
+
+
+                                                <select class="form-control address_fields" name="state" id="state"
+                                                    required>
+                                                    <option selected hidden>
+                                                        Select
+                                                    </option>
+                                                    <%states.forEach((state)=>{%>
+                                                        <option>
+                                                            <%=state.name%>
+                                                        </option>
+                                                        <%})%>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <!-- 
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">city</label>
+                                            <div class="col-lg-6">
+                                                <input class="form-control" type="text" value="<%=details.city%>" disabled placeholder="City">
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <input class="form-control" type="text" value="<%=details.state%>" disabled placeholder="State">
+                                            </div>
+                                        </div> 
+                                        -->
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Pin
+                                                Code</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control address_fields" type="text" required
+                                                    name="pinCode" value="<%=details.pinCode%>" id="pinCode"
+                                                    placeholder="Pin Code">
+                                            </div>
+                                        </div>
+                                        <%if(details.addresses.length<4){%>
+                                            <div class="form-group row" style="margin-top: 15px;">
+                                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                                <div class="col-lg-9">
+
+                                                    <!-- <button type="reset" class="btn btn-primary">Edit</button> -->
+
+
+                                                    <button type="button" onclick="saveAddress(event)"
+                                                        id="save_address_btn" class="btn btn-primary">Save
+                                                        Address</button>
+
+                                                    <p style="padding: 0;">
+                                                    <h6>you can save this address for your next order</h6>
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <%}%>
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+                                <div class="tab-pane" id="saved_address">
+
+
+                                    <div>
+
+
+                                        <div style="display: none;">
+                                            <input type="hidden" name="existing_selected" id="existing_flag">
+                                            <input type="text" name="select_address" class="selected_address_fields">
+                                            <input type="text" name="select_city" class="selected_address_fields">
+                                            <input type="text" name="select_state" class="selected_address_fields">
+                                            <input type="text" name="select_pinCode" class="selected_address_fields">
+                                            <%if(details.addresses.length<4){%>
+                                                <input type="text" name="save_address" value="false" id="save_address">
+                                                <%}%>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div>
+
+
+                                        <%for(let i=0;i<details.addresses.length;i++){ let element=details.addresses[i]
+                                            %>
+                                            <div class="address_box ">
+                                                <p class="address_box_street">
+                                                    <%=element.address%>
+                                                </p>
+                                                <div class="items_wrap">
+                                                    <div class="span_items">
+                                                        <span class="address_box_items">
+                                                            <%=element.city%>
+                                                        </span>
+                                                        <span class="address_box_items">
+                                                            <%=element.state%>
+                                                        </span>
+                                                        <span class="address_box_items">
+                                                            <%=element.pinCode%>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <button class="btn select_btn" type="button"
+                                                            onclick="selectAddress(<%= i %>)"><i
+                                                                class="fas fa-plus"></i>
+                                                            &nbsp;Select</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <%}%>
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <!-- <div class="tab-pane" id="messages">
+                                <div class="alert alert-info alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <div class="alert-icon">
+                                        <i class="icon-info"></i>
+                                    </div>
+                                    <div class="alert-message">
+                                        <span><strong>Info!</strong> Lorem Ipsum is simply dummy text.</span>
+                                    </div>
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="float-right font-weight-bold">3 hrs ago</span> Here is your
+                                                a link to the latest summary report from the..
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="float-right font-weight-bold">Yesterday</span> There has
+                                                been a request on your account since that was..
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="float-right font-weight-bold">9/10</span> Porttitor vitae
+                                                ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="float-right font-weight-bold">9/4</span> Vestibulum
+                                                tincidunt ullamcorper eros eget luctus.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="float-right font-weight-bold">9/4</span> Maxamillion ais
+                                                the fix for tibulum tincidunt ullamcorper eros.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div> -->
+
+
+
+                                <div class="tab-pane " id="profile">
+                                    <h5 class="mb-3">Electricity</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>About</h6>
+                                            <p>
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur,
+                                                soluta!
+                                            </p>
+                                            <h6>Extra</h6>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
+                                                necessitatibus!.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Recent works</h6>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">something</a>
+                                            <a href="javascript:void();"
+                                                class="badge badge-dark badge-pill">responsive-design</a>
+                                            <hr>
+                                            <!-- <span class="badge badge-primary"><i class="fa fa-user"></i> 900
+                                            Followers</span>
+                                        <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+                                        <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span> -->
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5 class="mt-2 mb-3"><span
+                                                    class="fa fa-clock-o ion-clock float-right"></span>
+                                                Recent Activity</h5>
+                                            <!-- <table class="table table-hover table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <strong>Abby</strong> joined ACME Project Team in
+                                                        <strong>`Collaboration`</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <strong>Gary</strong> deleted My Board1 in
+                                                        <strong>`Discussions`</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <strong>Kensington</strong> deleted MyBoard3 in
+                                                        <strong>`Discussions`</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <strong>John</strong> deleted My Board1 in
+                                                        <strong>`Discussions`</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <strong>Skell</strong> deleted his post Look at Why this is.. in
+                                                        <strong>`Discussions`</strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table> -->
+
+
+                                        </div>
+                                    </div>
+                                    <!--/row-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit_order_btn_col col-12 mt-4">
+
+
+                        <button class="button-55" role="button" type="submit">Submit Your Order</button>
+
+
+
+                    </div>
+
+                    <style>
+                        .submit_order_btn_col {
+                            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                            padding: 20px 0;
+                            background: #fff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+
+
+
+                        }
+                    </style>
+
+                    <style>
+                        /* CSS */
+                        .button-55 {
+                            align-self: center;
+                            background-color: #fff;
+                            background-image: none;
+                            background-position: 0 90%;
+                            background-repeat: repeat no-repeat;
+                            background-size: 4px 3px;
+                            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+                            border-style: solid;
+                            border-width: 2px;
+                            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+                            box-sizing: border-box;
+                            color: #41403e;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-family: Neucha, sans-serif;
+                            font-size: 1rem;
+                            line-height: 23px;
+                            outline: none;
+                            padding: .75rem;
+                            text-decoration: none;
+                            transition: all 235ms ease-in-out;
+                            border-bottom-left-radius: 15px 255px;
+                            border-bottom-right-radius: 225px 15px;
+                            border-top-left-radius: 255px 15px;
+                            border-top-right-radius: 15px 225px;
+                            user-select: none;
+                            -webkit-user-select: none;
+                            touch-action: manipulation;
+                        }
+
+                        .button-55 {
+
+                            font-weight: bold;
+                            background: whitesmoke;
+                            /* fallback for old browsers */
+
+                        }
+
+                        .button-55:hover {
+                            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+                            transform: translate3d(0, 2px, 0);
+                        }
+
+                        .button-55:focus {
+                            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+                        }
+                    </style>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include("../../partials/bootstrap_js_cdn")%>
+
+
+
+        <script>
+            const firstName = document.getElementById("first_name")
+            const lastName = document.getElementById("last_name")
+            const contactPhone = document.getElementById("contact_phone")
+            const alternatePhone = document.getElementById("alternate_phone")
+            const addressEL = document.getElementById("address")
+            const cityEL = document.getElementById("city")
+            const stateEL = document.getElementById("state")
+            const pinCodeEl = document.getElementById("pinCode")
+            const serviceSubmitForm = document.getElementById("service_submit_form")
+            serviceSubmitForm.onsubmit = () => {
+
+                if (globalSelected === null) {
+                    alert(globalSelected)
+                    let isNamesValid = namesValid()
+                    let isPhonesValid = phonesValid()
+                    let isAddressesValid = addressesValid()
+                    let isFormValid = isNamesValid && isPhonesValid && isAddressesValid
+
+                    return isFormValid
+                } else {
+                    let isNamesValid = namesValid()
+                    let isPhonesValid = phonesValid()
+
+                    let isFormValid = isNamesValid && isPhonesValid && isAddressesValid
+
+                    return isFormValid
+                }
+
+            }
+
+            function addressesValid() {
+                let valid = true
+                if (!isCorrectAddress(addressEL.value)) {
+                    valid = false
+
+                    showError(addressEL)
+                } else {
+                    showSuccess(addressEL)
+                }
+
+                if (stateEL.selectedIndex === 0) {
+                    valid = false
+
+                    showError(stateEL)
+                } else {
+                    showSuccess(stateEL)
+                }
+
+                if (!isPinCodeValid(pinCodeEl.value)) {
+                    valid = false
+                    showError(pinCodeEl)
+                } else {
+                    showSuccess(pinCodeEl)
+
+                }
+
+
+                if (!isCorrectCity(cityEL.value)) {
+                    valid = false
+                    showError(cityEL)
+                } else {
+                    showSuccess(cityEL)
+
+                }
+
+                return valid
+            }
+
+
+            function isPinCodeValid(value) {
+                var regex = /^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+                return regex.test(value.trim());
+            }
+
+
+            function namesValid() {
+                // alert("p")
+                let valid = true
+                if (!isCorrectName(firstName.value)) {
+                    valid = false
+
+                    showError(firstName)
+                } else {
+                    showSuccess(firstName)
+                }
+                if (!isCorrectName(lastName.value)) {
+                    valid = false
+                    showError(lastName)
+                } else {
+                    showSuccess(lastName)
+                }
+
+                return valid
+            }
+
+            function phonesValid() {
+                // alert("p")
+                let valid = true
+                if (!isCorrectPhone(contactPhone.value)) {
+                    valid = false
+
+                    showError(contactPhone)
+                } else {
+                    showSuccess(contactPhone)
+                }
+                if (alternatePhone.value.trim().length !== 0) {
+                    if (!isCorrectPhone(alternatePhone.value)) {
+                        valid = false
+                        showError(alternatePhone)
+                    } else {
+                        // alert(alternatePhone.value.trim().length)
+                        showSuccess(alternatePhone)
+                    }
+                } else {
+                    showSuccess(alternatePhone)
+                }
+
+
+                return valid
+            }
+
+
+            // window.onload=()=>{
+            //     var regex=/^([1-9]{1}[0-9]{5}|[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3})$/
+            //     alert( regex.test("482 002"))
+            // }
+
+
+            function isCorrectName(value) {
+                var regex = /^[a-zA-Z ]{2,30}$/;
+
+                return regex.test(value.trim());
+                // return value.trim().length==0?false:true
+            }
+
+            function isCorrectCity(value) {
+                var regex = /^[a-zA-Z ]{2,100}$/;
+
+                return regex.test(value.trim());
+                // return value.trim().length==0?false:true
+            }
+
+            // window.onload=()=>{
+            //     var regex = /^[a-zA-Z,. ]{2,30}$/;
+
+
+            // }
+
+            function isCorrectAddress(value) {
+                var regex = /^[a-zA-Z0-9,.() ]{2,100}$/;
+                return regex.test(value.trim());
+            }
+
+
+
+
+            function isCorrectPhone(value) {
+                var regex = /^[6-9]{1}[0-9]{9}$/;
+
+                return regex.test(value.trim());
+                // return value.trim().length==0?false:true
+            }
+
+            function showError(inputEl) {
+                inputEl.classList.remove("valid_field")
+                inputEl.classList.add("invalid_field")
+
+            }
+
+            function showSuccess(inputEl) {
+                inputEl.classList.remove("invalid_field")
+                //inputEl.classList.add("valid_field")
+
+            }
+        </script>
+
+        <script>
+
+            const addressFields = document.getElementsByClassName("address_fields")
+            const saveAddressBtn = document.getElementById("save_address_btn")
+            const existingFlag = document.getElementById("existing_flag")
+            const saveAddressField = document.getElementById("save_address")
+            function saveAddress(event) {
+                alert(saveAddressField.value)
+                saveAddressField.setAttribute("value", "true")
+                return
+
+
+
+                //alert(addressFields)
+                if (!addressesValid()) {
+                    return
+                } event.target.setAttribute("disabled", "disabled")
+                const addressData = {
+                    address: addressFields[0].value,
+                    city: addressFields[1].value,
+                    state: addressFields[2].value,
+                    pinCode: addressFields[3].value
+
+                }
+                //alert(JSON.stringify(addressData))
+
+                fetch('/customer/save_address', {
+                    method: "POST",
+                    headers: { "Content-type": "application/json;charset=UTF-8" },
+                    body: JSON.stringify(addressData)
+
+                })
+                    .then(response => response.json())
+                    .then((json) => {
+                        alert(json)
+
+                        selectedAddressFields[0].setAttribute("value", addressData.address)
+                        selectedAddressFields[1].setAttribute("value", addressData.city)
+                        selectedAddressFields[2].setAttribute("value", addressData.state)
+                        selectedAddressFields[3].setAttribute("value", addressData.pinCode)
+                        existingFlag.value = "true"
+                        event.target.style.display = "none"
+                        for (let index = 0; index < 4; index++) {
+                            let element = addressFields[index];
+                            element.setAttribute("disabled", "disabled")
+
+                        }
+
+                    })
+                    .catch((err) => {
+                        alert(err)
+                    });
+            }
+        </script>
+
+        <script>
+            const selectedAddressFields = document.getElementsByClassName("selected_address_fields")
+            const addressBoxColl = document.getElementsByClassName("address_box")
+            let globalSelected = null;
+            function selectAddress(addressBoxIndex) {
+                //alert(addressBoxIndex)
+                if (addressBoxColl[addressBoxIndex].classList.contains("selected_class")) {
+                    unSelectelectAddressBox(addressBoxIndex)
+                    globalSelected = null
+                    for (let index = 0; index < 4; index++) {
+                        let element = addressFields[index];
+                        element.removeAttribute("disabled")
+
+                    }
+
+                    try {
+                        saveAddressBtn.removeAttribute("disabled")
+                    } catch (error) {
+                        //alert(error)
+
+                    }
+                    existingFlag.removeAttribute("value")
+
+
+
+                } else {
+                    if (globalSelected !== null) {
+                        // alert(globalSelected)
+                        unSelectelectAddressBox(globalSelected)
+                    }
+                    globalSelected = addressBoxIndex
+                    //alert(globalSelected)
+
+                    selectAddressBox(addressBoxIndex)
+                }
+
+
+
+            }
+
+
+            function unSelectelectAddressBox(addressBoxIndex) {
+                addressBoxColl[addressBoxIndex].classList.remove("selected_class")
+                addressBoxColl[addressBoxIndex].getElementsByClassName("select_btn")[0].innerHTML = `<i class="fas fa-plus"></i>&nbsp;| Select`
+                addressBoxColl[addressBoxIndex].getElementsByClassName("select_btn")[0].classList.remove("active_btn")
+                selectedAddressFields[0].removeAttribute("value")
+                selectedAddressFields[1].removeAttribute("value")
+                selectedAddressFields[2].removeAttribute("value")
+                selectedAddressFields[3].removeAttribute("value")
+
+
+
+            }
+
+            function selectAddressBox(addressBoxIndex) {
+                const address = addressBoxColl[addressBoxIndex].getElementsByClassName("address_box_street")[0].innerText
+                const city = addressBoxColl[addressBoxIndex].getElementsByClassName("address_box_items")[0].innerText
+                const state = addressBoxColl[addressBoxIndex].getElementsByClassName("address_box_items")[1].innerText
+                const pinCode = addressBoxColl[addressBoxIndex].getElementsByClassName("address_box_items")[2].innerText
+
+                //alert(`${address},${city},${state},${pinCode}`)
+                addressBoxColl[addressBoxIndex].classList.add("selected_class")
+                addressBoxColl[addressBoxIndex].getElementsByClassName("select_btn")[0].innerHTML = `<i class="far fa-check-circle"></i>&nbsp;| Unselect`
+                addressBoxColl[addressBoxIndex].getElementsByClassName("select_btn")[0].classList.add("active_btn")
+                selectedAddressFields[0].setAttribute("value", address)
+                selectedAddressFields[1].setAttribute("value", city)
+                selectedAddressFields[2].setAttribute("value", state)
+                selectedAddressFields[3].setAttribute("value", pinCode)
+                saveAddressField.removeAttribute("value")
+                for (let index = 0; index < 4; index++) {
+                    let element = addressFields[index];
+                    element.classList.remove("invalid_field")
+                    element.setAttribute("disabled", "disabled")
+                    //element.value = ""
+
+
+
+                }
+
+                try {
+                    saveAddressBtn.setAttribute("disabled", "disabled")
+                } catch (error) {
+                    // alert(error)
+                }
+                existingFlag.value = "true"
+            }
+        </script>
+
+
+        <!-- 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script> -->
+
+
+
+        <!-- <script>
+
+                if (window.history.replaceState) {
+                    //alert(window.location.href)
+                    window.history.replaceState(null, null, "/employee/home_dash")
+                }
+            </script> -->
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<style>
+    .span_a {
+        position: relative;
+        display: inline-flex;
+        width: 180px;
+        height: 55px;
+        margin: 0 15px;
+        perspective: 1000px;
+    }
+
+    .span_a a {
+        font-size: 19px;
+        letter-spacing: 1px;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform .25s;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .span_a a:before,
+    .span_a a:after {
+        position: absolute;
+        content: "BUTTON";
+        height: 55px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid black;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .span_a a:before {
+        color: #fff;
+        background: #000;
+        transform: rotateY(0deg) translateZ(25px);
+    }
+
+    .span_a a:after {
+        color: #000;
+        transform: rotateX(90deg) translateZ(25px);
+    }
+
+    .span_a a:hover {
+        transform: translateZ(-25px) rotateX(-90deg);
+    }
+</style> -->
+<!-- <span class="span_a"><a href="#"></a></span> -->

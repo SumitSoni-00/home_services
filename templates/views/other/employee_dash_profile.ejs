@@ -1,0 +1,1422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%-include("../partials/global_header.ejs",{title:"Employee Dash Profile"})%>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+    <!--========== HEADER / NAV (START)==========-->
+    <%-include("../partials/dash_header_nav")%>
+        <!--========== HEADER / NAV (END)==========-->
+
+
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+            @import url("https://fonts.googleapis.com/css?family=Bree+Serif&display=swap");
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                /* background: #e9e9e9; */
+                overflow-x: hidden;
+
+                font-family: "Poppins", sans-serif;
+
+            }
+
+            .profile-header {
+                /* background: #fff; */
+                width: 100%;
+                display: flex;
+                /* height: 190px; */
+                position: relative;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+
+            .profile-img {
+                float: left;
+                width: 340px;
+                height: 200px;
+            }
+
+            .profile-img img {
+                border-radius: 50%;
+                height: 230px;
+                width: 230px;
+                border: 5px solid #fff;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+                position: absolute;
+                left: 50px;
+                top: 20px;
+                z-index: 5;
+                background: #fff;
+            }
+
+            .profile-nav-info {
+                float: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 60px;
+            }
+
+            .profile-nav-info h3 {
+                font-variant: small-caps;
+                font-size: 2rem;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+
+            .profile-nav-info .address {
+                display: flex;
+                font-weight: bold;
+                color: #777;
+            }
+
+            .profile-nav-info .address p {
+                margin-right: 5px;
+            }
+
+            .profile-option {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.5s ease-in-out;
+                outline: none;
+                background: #e40046;
+            }
+
+            .profile-option:hover {
+                background: #fff;
+                border: 1px solid #e40046;
+            }
+
+            .profile-option:hover .notification i {
+                color: #e40046;
+            }
+
+            .profile-option:hover span {
+                background: #e40046;
+            }
+
+            .profile-option .notification i {
+                color: #fff;
+                font-size: 1.2rem;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .profile-option .notification .alert-message {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: #fff;
+                color: #e40046;
+                border: 1px solid #e40046;
+                padding: 5px;
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            /* ################################################################################### */
+
+
+
+
+            .main-bd {
+                width: 100%;
+                display: flex;
+                padding-right: 15px;
+                border: 10px solid green;
+            }
+
+            .profile-side {
+                /* width: 300px; */
+
+                /* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); */
+                /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); */
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                padding: 90px 30px 20px;
+                /* font-family: "Bree Serif", serif; */
+                /* margin-left: 10px; */
+                z-index: 99;
+
+            }
+
+            .profile-side p {
+                margin-bottom: 7px;
+                color: #333;
+                font-size: 14px;
+            }
+
+            .profile-side p i {
+                color: #e40046;
+                margin-right: 10px;
+            }
+
+            .mobile-no i {
+                transform: rotateY(180deg);
+                color: #e40046;
+            }
+
+            .profile-btn {
+                display: flex;
+            }
+
+            button.chatbtn,
+            button.createbtn {
+                border: 0;
+                padding: 10px;
+                width: 100%;
+                border-radius: 3px;
+                background: #e40046;
+                color: #fff;
+                font-family: "Bree Serif";
+                font-size: 1rem;
+                margin: 5px 2px;
+                cursor: pointer;
+                outline: none;
+                margin-bottom: 10px;
+                transition: background 0.3s ease-in-out;
+                box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+            }
+
+            button.chatbtn:hover,
+            button.createbtn:hover {
+                background: rgba(288, 0, 70, 0.9);
+            }
+
+            button.chatbtn i,
+            button.createbtn i {
+                margin-right: 5px;
+            }
+
+            .user-rating {
+                display: flex;
+            }
+
+            .user-rating h3 {
+                font-size: 2.5rem;
+                font-weight: 200;
+                margin-right: 5px;
+                letter-spacing: 1px;
+                color: #666;
+            }
+
+            .user-rating .no-of-user-rate {
+                font-size: 0.9rem;
+            }
+
+            .rate {
+                padding-top: 6px;
+            }
+
+            .rate i {
+                font-size: 0.9rem;
+                color: rgba(228, 0, 70, 1);
+            }
+
+            .nav_bar {
+                /* width: 100%; */
+                /* z-index: -1; */
+                /* box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3); */
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                margin: 10px;
+            }
+
+            .nav_bar ul {
+                display: flex;
+                justify-content: space-around;
+                list-style-type: none;
+                height: 60px;
+                /* background: #fff; */
+                background: none;
+                /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+            }
+
+            .nav_bar ul li {
+                padding: 15px;
+                width: 100%;
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .nav_bar ul li:hover,
+            .nav_bar ul li.active {
+                box-shadow: 0px -3px 0px rgba(288, 0, 70, 0.9) inset;
+            }
+
+
+
+            /* #################################################################################### */
+            .nav_bar_responsive {
+                /* width: 100%; */
+                /* z-index: -1; */
+                box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+                margin: 10px;
+            }
+
+            .nav_bar_responsive ul {
+                display: flex;
+                justify-content: space-around;
+                list-style-type: none;
+                height: 60px;
+                /* background: #fff; */
+                background: none;
+                /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+            }
+
+            .nav_bar_responsive ul li {
+                padding: 15px;
+                width: 100%;
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .nav_bar_responsive ul li:hover,
+            .nav_bar_responsive ul li.active {
+                box-shadow: 0px -3px 0px rgba(288, 0, 70, 0.9) inset;
+            }
+
+
+          
+
+          
+
+            /* ############################################################################## */
+
+
+
+
+            .profile-body {
+                width: 100%;
+                /* z-index: -1; */
+            }
+
+            .tab {
+                display: none;
+            }
+
+            .tab {
+                padding: 20px;
+                width: 100%;
+
+            }
+
+            .nav_bar_responsive {
+                display: none;
+            }
+
+            @media (max-width: 576px) {
+                .nav_bar_responsive {
+                    display: block;
+                }
+
+                .nav_bar {
+                    display: none;
+                }
+                .nav_bar_responsive{
+                    padding: 0;
+                    height: 50px;
+                   
+                }
+                .nav_bar_responsive ul{
+                    padding: 0;
+                    margin: 0;
+                    height: auto;
+                    display: flex;
+                }
+
+                .nav_bar_responsive ul li{
+                    width: 30px;
+                    padding: 0;
+                   
+                    margin: 0;
+                }
+
+            }
+
+
+
+            @media (max-width: 1100px) {
+                .profile-side {
+                    /* width: 250px; */
+                    padding: 90px 15px 20px;
+                }
+
+                .profile-img img {
+                    height: 200px;
+                    width: 200px;
+                    left: 50px;
+                    top: 50px;
+                }
+            }
+
+            @media (max-width: 900px) {
+                body {
+                    margin: 0 20px;
+                }
+
+                .profile_cont{
+                   
+                    margin-top: 80px;
+                }
+
+                .profile-header {
+                    display: flex;
+                    height: 100%;
+                    flex-direction: column;
+                    text-align: center;
+                    padding-bottom: 20px;
+                }
+
+                .profile-img {
+                    float: left;
+                    width: 100%;
+                    height: 200px;
+                }
+
+                .profile-img img {
+                    position: relative;
+                    height: 200px;
+                    width: 200px;
+                    left: 0px;
+                }
+
+                .profile-nav-info {
+                    text-align: center;
+                }
+
+                /* .profile-option {
+                    right: 20px;
+                    top: 75%;
+                    transform: translateY(-100%);
+                } */
+
+                .profile-option{
+                   
+                    right:0;
+                    top:10%;
+                    position: absolute;
+                }
+                /* .profile-header{
+                    position: relative;
+                } */
+
+                .main-bd {
+                    flex-direction: column;
+                    padding-right: 0;
+                }
+
+                .profile-side {
+                    width: 100%;
+                    text-align: center;
+                    padding: 20px;
+                    /* margin: 5px 0; */
+
+                }
+
+                .profile-nav-info .address {
+                    justify-content: center;
+                }
+
+                .user-rating {
+                    justify-content: center;
+                }
+            }
+
+            @media screen and (max-width: 1020px) and (min-width: 992px)  {
+            html{
+                font-size: 80%;
+            }
+        }
+        @media (max-width: 992px) {
+            .nav_bar{
+                border: 2px solid pink;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .nav_bar_responsive{
+               
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+            @media (max-width: 1024px) {
+           
+
+            .profile-nav-info{
+               
+                left:0;
+            }
+
+            .profile-img{
+                
+                padding: 0;
+            }
+            .profile-img img{
+                margin: 0;
+            }
+
+
+            .profile-img img {
+                    position: relative;
+                    height: 150px;
+                    width: 150px;
+                    left: 0px;
+                }
+            }
+
+            @media (max-width: 991px) {
+            .profile-posts{
+                
+                padding: 0;
+            }
+            }
+
+            @media (max-width: 400px) {
+                /* body {
+                margin: ;
+            } */
+
+                /* .profile-header h3 {} */
+
+                /* .profile-option {
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    right: 15px;
+                    top: 83%;
+                } */
+
+                .profile-img img {
+                    height: 150px;
+                    width: 150px;
+                     
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                    
+                    
+                    top: 50px;
+                }
+
+                .profile-option .notification .alert-message {
+                    top: -3px;
+                    right: -4px;
+                    padding: 4px;
+                    height: 15px;
+                    width: 15px;
+                    font-size: 0.7rem;
+                }
+
+                .profile-nav-info h3 {
+                    font-size: 1.9rem;
+                }
+
+                .profile-nav-info .address p,
+                .profile-nav-info .address span {
+                    font-size: 0.7rem;
+                }
+            }
+        </style>
+
+        <style>
+            .upload_icon {
+                font-size: 50px;
+                float: left;
+                cursor: pointer;
+                padding: 3px;
+                margin: 3px 0 0 3px;
+                border-radius: 50%;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+
+            /* .profile-img{
+        border: 1px solid red;
+    } */
+        </style>
+
+        <div class="container-fluid profile_cont">
+            <div class="row">
+                <div class="col-md-12" style="padding: 0;">
+                    <div class="profile-header">
+                        <div class="profile-img">
+
+
+                            <i class='bx bx-cloud-upload bx-tada upload_icon'></i>
+
+
+                            <img class="user_img"
+                            src="<%=emplProfile.profilePhoto?emplProfile.profilePhoto:'/images/user.png'%>"
+                                width="200" alt="Profile Image">
+                        </div>
+                        <div class="profile-nav-info">
+                            <h3 class="user-name">
+                                <%=emplProfile.name%>Sumit Soni
+                            </h3>
+                            <div class="address">
+                                <p id="state" class="state">
+                                    <%=emplProfile.city%>Jabalpur,
+                                </p>
+                                <br>
+                                <span id="country" class="country">
+                                    <%=emplProfile.state%>Madhya Pradesh.
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="profile-option">
+                            <div class="notification">
+                                <i class="fa fa-bell"></i>
+                                <span class="alert-message">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-12 col-lg-3" style="padding: 0;">
+
+
+                    <div class="left-side mt-2" style="padding: 0;">
+                        <div class="profile-side">
+                            <p class="mobile-no"><i class="fa fa-phone"></i>
+                                <%=emplProfile.contactPhone%>+91(8989898989)
+                            </p>
+
+                            <%if(emplProfile.contactEmail){%>
+                                <p class="user-mail"><i class="fa fa-envelope"></i>
+                                    <%=emplProfile.contactEmail%>
+                                </p>
+                                <%}%>
+                                    <div class="user-bio">
+                                        <h3>
+                                            <%=emplProfile.title%>Title
+                                        </h3>
+                                        <p class="bio">
+                                            <%=emplProfile.extraDetails%>
+                                                Lorem ipsum dolor sit amet, hello how consectetur adipisicing elit. Sint
+                                                consectetur
+
+                                        </p>
+                                    </div>
+                                    <div class="profile-btn">
+                                        <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Chat</button>
+                                        <button class="createbtn" id="Create-post"><i class="fa fa-plus"></i>
+                                            Create</button>
+                                    </div>
+                                    <div class="user-rating">
+                                        <h3 class="rating">
+                                            <%=+emplProfile.rating>=3?emplProfile.rating:""%>
+                                        </h3>
+                                        <div class="rate">
+                                            <div class="star-outer">
+                                                <div class="star-inner">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
+                                        </div>
+
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12" style="padding: 0;">
+                    <div class="right-side" >
+
+
+
+
+                        <div class="nav_bar" >
+                            <ul>
+                                <li onclick="tabs(0)" class="user-post active">Profile</li>
+                                <li onclick="tabs(1)" class="user-review ">Reviews</li>
+                                 <li onclick="tabs(3)" class="user-setting"> Settings</li>
+                                <li onclick="tabs(4)" class="user-setting"> Settings</li>
+                                <li onclick="tabs(5)" class="user-setting"> Settings</li> 
+                            </ul>
+                        </div>
+
+                        <div class="nav_bar_responsive">
+                            <ul>
+                                <li onclick="tabs(0)" class="user-post active"><i style="font-size: 30px;"
+                                        class='bx bxl-docker'></i></li>
+                                <li onclick="tabs(1)" class="user-review"><i style="font-size: 30px;"
+                                        class='bx bxl-docker'></i></li>
+                                <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                        class='bx bxl-docker'></i></li>
+                                <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                        class='bx bxl-docker'></i></li>
+                                <li onclick="tabs(2)" class="user-setting"> <i style="font-size: 30px;"
+                                        class='bx bxl-docker'></i></li>
+                            </ul>
+                        </div>
+
+
+
+
+
+                        <div class="profile-body">
+                            <div class="profile-posts tab">
+
+                                <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2 text-primary">Personal Details</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">First Name</label>
+                                                        <input type="text" name="first_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required
+                                                            value="<%=emplProfile.firstName%>" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Last Name</label>
+                                                        <input type="text" name="last_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required disabled
+                                                            value="<%=emplProfile.lastName%>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="phone"> Phone</label>
+                                                        <input type="text"  id="phone" required
+                                                            placeholder="Enter phone number"
+                                                            value="<%=emplProfile.phone%>" disable
+                                                            
+                                                            <%if(emplProfile.loginMethod==="phone"){%>
+                                                                value="<%=emplProfile.phone%>"
+                                                                     readonly
+                                                                    <%}else if(emplProfile.phone){%>
+                                                                        value="<%=emplProfile.phone%>"
+                                                                         class="form-control edit_fields"
+                                                                        <%}else{%>
+                                                                            class="form-control edit_fields"
+                                                                            <%}%>
+                                                            >
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="eMail"> Email</label>
+                                                        <input type="email"  id="eMail"
+                                                            placeholder="Enter email ID" required disabled
+                                                            <%if(emplProfile.loginMethod==="email"){%>
+                                                        value="<%=emplProfile.email%>"
+                                                             readonly
+                                                            <%}else if(emplProfile.email){%>
+                                                                value="<%=emplProfile.email%>"
+                                                                 class="form-control edit_fields"
+                                                                <%}%>
+                                                                >
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="Street">Address</label>
+                                                        <input type="name" class="form-control edit_fields" id="Street"
+                                                            placeholder="Enter Address" name="address" required disabled
+                                                            value="<%=emplProfile.address%>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="ciTy">City</label>
+                                                        <input type="name" class="form-control edit_fields" id="ciTy"
+                                                            placeholder="Enter City" name="city" required disabled
+                                                            value="<%=emplProfile.city%>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="sTate">State</label>
+                                                        <input type="text" class="form-control edit_fields" id="sTate"
+                                                            placeholder="Enter State" name="state" required disabled
+                                                            value="<%=emplProfile.state%>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="zIp">Pin Code</label>
+                                                        <input type="text" class="form-control edit_fields" id="zIp"
+                                                            placeholder="Pin Code" name="pin_code" required disabled
+                                                            value="<%=emplProfile.pinCode%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="text-right">
+                                                        <button type="button" id="cancel" class="btn btn-secondary"
+                                                            disabled>Cancel</button>
+
+                                                        <button type="button" id="edit"
+                                                            class="btn btn-primary">Edit</button>
+                                                        <button type="submit" id="submit" class="btn btn-primary"
+                                                            style="display: none;">Save</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+
+
+                            <div class="profile-reviews  tab">
+
+                                <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2 text-primary">Personal Details</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Full Name</label>
+                                                        <input type="text" name="first_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Last Name</label>
+                                                        <input type="text" name="last_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="phone">Phone</label>
+                                                        <input type="text" class="form-control" id="phone"
+                                                            placeholder="Enter phone number">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="eMail">Email</label>
+                                                        <input type="email" class="form-control" id="eMail"
+                                                            placeholder="Enter email ID" required>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="Street">Street</label>
+                                                        <input type="name" class="form-control edit_fields" id="Street"
+                                                            placeholder="Enter Street" name="address" required disabled
+                                                            value="ded">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="ciTy">City</label>
+                                                        <input type="name" class="form-control edit_fields" id="ciTy"
+                                                            placeholder="Enter City" name="city" required disabled
+                                                            value="city">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="sTate">State</label>
+                                                        <input type="text" class="form-control edit_fields" id="sTate"
+                                                            placeholder="Enter State" name="state" required disabled
+                                                            value="state">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="zIp">Pin Code</label>
+                                                        <input type="text" class="form-control edit_fields" id="zIp"
+                                                            placeholder="Zip Code" name="pin_code" required disabled
+                                                            value="pin">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="text-right">
+                                                        <button type="button" id="cancel" class="btn btn-secondary"
+                                                            disabled>Cancel</button>
+
+                                                        <button type="button" id="edit"
+                                                            class="btn btn-primary">Edit</button>
+                                                        <button type="submit" id="submit" class="btn btn-primary"
+                                                            style="display: none;">Save</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+
+
+                            <div class="profile-settings tab">
+
+                                <form action="/employee/dash/profile_update" method="post" id="update_form">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2 text-primary">Personal Details</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Full Name</label>
+                                                        <input type="text" name="first_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Last Name</label>
+                                                        <input type="text" name="last_name"
+                                                            class="form-control edit_fields" id="fullName"
+                                                            placeholder="Enter full name" required disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="phone">Phone</label>
+                                                        <input type="text" class="form-control" id="phone"
+                                                            placeholder="Enter phone number">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="eMail">Email</label>
+                                                        <input type="email" class="form-control" id="eMail"
+                                                            placeholder="Enter email ID" required>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="website">Website URL</label>
+                                        <input type="url" class="form-control" id="website"
+                                            placeholder="Website url">
+                                    </div>
+                                </div> -->
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="Street">Street</label>
+                                                        <input type="name" class="form-control edit_fields" id="Street"
+                                                            placeholder="Enter Street" name="address" required disabled
+                                                            value="ded">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="ciTy">City</label>
+                                                        <input type="name" class="form-control edit_fields" id="ciTy"
+                                                            placeholder="Enter City" name="city" required disabled
+                                                            value="city">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="sTate">State</label>
+                                                        <input type="text" class="form-control edit_fields" id="sTate"
+                                                            placeholder="Enter State" name="state" required disabled
+                                                            value="state">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="zIp">Pin Code</label>
+                                                        <input type="text" class="form-control edit_fields" id="zIp"
+                                                            placeholder="Zip Code" name="pin_code" required disabled
+                                                            value="pin">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gutters">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="text-right">
+                                                        <button type="button" id="cancel" class="btn btn-secondary"
+                                                            disabled>Cancel</button>
+
+                                                        <button type="button" id="edit"
+                                                            class="btn btn-primary">Edit</button>
+                                                        <button type="submit" id="submit" class="btn btn-primary"
+                                                            style="display: none;">Save</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+
+                            <!-- 
+
+                        <div class="profile-reviews tab">
+                            <h1>User reviews</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur officia,
+                                aperiam
+                                quidem quasi, tenetur molestiae. Architecto mollitia laborum possimus iste esse.
+                                Perferendis
+                                tempora consectetur, quae qui nihil voluptas. Maiores debitis
+                                repellendus excepturi quisquam temporibus quam nobis voluptatem, reiciendis distinctio
+                                deserunt vitae! Maxime provident, distinctio animi commodi nemo, eveniet fugit porro
+                                quos
+                                nesciunt quidem a, corporis nisi dolorum minus sit eaque error
+                                sequi ullam. Quidem ut fugiat, praesentium velit aliquam!</p>
+                        </div>
+                        <div class="profile-settings tab">
+                            <div class="account-setting">
+                                <h1>Acount Setting</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis eaque,
+                                    expedita nostrum, facere libero provident laudantium. Quis, hic doloribus!
+                                    Laboriosam
+                                    nemo tempora praesentium. Culpa quo velit omnis, debitis maxime, sequi
+                                    animi dolores commodi odio placeat, magnam, cupiditate facilis impedit veniam?
+                                    Soluta
+                                    aliquam excepturi illum natus adipisci ipsum quo, voluptatem, nemo, commodi,
+                                    molestiae
+                                    doloribus magni et. Cum, saepe enim quam voluptatum vel debitis
+                                    nihil, recusandae, omnis officiis tenetur, ullam rerum.</p>
+                            </div>
+                        </div>
+ -->
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- <style>
+                        .tabs {
+                            display: flex;
+                            position: relative;
+                        }
+
+                        .tabs .line {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 0;
+                            height: 6px;
+                            border-radius: 15px;
+                            background-color: #c23564;
+                            transition: all 0.2s ease;
+                        }
+
+                        .tab-item {
+                            min-width: 80px;
+                            padding: 16px 20px 11px 20px;
+                            font-size: 20px;
+                            text-align: center;
+                            color: #c23564;
+                            background-color: #fff;
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+                            border-bottom: 5px solid transparent;
+                            opacity: 0.6;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+                        }
+
+                        .tab-icon {
+                            font-size: 24px;
+                            width: 32px;
+                            position: relative;
+                            top: 2px;
+                        }
+
+
+                        .tab-item:hover {
+                            opacity: 1;
+                            background-color: rgba(194, 53, 100, 0.05);
+                            border-color: rgba(194, 53, 100, 0.1);
+                        }
+
+                        .tab-item.active {
+                            opacity: 1;
+                        }
+                    </style>
+
+                    <div class="tabs">
+                        <div class="tab-item active">
+                            <i class="tab-icon fas fa-code"></i>
+                            React
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-cog"></i>
+                            Angular
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-plus-circle"></i>
+                            Ember
+                        </div>
+                        <div class="tab-item">
+                            <i class="tab-icon fas fa-pen-nib"></i>
+                            Vue.JS
+                        </div>
+                        <div class="line"></div>
+                    </div> -->
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <%- include("../partials/bootstrap_js_cdn")%>
+
+
+
+
+            <%-include("../partials/dash_header_nav_js.ejs")%>
+
+                <script>
+                    $(".nav_bar ul li").click(function () {
+                        $(this)
+                            .addClass("active")
+                            .siblings()
+                            .removeClass("active");
+                    });
+
+                    const tabBtn = document.querySelectorAll(".nav_bar ul li");
+                    const tab = document.querySelectorAll(".tab");
+
+                    function tabs(panelIndex) {
+                        tab.forEach(function (node) {
+                            node.style.display = "none";
+                        });
+                        tab[panelIndex].style.display = "block";
+                    }
+                    tabs(0);
+
+                    let bio = document.querySelector(".bio");
+                    const bioMore = document.querySelector("#see-more-bio");
+                    const bioLength = bio.innerText.length;
+
+                    function bioText() {
+                        bio.oldText = bio.innerText;
+
+                        bio.innerText = bio.innerText.substring(0, 100) + "...";
+                        bio.innerHTML += `<span onclick='addLength()' id='see-more-bio'>See More</span>`;
+                    }
+                    //        console.log(bio.innerText)
+
+                    bioText();
+
+                    function addLength() {
+                        bio.innerText = bio.oldText;
+                        bio.innerHTML +=
+                            "&nbsp;" + `<span onclick='bioText()' id='see-less-bio'>See Less</span>`;
+                        document.getElementById("see-less-bio").addEventListener("click", () => {
+                            document.getElementById("see-less-bio").style.display = "none";
+                        });
+                    }
+                    if (document.querySelector(".alert-message").innerText > 9) {
+                        document.querySelector(".alert-message").style.fontSize = ".7rem";
+                    }
+
+
+
+
+
+
+                </script>
+
+
+
+
+
+
+<script>
+    const editBtn = document.getElementById("edit")
+    const cancelBtn = document.getElementById("cancel")
+    const editFieldsColl = document.getElementsByClassName("edit_fields")
+    const updateForm = document.getElementById("update_form")
+
+    updateForm.onsubmit=()=>{
+        submitBtn.setAttribute("disabled","disabled")
+        //alert("true")
+    }
+    const submitBtn = document.getElementById("submit")
+    
+    editBtn.onclick = () => {
+        for (const field of editFieldsColl) {
+            field.removeAttribute("disabled")
+        }
+
+
+        //editBtn.setAttribute("disabled", "disabled")
+        cancelBtn.removeAttribute("disabled")
+        submitBtn.style.display = "inline-block"
+        editBtn.style.display = "none"
+        editBtn.setAttribute("disabled", "disabled")
+
+
+    }
+
+    cancelBtn.onclick = () => {
+        for (const field of editFieldsColl) {
+            field.setAttribute("disabled", "disabled")
+        }
+        editBtn.removeAttribute("disabled")
+        editBtn.style.display = "inline-block"
+        cancelBtn.setAttribute("disabled", "disabled")
+        submitBtn.style.display = "none"
+    }
+</script>
+
+
+
+
+<script>
+
+    if (window.history.replaceState) {
+        //alert(window.location.href)
+        window.history.replaceState(null, null, "/employee/dash_profile")
+    }
+</script>
+</body>
+
+</html>

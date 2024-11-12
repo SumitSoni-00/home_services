@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/hierarchy-select.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Hello, world!</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            color: #212112;
+            /* background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 7%;
+            background-color: #fff; */
+            overflow-x: hidden;
+            transition: all 200ms linear;
+        }
+
+        .services_icon img {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .service_my_col {
+
+            margin-bottom: 1.5rem;
+
+            text-align: center;
+
+        }
+
+        .service_my_col a {
+            text-decoration: none;
+            color: rgb(124, 120, 120);
+        }
+
+        .service_my_col a:hover {
+            color: blueviolet;
+
+        }
+
+
+
+        .service_my_cont {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        }
+
+        .services_my_row {
+            padding: 0;
+        }
+
+        .city_select {
+            width: 100%;
+            padding: 2rem;
+        }
+
+        /* 
+        @media only screen and (max-width: 576px) {
+
+
+            .location_cont .location_cont_row .first_col {
+                margin-bottom: 1.5rem;
+            }
+
+            .map_alt {
+                margin-bottom: 1rem;
+            }
+
+
+        }
+
+
+
+        @media only screen and (max-width: 768px) {
+            body {
+
+                font-size: 10%;
+            }
+
+            .city_select {
+                width: 100%;
+            }
+
+
+        } */
+
+        .location_cont {
+            /* border: 1px solid red; */
+            margin-top: 1rem;
+        }
+
+        .city_select {
+
+            /* border: 1px solid red; */
+            font-size: 90px;
+        }
+
+        .location_cont_row .my_col {
+            border: none;
+
+            /* margin-right: 2rem; */
+        }
+
+        .location_row .map_alt div {
+            font-size: 1.5rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+
+        .map_alt {
+            border: 1px solid gray;
+            cursor: pointer;
+        }
+
+        .map_alt:hover {
+            color: azure;
+            background: rgb(205, 207, 207);
+
+        }
+
+        .location_row .map_alt {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 1rem;
+        }
+
+        .location_row .map_alt div span {
+            text-align: start;
+        }
+
+        .fa_my_map {
+            font-size: 1.5rem;
+        }
+
+        .my_addr_col {
+            /* border: 1px solid yellowgreen; */
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .my_addr_col div {
+
+            width: 80%;
+            height: 4rem;
+
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+
+        }
+
+        .my_addr_col div input[type="text"] {
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            padding: 1rem;
+            border: 0.2rem solid rgb(121, 119, 119);
+            outline: none;
+            border-radius: 0.5rem;
+        }
+
+        .or_row div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+
+        }
+
+        .location_cont .location_cont_row .my_col {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid black; */
+        }
+
+        .location_cont .location_cont_row .my_col select {
+
+            width: 80%;
+            text-align: center;
+            border: 0.1rem solid grey;
+            border-radius: 0.5rem;
+            outline: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <%if(login){%>
+                    <a href="/customer/page">My Page</a>
+                    <%}%>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <%if(!login){%>
+                    <a href="/view_login">Login</a>
+                    <%}%>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container location_cont">
+        <div class="row location_cont_row">
+            <div class="my_col col-12 col-sm-12 col-md-6 first_col">
+                <select id="state_select_ID" name="state">
+                    <option value="null" selected>select state</option>
+                    <%states.forEach((state)=>{%>
+                        <option value="<%=state.name%>">
+                            <%=state.name%>
+                        </option>
+                        <%})%>
+
+                </select>
+
+            </div>
+            <div class="my_col col-12 col-sm-12 col-md-6">
+                <select id="city_select_ID" name="city">
+                    <option value="null" selected hidden>select city</option>
+                </select>
+            </div>
+
+
+
+
+
+
+        </div>
+        <div class="row  or_row">
+            <div class="col-md-12 col-sm-12 col-12">OR</div>
+        </div>
+        <div class="row  location_row">
+            <div class="map_alt col-sm-4 col-md-2" id="my_location">
+                <div>
+                    <div><i class="fas fa-map-marker-alt fa_my_map"></i></div><span>Access My Location</span>
+                </div>
+            </div>
+
+            <div class="my_addr_col col-sm-8 col-md-10">
+                <div>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="service_my_cont container mt-5">
+        <div class="services_my_row row">
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/painters">
+                    <div class="services_icon">
+                        <img src="/images/painter.png" alt="">
+                    </div>
+                    <p class="services_name">Painters</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/electricity">
+                    <div class="services_icon">
+                        <img src="/images/electricity.png" alt="">
+                    </div>
+                    <p class="services_name">Electricity</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/cleaning">
+                    <div class="services_icon">
+                        <img src="/images/cleaning.png" alt="">
+                    </div>
+                    <p class="services_name">Cleaning</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/pest_control">
+                    <div class="services_icon">
+                        <img src="/images/pest.png" alt="">
+                    </div>
+                    <p class="services_name">Pest | Control</p>
+                </a>
+            </div>
+
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/plumbering">
+                    <div class="services_icon">
+                        <img src="/images/pest.png" alt="">
+                    </div>
+                    <p class="services_name">plumbering</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/furniture">
+                    <div class="services_icon">
+                        <img src="/images/furniture.png" alt="">
+                    </div>
+                    <p class="services_name">Furniture Works</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/gardening">
+                    <div class="services_icon">
+                        <img src="/images/gardening.png" alt="">
+                    </div>
+                    <p class="services_name">Gardening Works</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="/services/tiles">
+                    <div class="services_icon">
+                        <img src="/images/tiles.png" alt="">
+                    </div>
+                    <p class="services_name">Tiles|Ceiling Works</p>
+                </a>
+            </div>
+
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="">
+                    <div class="services_icon">
+                        <img src="/images/electricity.png" alt="">
+                    </div>
+                    <p class="services_name">Some Work</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="">
+                    <div class="services_icon">
+                        <img src="/images/electricity.png" alt="">
+                    </div>
+                    <p class="services_name">Some Work</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="">
+                    <div class="services_icon">
+                        <img src="/images/electricity.png" alt="">
+                    </div>
+                    <p class="services_name">Some Work</p>
+                </a>
+            </div>
+            <div class="service_my_col col-3 col-sm-3 col-md-2">
+                <a href="">
+                    <div class="services_icon">
+                        <img src="/images/electricity.png" alt="">
+                    </div>
+                    <p class="services_name">Some Work</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <div >
+    <img class="img-fluid" src="../../public/images/1.jpg" style="width: 100%;height: auto;" alt="" srcset="">
+
+   </div> -->
+
+   
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<!-- <script>
+    $(document).ready(function () {
+        $('.city_select').select2();
+    });
+</script> -->
+
+
+<script>
+    var stateOptions;
+    var cityOptions;
+    window.onload = () => {
+
+
+        fetch('/clear_cookie', {
+            method: "POST",
+
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(res => res.json())
+            .then((jsonRes) => {
+                //alert(jsonRes.hello)
+            })
+            .catch((err) => {
+                alert("plo")
+                alert(err)
+            })
+
+
+
+
+
+
+
+        //alert(decodeURIComponent(document.cookie))
+        //alert(window.localStorage.cities.split(",")[0])
+        const cityState = getCityStateFromCookie(document.cookie)
+        //alert(cityState)
+        //alert(typeof cityState.state)
+        //alert(stateSelectEle.options[1].value)
+        stateOptions = stateSelectEle.options
+        stateSelectEle.onclick = () => {
+            //alert("click")
+        }
+
+        //cityOptions = citySelectEle.options
+
+        if (cityState.state.trim().length !== 0) {
+            const allCookieArr = document.cookie.split(";")
+            for (let index = 0; index < allCookieArr.length; index++) {
+                const cookie = allCookieArr[index];
+                //alert(cookie)
+                //alert(cookie.trim().indexOf("globalCities"))
+                if (cookie.trim().indexOf("globalCities") === 0) {
+                    cityOptions = `<option   value="null" hidden>Select City</option>`
+                    let citiesFromGlobal = cookie.split("=")[1].trim();
+                    var globalCitiesNames = []
+                    citiesFromGlobal.split(",").forEach((city) => {
+                        globalCitiesNames.push(city.trim())
+                        cityOptions = cityOptions + `<option   value="${city.trim()}">${city.trim()}</option>`
+
+
+
+                    })
+                    citySelectEle.innerHTML = cityOptions
+                    //alert(globalCitiesNames[0])
+                    break
+                }
+
+            }
+            cityOptions = citySelectEle.options
+            setSelectedOption(stateOptions, cityState.state.trim());
+
+        }
+
+        if (cityState.city.trim().length !== 0) {
+            //alert(document.cookie)
+
+            //alert(cityOptions)
+
+            setSelectedOption(cityOptions, cityState.city.trim());
+
+        }
+
+
+
+
+    }
+
+    function setSelectedOption(options, state) {
+        for (let index = 0; index < options.length; index++) {
+            var option = options[index]
+            if (option.value.trim() === state) {
+                option.setAttribute("selected", "selected")
+                break
+            }
+
+
+        }
+    }
+
+
+    function getCityStateFromCookie(cookie) {
+        //let name = cname + "=";
+        //alert(cookie)
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let cookieArr = decodedCookie.split(';');
+
+        const cityState = {
+            city: "",
+            state: ""
+
+        }
+        cookieArr.forEach((cookie) => {
+            if (cookie.trim().indexOf("city") === 0) {
+
+                cityState.city = cookie.split("=")[1]
+
+            }
+            if (cookie.trim().indexOf("state") === 0) {
+
+                cityState.state = cookie.split("=")[1]
+            }
+        })
+
+        //alert(cityState.state)
+        return cityState;
+        // for (let i = 0; i < ca.length; i++) {
+        //     let c = ca[i];
+        //     while (c.charAt(0) == ' ') {
+        //         c = c.substring(1);
+        //     }
+        //     if (c.indexOf(name) == 0) {
+        //         return c.substring(name.length, c.length);
+        //     }
+        // }
+        // return "";
+    }
+
+
+    var stateSelectEle = document.getElementById("state_select_ID")
+
+
+
+    var citySelectEle = document.getElementById("city_select_ID")
+
+    citySelectEle.onchange = () => {
+        //alert("p")
+        document.cookie = `city=${citySelectEle.value}`
+    }
+    var globalCities = []
+    stateSelectEle.onchange = () => {
+        if (stateSelectEle.selectedIndex === 0) {
+            citySelectEle.innerHTML = `<option selected hidden value="null">Select City</option>`
+            document.cookie = `city=`
+            document.cookie = `state=`
+            document.cookie = `globalCities=`
+            return
+        }
+        document.cookie = `state=${stateSelectEle.value}`
+        const data = {
+            state: stateSelectEle.value
+        }
+        fetch('/cities_for_state', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(response => response.json())
+            .then((cities) => {
+
+                //alert(cities);
+                var citiesName = []
+                cities.forEach(city => {
+                    citiesName.push(city.name)
+                });
+                //alert(citySelectEle)
+
+                citySelectEle.innerHTML = ""
+
+                var options = `<option selected hidden value="null">Select City</option>`
+                citiesName.forEach((name) => {
+                    options = options + `<option   value="${name}">${name}</option>`
+                })
+                //alert(options)
+                //window.localStorage.cities=citiesName
+                document.cookie = `globalCities=${citiesName}`
+                citySelectEle.innerHTML = options
+                document.cookie = `city=`
+
+
+                // $("#city_select_ID").select2()
+
+                //alert(citiesName)
+            })
+            .catch(err => alert(err));
+    }
+</script>
+
+
+
+<!-- <script>
+
+    var myLoc = document.getElementById("my_location");
+    myLoc.onclick = getLocation
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.")
+        }
+    }
+
+    function showPosition(position) {
+        //alert("Latitude: " + position.coords.latitude +"<br>Longitude: " + position.coords.longitude)
+        GetAddress(position.coords.latitude, position.coords.longitude)
+    }
+</script>
+ -->
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    function GetAddress(latStr, lngStr) {
+        var lat = parseFloat(latStr);
+        var lng = parseFloat(lngStr);
+
+        var latlng = new google.maps.LatLng(lat, lng);
+        var geocoder = geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+            if (status !== google.maps.GeocoderStatus.OK) {
+                alert(status);
+            }
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    alert("Location: " + results[1].formatted_address);
+                }
+            }
+        });
+    }
+</script>
+
+
+<!-- <script>
+    window.onload = () => {
+        fetch('/clear_cookie', {
+            method: "POST",
+
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(res => res.json())
+            .then((jsonRes) => {
+                //alert(jsonRes.hello)
+            })
+            .catch((err) => {
+                alert("plo")
+                alert(err)
+            })
+
+    }
+</script> -->
+<!-- <script>
+    if(window.history.replaceState){
+        alert(window.location.href)
+        window.history.replaceState(null,null,window.location.href)
+    }
+</script>
+ -->
+
+
+</html>
